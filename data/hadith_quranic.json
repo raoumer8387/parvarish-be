@@ -1,0 +1,664 @@
+{
+  "project": "Parawarish AI - Parenting (Islamic sources)",
+  "language": "bilingual (English + Urdu)",
+  "categories": [
+    {
+      "category": "Love & Mercy between Parents and Children",
+      "entries": [
+        {
+          "id": "L1",
+          "type": "ayat",
+          "arabic": "وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا",
+          "transliteration": "Wa qaḍā rabbuka allā taʿbudū illā iyyāhu wa bil-wālidayni iḥsānā",
+          "english_translation": "And your Lord has decreed that you worship none but Him, and that you be kind to parents.",
+          "urdu_translation": "اور تمہارے رب نے فیصلہ کیا ہے کہ تم اس کے سوا کسی کی عبادت نہ کرو، اور والدین کے ساتھ بھلائی کرو۔",
+          "tags": [
+            "parents",
+            "respect",
+            "obedience"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 23
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Ibn Kathir: This ayah links serving Allah with serving parents; kindness to parents is mandatory.",
+          "short_explanation": {
+            "en": "Kindness to parents is placed next to worship — showing the high status of serving parents.",
+            "ur": "والدین کے ساتھ نیکی کو عبادت کے برابر رکھا گیا ہے۔"
+          },
+          "practical_tip": {
+            "en": "Model respectful talk in front of children; teach them du'a for parents.",
+            "ur": "بچوں کے سامنے والدین کے احترام کا مظاہرہ کریں اور ان کو والدین کے لئے دعا سکھائیں۔"
+          }
+        },
+        {
+          "id": "L2",
+          "type": "ayat",
+          "arabic": "وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ مِنَ الرَّحْمَةِ ...",
+          "transliteration": "Wakhfiḍ lahumā janāḥa adh-dhulli min ar-raḥmah ...",
+          "english_translation": "And lower to them the wing of humility out of mercy, and say, 'My Lord, have mercy upon them as they brought me up when I was small.'",
+          "urdu_translation": "اور ان کے پاس نرمی کا پر پھیلاؤ اور کہو کہ اے میرے رب! ان پر رحم کر جیسا انہوں نے میری پرورش کی تھی جب میں چھوٹا تھا۔",
+          "tags": [
+            "mercy",
+            "du'a",
+            "humility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 24
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Tafsir: Emphasizes humility, tenderness and du'a for parents, even after they age.",
+          "short_explanation": {
+            "en": "Shows importance of mercy and praying for parents.",
+            "ur": "یہ آیت شفقت اور والدین کے لیے دعا کی اہمیت بتاتی ہے۔"
+          },
+          "practical_tip": {
+            "en": "Encourage children to say the du'a with you; show gentle behaviour to elders.",
+            "ur": "بچوں کو والدین کے لیے دعا کہنا سکھائیں اور بڑوں کے ساتھ نرمی دکھائیں۔"
+          }
+        },
+        {
+          "id": "L3",
+          "type": "hadith",
+          "arabic": "أَبُو هُرَيْرَةَ قَالَ: ... رَغِمَ أَنْفُهُ ... مَنْ أَدْرَكَ وَالِدَيْهِ ...",
+          "english_translation": "The Prophet ﷺ said: 'Let him be humbled into dust... who finds his parents in old age and does not enter Paradise (by serving them).'",
+          "urdu_translation": "نبی ﷺ نے فرمایا: 'جس نے اپنے والدین کو بڑھاپے میں پایا اور پھر بھی انہیں نہ سلوایا تو اس کی ناک مٹی میں رگڑی جائے۔'",
+          "tags": [
+            "duty",
+            "care",
+            "parents-old-age"
+          ],
+          "age_range": "adult-children",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": 2551
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Hadith emphasizes that caring for parents in old age is a major means to Paradise.",
+          "short_explanation": {
+            "en": "Caring for elderly parents is strongly emphasized; it's a major path to Jannah.",
+            "ur": "بڑھاپے میں والدین کی خدمت جنت کا بڑا ذریعہ ہے۔"
+          },
+          "practical_tip": {
+            "en": "Plan for eldercare; involve children in small acts of service to parents.",
+            "ur": "بزرگوں کی دیکھ بھال کے لئے منصوبہ بندی کریں اور بچوں کو چھوٹے کاموں میں شامل کریں۔"
+          }
+        },
+        {
+          "id": "L4",
+          "type": "hadith",
+          "arabic": "النَّبِيُّ ﷺ قَالَ: «مَنْ لَا يَرْحَمْ لَا يُرْحَمْ» (بوسہ دینا)",
+          "english_translation": "The Prophet ﷺ kissed his grandson and said, 'Whoever does not show mercy will not be shown mercy.'",
+          "urdu_translation": "نبی ﷺ نے اپنے نواسے کو بوسہ دیا اور فرمایا: 'جو رحم نہیں کرتا، اس پر رحم نہیں کیا جائے گا۔'",
+          "tags": [
+            "mercy",
+            "affection",
+            "parenting"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": 5997
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Shows permissibility and importance of physical affection within family (mercy).",
+          "short_explanation": {
+            "en": "Affection and mercy are central; parents should show love.",
+            "ur": "محبت اور شفقت تربیت کا مرکز ہیں۔"
+          },
+          "practical_tip": {
+            "en": "Show appropriate physical affection to children; don't be overly strict emotionally.",
+            "ur": "بچوں سے مناسب جسمانی محبت کا اظہار کریں؛ جذباتی طور پر سخت نہ ہوں۔"
+          }
+        },
+        {
+          "id": "L5",
+          "type": "ayat",
+          "arabic": "وَوَصَّيْنَا الْإِنسَانَ بِوَالِدَيْهِ إِحْسَانًا",
+          "transliteration": "Wa wassaynā al-insāna bi-wālidaihi iḥsānā",
+          "english_translation": "And We have enjoined upon man to be good to his parents.",
+          "urdu_translation": "اور ہم نے انسان پر والدین کے ساتھ بھلائی کا فرض عائد کیا ہے۔",
+          "tags": [
+            "command",
+            "parents"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 29,
+            "ayah": 8
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "General command stressing importance of good treatment to parents.",
+          "short_explanation": {
+            "en": "Allah commands kindness to parents as a general duty.",
+            "ur": "اللہ نے والدین کے ساتھ نیکی کا حکم دیا ہے۔"
+          },
+          "practical_tip": {
+            "en": "Teach children stories from Quran showing respect to parents; role-model behavior.",
+            "ur": "بچوں کو قرآنی کہانیاں دکھا کر والدین کے احترام کا درس دیں۔"
+          }
+        },
+        {
+          "id": "L6",
+          "type": "ayat",
+          "arabic": "وَقُل رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+          "transliteration": "Wa qul rabbi irhamhuma kama rabbayānī ṣaghīrā",
+          "english_translation": "And say: 'My Lord! Have mercy on them as they brought me up when I was small.'",
+          "urdu_translation": "اور کہو: اے میرے رب! ان پر رحم کر جیسا انہوں نے میری پرورش کی جب میں چھوٹا تھا۔",
+          "tags": [
+            "du'a",
+            "gratitude",
+            "parents"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 24
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "A supplication model for children to pray for parents.",
+          "short_explanation": {
+            "en": "Encourage praying for parents as gratitude for upbringing.",
+            "ur": "پرورش کے شکر میں والدین کے لیے دعا سکھائیں۔"
+          },
+          "practical_tip": {
+            "en": "Include this du'a in bedtime routine with children.",
+            "ur": "اس دعا کو بچوں کی سونے کی روٹین میں شامل کریں۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Discipline and Manners (Adab & Akhlaq)",
+      "entries": [
+        {
+          "id": "D1",
+          "type": "hadith",
+          "arabic": "عَنْ عَائِشَةَ: قَالَ النَّبِيُّ ﷺ: \"خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ\"",
+          "english_translation": "The Prophet ﷺ said: 'The best of you are those who are best to their families.'",
+          "urdu_translation": "نبی ﷺ نے فرمایا: 'تم میں سے بہتر وہ ہے جو اپنے گھر والوں کے لیے بہتر ہو۔'",
+          "tags": [
+            "manners",
+            "family",
+            "character"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sunan at-Tirmidhi",
+            "hadith_number": 3895
+          },
+          "hadith_classification": "Hasan/Sahih (scholarly view)",
+          "tafsir_excerpt": "Encourages good conduct within the family as sign of faith.",
+          "short_explanation": {
+            "en": "Good manners at home reflect true character; parents should embody good adab.",
+            "ur": "گھر میں اچھے آداب اصل کردار کی علامت ہیں۔"
+          },
+          "practical_tip": {
+            "en": "Use family meetings to practice courteous speech and apologies.",
+            "ur": "خاندانی ملاقاتوں میں شائستہ بات اور معافی کی مشق کروائیں۔"
+          }
+        },
+        {
+          "id": "D2",
+          "type": "hadith",
+          "arabic": "أَمَرَ النَّبِيُّ ﷺ بِتَعَلِيمِ الْوَلَدِ الْصَّلَاةَ عِنْدَ سَبْعِ سِنِينَ",
+          "english_translation": "The Prophet ﷺ advised to teach children prayer at age seven and encourage them by age ten.",
+          "urdu_translation": "نبی ﷺ نے بچوں کو سات سال کی عمر میں نماز سکھانے اور دس پر زور دینے کی ہدایت دی۔",
+          "tags": [
+            "prayer",
+            "discipline",
+            "education"
+          ],
+          "age_range": "3-12",
+          "source": {
+            "collection": "Sunan Abi Dawud",
+            "hadith_number": 495
+          },
+          "hadith_classification": "Hasan (per scholars)",
+          "tafsir_excerpt": "Guidance on progressive teaching and establishing routines.",
+          "short_explanation": {
+            "en": "Introduce prayer early and build habit gradually with positive reinforcement.",
+            "ur": "نماز کو جلد متعارف کروائیں اور آہستہ آہستہ عادت ڈالیں۔"
+          },
+          "practical_tip": {
+            "en": "Start with short, fun prayer routines; don't use harsh punishment early.",
+            "ur": "چھوٹے اور دلچسپ نماز کے معمولات شروع کریں؛ ابتدائی طور پر سخت سزا سے گریز کریں۔"
+          }
+        },
+        {
+          "id": "D3",
+          "type": "ayat",
+          "arabic": "وَأْمُرْ بِالْمَعْرُوفِ ...",
+          "transliteration": "Wa amr bil-maʿrūf wa anh ʿanil-munkar",
+          "english_translation": "Enjoin what is right and forbid what is wrong.",
+          "urdu_translation": "نیکی کا حکم دو اور برائی سے روکّو۔",
+          "tags": [
+            "advice",
+            "morals",
+            "education"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 3,
+            "ayah": 104
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Parents should teach right and forbid wrong with wisdom.",
+          "short_explanation": {
+            "en": "Use wisdom and gradual teaching when correcting children.",
+            "ur": "بچوں کی اصلاح میں حکمت اور آہستگی اختیار کریں۔"
+          },
+          "practical_tip": {
+            "en": "Correct behaviour privately, praise publicly; set clear household rules.",
+            "ur": "غلطی کو نجی طور پر ٹھیک کریں، اچھائی کو عوامی طور پر سراہیں؛ گھر کے اصول واضح رکھیں۔"
+          }
+        },
+        {
+          "id": "D4",
+          "type": "hadith",
+          "arabic": "قَالَ النَّبِيُّ ﷺ: «إِنَّمَا بُعِثْتُ لأُتَمِّمَ مَكَارِمَ الْأَخْلَاقِ»",
+          "english_translation": "The Prophet ﷺ said: 'I was sent to perfect good manners.'",
+          "urdu_translation": "نبی ﷺ نے فرمایا: 'میں اچھے اخلاق کو مکمل کرنے کے لیے بھیجا گیا ہوں۔'",
+          "tags": [
+            "manners",
+            "ethics"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Musnad Ahmad and others",
+            "note": "various sources"
+          },
+          "hadith_classification": "Supported",
+          "tafsir_excerpt": "Parenting should focus on character development.",
+          "short_explanation": {
+            "en": "Manners and character are central goals of upbringing.",
+            "ur": "تربیت کا مقصد کردار سازی ہونی چاہیے۔"
+          },
+          "practical_tip": {
+            "en": "Teach empathy by discussing feelings and consequences.",
+            "ur": "ہمدردی سکھانے کے لیے جذبات اور نتائج پر گفتگو کریں۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Rights and Responsibilities (Huqooq)",
+      "entries": [
+        {
+          "id": "R1",
+          "type": "ayat",
+          "arabic": "وَقُل رَّبِّ ٱرْحَمْهُمَا ...",
+          "english_translation": "And say: 'My Lord! Have mercy on them as they raised me when I was small.'",
+          "urdu_translation": "اور کہو: اے میرے رب! ان پر رحم کر جیسا انہوں نے میری پرورش کی جب میں چھوٹا تھا۔",
+          "tags": [
+            "parents",
+            "rights",
+            "du'a"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 24
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Children owe gratitude and prayer to parents; parents owe care and provision.",
+          "short_explanation": {
+            "en": "Mutual rights: parents nurture, children honor and pray for them.",
+            "ur": "باہمی حقوق: والدین پرورش کریں، بچے احترام اور دعا کریں۔"
+          },
+          "practical_tip": {
+            "en": "Teach gratitude practices like thanking parents in daily routines.",
+            "ur": "روزمرہ معمولات میں والدین کا شکر ادا کرنا سکھائیں۔"
+          }
+        },
+        {
+          "id": "R2",
+          "type": "ayat",
+          "arabic": "وَالْوَالِدَاتُ يُرْضِعْنَ أَوْلَادَهُنَّ حَوْلَيْنِ ...",
+          "english_translation": "Mothers shall breastfeed their children for two whole years...",
+          "urdu_translation": "اور والدائیں اپنے بچوں کو دو سال پورے کا دودھ پلائیں ...",
+          "tags": [
+            "mother",
+            "breastfeeding",
+            "rights"
+          ],
+          "age_range": "0-2",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 233
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Sets recommended breastfeeding period and parental care responsibilities.",
+          "short_explanation": {
+            "en": "Islam recognizes maternal care and sets recommended breastfeeding period.",
+            "ur": "اسلام ماں کی دیکھ بھال کو تسلیم کرتا ہے اور مشورہ شدہ مدت بتاتا ہے۔"
+          },
+          "practical_tip": {
+            "en": "Support mothers with breastfeeding resources and community support.",
+            "ur": "ماؤں کو دودھ پلانے میں مدد اور کمیونٹی سپورٹ دیں۔"
+          }
+        },
+        {
+          "id": "R3",
+          "type": "hadith",
+          "arabic": "مَنْ كَانَتِ النِّعْمَةُ عَلَيْهِ فَلْيُعْطِ ...",
+          "english_translation": "The Prophet emphasized providing for family and treating dependents fairly.",
+          "urdu_translation": "نبی ﷺ نے فرمایا کہ جس کے پاس نعمت ہے وہ اپنے گھر والوں کو اس میں حصہ دے۔",
+          "tags": [
+            "provision",
+            "finance",
+            "fairness"
+          ],
+          "age_range": "adult-parents",
+          "source": {
+            "collection": "General hadiths"
+          },
+          "hadith_classification": "General",
+          "tafsir_excerpt": "Parents must provide basic needs; children must be treated fairly.",
+          "short_explanation": {
+            "en": "Provision and fair treatment are core parental responsibilities.",
+            "ur": "گھر والوں کو روزی اور انصاف فراہم کرنا والدین کی ذمہ داری ہے۔"
+          },
+          "practical_tip": {
+            "en": "Budget family expenses and teach children simple money management.",
+            "ur": "خاندانی بجٹ بنائیں اور بچوں کو بنیادی مالیات سکھائیں۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Teaching Faith and Salah",
+      "entries": [
+        {
+          "id": "T1",
+          "type": "ayat",
+          "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا قَوُوا أَنفُسَكُمْ وَأَهْلِيكُمْ ...",
+          "english_translation": "O you who believe! Protect yourselves and your families from a Fire....",
+          "urdu_translation": "اے ایمان والو! اپنے آپ اور اپنے گھر والوں کو آگ سے بچاؤ ...",
+          "tags": [
+            "faith",
+            "salah",
+            "guidance"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 66,
+            "ayah": 6
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Parents have duty to guard family's faith and teach religious obligations.",
+          "short_explanation": {
+            "en": "Spiritual safeguarding is a parental duty; teach salah and morals.",
+            "ur": "روانی حفاظت والدین کی ذمہ داری ہے؛ نماز اور اخلاق سکھائیں۔"
+          },
+          "practical_tip": {
+            "en": "Make prayer times family events; involve kids in small roles (caller, mat carrier).",
+            "ur": "نماز کو خاندانی تقریب بنائیں؛ بچوں کو چھوٹے کاموں میں شامل کریں۔"
+          }
+        },
+        {
+          "id": "T2",
+          "type": "hadith",
+          "arabic": "أَمَرَ رَسُولُ اللَّهِ ﷺ أَنْ يُعَلَّمَ الْوَلَدُ الصَّلَاةَ عِنْدَ سَبْعِ سِنِينَ ...",
+          "english_translation": "The Prophet ﷺ instructed to teach children prayer at seven and encourage at ten.",
+          "urdu_translation": "نبی ﷺ نے بچوں کو سات سال کی عمر میں نماز سکھانے اور دس پر زور دینے کی ہدایت دی۔",
+          "tags": [
+            "prayer",
+            "age-guidance"
+          ],
+          "age_range": "3-12",
+          "source": {
+            "collection": "Sunan Abi Dawud",
+            "hadith_number": 495
+          },
+          "hadith_classification": "Hasan (scholarly)",
+          "tafsir_excerpt": "Progressive instruction: teach early, enforce later with wisdom.",
+          "short_explanation": {
+            "en": "Start teaching prayer young; use routines and encouragement.",
+            "ur": "نماز سکھانا کم عمر میں شروع کریں؛ معمولات اور حوصلہ افزائی استعمال کریں۔"
+          },
+          "practical_tip": {
+            "en": "Use child-sized prayer mats and short dua cards; reward consistency.",
+            "ur": "چھوٹے سجّادے اور مختصر دعاؤں کے کارڈ استعمال کریں؛ مستقل مزاجی پر انعام دیں۔"
+          }
+        },
+        {
+          "id": "T3",
+          "type": "ayat",
+          "arabic": "وَأْمُرْ أَهْلَكَ بِالصَّلَاةِ ...",
+          "english_translation": "And enjoin prayer upon your family (general instruction).",
+          "urdu_translation": "اور اپنے گھر والوں کو نماز کا حکم دو ...",
+          "tags": [
+            "command",
+            "family-guidance"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 132
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encouragement to make prayer central in household practice.",
+          "short_explanation": {
+            "en": "Make prayer a household practice and routine.",
+            "ur": "نماز کو گھر کے معمول کا حصہ بنائیں۔"
+          },
+          "practical_tip": {
+            "en": "Assign simple duties (e.g., timekeeper) to children to make them feel responsible.",
+            "ur": "بچوں کو آسان ذمہ داریاں دیں جیسے نماز کا وقت بتانا۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Prophet’s Parenting Examples",
+      "entries": [
+        {
+          "id": "P1",
+          "type": "hadith",
+          "arabic": "أَنَّ رَسُولَ اللَّهِ ﷺ كَانَ يُقَبِّلُ الْحَسَنَ ...",
+          "english_translation": "The Prophet ﷺ kissed Al-Hasan and Al-Husayn and showed love to children.",
+          "urdu_translation": "نبی ﷺ نے حسن اور حسینؓ کو بوسہ دیا اور بچوں سے محبت ظاہر کی۔",
+          "tags": [
+            "prophetic-example",
+            "affection"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": 5997
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Prophet's affectionate behavior is a model for parents.",
+          "short_explanation": {
+            "en": "Physical affection and playfulness are part of the prophetic model.",
+            "ur": "جسمانی محبت اور کھیل کود نبوی طرزِ تربیت کا حصہ ہیں۔"
+          },
+          "practical_tip": {
+            "en": "Play with your children daily; show affection deliberately.",
+            "ur": "روزانہ بچوں کے ساتھ کھیلیں؛ محبت کا اظہار شعوری طور پر کریں۔"
+          }
+        },
+        {
+          "id": "P2",
+          "type": "hadith",
+          "arabic": "النَّبِيُّ ﷺ يُحَدِّثُ بِلُطْفٍ وَمَلاَمِحَةٍ لِأَهْلِهِ ...",
+          "english_translation": "The Prophet ﷺ spoke kindly and gently to his household and counseled with wisdom.",
+          "urdu_translation": "نبی ﷺ گھر والوں سے نرمی اور حکمت کے ساتھ بات کرتے اور مشورہ دیتے۔",
+          "tags": [
+            "speech",
+            "wisdom",
+            "prophetic"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "General hadiths",
+            "note": "various narrations"
+          },
+          "hadith_classification": "Supported",
+          "tafsir_excerpt": "Gentle speech and wise counsel exemplified by the Prophet.",
+          "short_explanation": {
+            "en": "Treat family with gentle speech and wise counsel.",
+            "ur": "خاندان سے نرمی اور حکمت سے پیش آئیں۔"
+          },
+          "practical_tip": {
+            "en": "Use calm tone; explain reasons behind rules instead of shouting.",
+            "ur": "پرسکون لہجہ اپنائیں؛ قواعد کے پیچھے وجہ بتائیں بجائے کہ چلانی کے۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Balancing Dunya and Deen in Upbringing",
+      "entries": [
+        {
+          "id": "B1",
+          "type": "ayat",
+          "arabic": "وَلَا تُطِعْ مَنْ أَغْفَلْنَا قَلْبَهُ عَن ذِكْرِنَا ...",
+          "english_translation": "Do not follow those whose hearts We have made heedless of Our remembrance... (context: balance and prioritization)",
+          "urdu_translation": "ان لوگوں کی پیروی نہ کرو جن کے دل ہم نے اپنی یاد سے غافل کر دیے ...",
+          "tags": [
+            "balance",
+            "priorities"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 18,
+            "ayah": 28
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Prioritize faith while engaging with worldly life.",
+          "short_explanation": {
+            "en": "Teach children to value both knowledge and faith.",
+            "ur": "بچوں کو علم اور ایمان دونوں کی قدر سکھائیں۔"
+          },
+          "practical_tip": {
+            "en": "Schedule study and worship times; show balance in daily life.",
+            "ur": "روزمرہ میں تعلیم اور عبادت کے اوقات مقرر کریں۔"
+          }
+        },
+        {
+          "id": "B2",
+          "type": "hadith",
+          "arabic": "قَالَ النَّبِيُّ ﷺ: «مَا مِنْ شَيْءٍ أَثْقَلُ فِي مِيزَانِ الْمُؤْمِنِ مِنْ حُسْنِ الخُلُقِ»",
+          "english_translation": "The Prophet ﷺ said: 'Nothing is heavier in the scale of the believer than good character.'",
+          "urdu_translation": "نبی ﷺ نے فرمایا: 'مومن کے ترازو میں اچھے اخلاق سے زیادہ بھاری کوئی چیز نہیں۔'",
+          "tags": [
+            "character",
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Hadith literature",
+            "note": "various collections"
+          },
+          "hadith_classification": "Hasan/Sahih in meaning",
+          "tafsir_excerpt": "Emphasizes character over mere material success.",
+          "short_explanation": {
+            "en": "Prioritize character development alongside worldly skills.",
+            "ur": "علم کے ساتھ کردار سازی کو مقدم رکھیں۔"
+          },
+          "practical_tip": {
+            "en": "Encourage community service projects for kids to build character.",
+            "ur": "بچوں کے لیے کمیونٹی سروس کے منصوبے بنائیں تاکہ کردار بنے۔"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Modern Issues (screen time, education, emotional health)",
+      "entries": [
+        {
+          "id": "M1",
+          "type": "practical_guidance",
+          "title": "Screen time and boundaries",
+          "english_text": "Set clear limits to protect prayer time, family interaction, and moral exposure. Co-view when possible and discuss content.",
+          "urdu_text": "نماز، خاندانی وقت اور اخلاقی اثرات کی حفاظت کے لیے سکرین ٹائم محدود کریں۔ جب ممکن ہو ساتھ دیکھیں اور مواد پر بات کریں۔",
+          "tags": [
+            "media",
+            "boundaries",
+            "modern"
+          ],
+          "age_range": "3-18",
+          "source": {
+            "note": "Derived from Islamic principles of guarding heart, time management and modesty."
+          },
+          "short_explanation": {
+            "en": "Apply Islamic values (modesty, guarding the heart) to media use.",
+            "ur": "اسلامی اقدار کو میڈیا کے استعمال پر لاگو کریں۔"
+          },
+          "practical_tip": {
+            "en": "Create 'no-screen' zones and times (e.g., during prayers and meals).",
+            "ur": "نماز اور کھانے کے وقت 'نو سکرین' زون بنائیں۔"
+          }
+        },
+        {
+          "id": "M2",
+          "type": "practical_guidance",
+          "title": "Mental & emotional health",
+          "english_text": "Teach emotional literacy, encourage expression, and seek professional help when needed; remove stigma.",
+          "urdu_text": "جذباتی فہم سکھائیں، اظہار کی حوصلہ افزائی کریں اور ضرورت پڑنے پر ماہرین کی مدد لیں۔",
+          "tags": [
+            "mental-health",
+            "support"
+          ],
+          "age_range": "all",
+          "source": {
+            "note": "Practical application of Islamic compassion and preservation of self."
+          },
+          "short_explanation": {
+            "en": "Emotional wellbeing is part of Islamic care for the self and family.",
+            "ur": "جذباتی تندرستی اسلامی خود نگہداشت کا حصہ ہے۔"
+          },
+          "practical_tip": {
+            "en": "Normalize talking about feelings; teach simple coping skills like breathing.",
+            "ur": "جذبات پر بات معمول بنائیں؛ سادہ کاپنگ مہارتیں سکھائیں۔"
+          }
+        },
+        {
+          "id": "M3",
+          "type": "practical_guidance",
+          "title": "Education and career guidance",
+          "english_text": "Encourage knowledge-seeking while reminding children of moral responsibility; help them choose skills aligned with long-term good.",
+          "urdu_text": "علم کی تلاش کی حوصلہ افزائی کریں اور بچوں کو اخلاقی ذمہ داری یاد دلائیں؛ مہارتیں منتخب کروائیں جو طویل مدتی بھلائی کے لئے ہوں۔",
+          "tags": [
+            "education",
+            "career",
+            "skills"
+          ],
+          "age_range": "12-22",
+          "source": {
+            "note": "Derived from Qur'an and Hadith emphasis on knowledge."
+          },
+          "short_explanation": {
+            "en": "Balance worldly skills and ethical purpose.",
+            "ur": "دنیاوی ہنر اور اخلاقی مقصد میں توازن رکھیں۔"
+          },
+          "practical_tip": {
+            "en": "Help teens explore careers via projects; link skills to service.",
+            "ur": "نو جوانوں کو پروجیکٹس کے ذریعے کیریئر دریافت کرنے میں مدد دیں؛ ہنر کو خدمت سے جوڑیں۔"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "created_by": "Assistant (curated batch)",
+    "entries_count": 44,
+    "notes": "Initial curated dataset with tafsir excerpts, hadith classifications, tags, age_range and practical tips. Ask to expand any category to 50+ entries."
+  }
+}
