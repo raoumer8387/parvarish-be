@@ -1,0 +1,902 @@
+[
+    {
+        "id": 1,
+        "title": "Nabi ﷺ aur Sach Bolna",
+        "urdu_text": "Ek din kuch logon ne aap ﷺ se kaha, “Agar hum ek burai chhod dein to kaunsi chhodni chahiye?” Aap ﷺ ne farmaya: “Jhoot chhod do.” Wo aadmi har burai chhod baitha, kyunke use dar tha ke agar wo jhoot nahi bolega to sabko sach pata chal jaayega.",
+        "english_text": "People asked the Prophet ﷺ which sin to leave. He said, 'Leave lying.' The man then left all bad deeds because truth reveals everything.",
+        "lesson_urdu": "Sach bolne wala insaan har bura kaam chhod deta hai.",
+        "lesson_english": "Truth always wins."
+    },
+    {
+        "id": 2,
+        "title": "Nabi ﷺ aur Ameer-O-Ghareeb ka Bartao",
+        "urdu_text": "Aap ﷺ kabhi fakhr nahi karte the. Jab koi ghareeb aata, to aap uske paas bethte, uska haal poochte aur usay izzat dete.",
+        "english_text": "The Prophet ﷺ treated poor people with respect and humility.",
+        "lesson_urdu": "Sab insaan barabar hain.",
+        "lesson_english": "All humans are equal in Allah’s eyes."
+    },
+    {
+        "id": 3,
+        "title": "Nabi ﷺ aur Billi",
+        "urdu_text": "Ek baar aap ﷺ ke kapray par ek billi so gayi. Namaz ka waqt hua to aap ne us billi ko jagaya nahi, balki kapray ka wo hissa kaat diya jahan billi so rahi thi.",
+        "english_text": "Once a cat slept on the Prophet’s ﷺ clothes. He did not disturb it and cut the cloth instead.",
+        "lesson_urdu": "Har janwar Allah ki makhlooq hai.",
+        "lesson_english": "Be kind to animals."
+    },
+    {
+        "id": 4,
+        "title": "Nabi ﷺ aur Chhota Larka",
+        "urdu_text": "Aap ﷺ bachon se bohot pyaar karte the. Jab koi bacha milta, aap usay salam karte, hans kar baat karte aur unke sar par haath pherte.",
+        "english_text": "The Prophet ﷺ always greeted and loved children with kindness.",
+        "lesson_urdu": "Bachon se mohabbat se pesh aana sunnat hai.",
+        "lesson_english": "Love children with kindness."
+    },
+    {
+        "id": 5,
+        "title": "Nabi ﷺ aur Badzubaan Aurat",
+        "urdu_text": "Ek aurat roz aap ﷺ ko gali deti thi. Jab wo bimar hui to aap uska haal poochne gaye.",
+        "english_text": "A woman insulted the Prophet ﷺ daily. When she fell sick, he visited her.",
+        "lesson_urdu": "Burai ka jawab nek dil se dena chahiye.",
+        "lesson_english": "Respond to evil with kindness."
+    },
+    {
+        "id": 6,
+        "title": "Nabi ﷺ aur Dushman ko Maaf Karna",
+        "urdu_text": "Makkah fatah ke din aap ﷺ ne sab ko maaf kar diya.",
+        "english_text": "On the day of the conquest of Makkah, the Prophet ﷺ forgave everyone.",
+        "lesson_urdu": "Maafi dene wala dil sabse bada hota hai.",
+        "lesson_english": "Forgiveness is strength."
+    },
+    {
+        "id": 7,
+        "title": "Nabi ﷺ aur Ansoo",
+        "urdu_text": "Ek bacha tha jiska parinda mar gaya. Aap ﷺ usay tasalli dene gaye.",
+        "english_text": "The Prophet ﷺ comforted a child whose bird had died.",
+        "lesson_urdu": "Doosron ke dukh mein unka saath dena sunnat hai.",
+        "lesson_english": "Stand with others in sorrow."
+    },
+    {
+        "id": 8,
+        "title": "Nabi ﷺ aur Zameen par Khana",
+        "urdu_text": "Aap ﷺ zameen par beth kar khana khate the.",
+        "english_text": "The Prophet ﷺ ate with simplicity, sitting on the floor.",
+        "lesson_urdu": "Sadegi aur shukar Allah ko pasand hai.",
+        "lesson_english": "Simplicity and gratitude are beloved to Allah."
+    },
+    {
+        "id": 9,
+        "title": "Nabi ﷺ aur Wada Nibhana",
+        "urdu_text": "Aap ﷺ ne teen din tak intezar kiya wada nibhanay ke liye.",
+        "english_text": "The Prophet ﷺ waited three days to keep his promise.",
+        "lesson_urdu": "Wada nibhana imandaron ka kaam hai.",
+        "lesson_english": "Keeping promises shows honesty."
+    },
+    {
+        "id": 10,
+        "title": "Nabi ﷺ aur Safai",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Safai imaan ka hissa hai.'",
+        "english_text": "The Prophet ﷺ said, 'Cleanliness is part of faith.'",
+        "lesson_urdu": "Safai Allah ko pasand hai.",
+        "lesson_english": "Cleanliness is loved by Allah."
+    },
+    {
+        "id": 11,
+        "title": "Nabi ﷺ aur Padosi",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Jo padosi ka haq nahi rakhta wo imandar nahi.'",
+        "english_text": "The Prophet ﷺ said, 'He is not a believer who harms his neighbor.'",
+        "lesson_urdu": "Padosi ka haq ada karna imaan hai.",
+        "lesson_english": "Respecting neighbors is faith."
+    },
+    {
+        "id": 12,
+        "title": "Nabi ﷺ aur Budhi Aurat",
+        "urdu_text": "Ek budhi aurat har roz aap ﷺ par kachra phenkti thi. Aap ne usay maaf kiya.",
+        "english_text": "An old woman threw trash on the Prophet ﷺ daily, and he forgave her.",
+        "lesson_urdu": "Neki se dil jeet lo.",
+        "lesson_english": "Win hearts through kindness."
+    },
+    {
+        "id": 13,
+        "title": "Nabi ﷺ aur Madadgar Farishta",
+        "urdu_text": "Jang-e-Badr mein Allah ne Farishton ko bheja.",
+        "english_text": "In the Battle of Badr, Allah sent angels to help.",
+        "lesson_urdu": "Allah apne bande ko kabhi akela nahi chhodta.",
+        "lesson_english": "Allah never leaves His servants alone."
+    },
+    {
+        "id": 14,
+        "title": "Nabi ﷺ aur Ghulaam",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Tumhare ghulaam tumhare bhai hain.'",
+        "english_text": "The Prophet ﷺ said: 'Your servants are your brothers.'",
+        "lesson_urdu": "Sab ke saath izzat ka bartao karo.",
+        "lesson_english": "Treat everyone with respect."
+    },
+    {
+        "id": 15,
+        "title": "Nabi ﷺ aur Janwaron ki Hifazat",
+        "urdu_text": "Aap ﷺ ne bhookay janwar par reham kiya.",
+        "english_text": "The Prophet ﷺ showed mercy to a hungry animal.",
+        "lesson_urdu": "Rehmat sab par honi chahiye.",
+        "lesson_english": "Show mercy to all creatures."
+    },
+    {
+        "id": 16,
+        "title": "Nabi ﷺ aur Doodh ka Pyala",
+        "urdu_text": "Aap ﷺ ne doodh sabse chhote ko pehle diya.",
+        "english_text": "The Prophet ﷺ gave milk to the youngest first.",
+        "lesson_urdu": "Insaf sab ke saath barabar.",
+        "lesson_english": "Justice for all."
+    },
+    {
+        "id": 17,
+        "title": "Nabi ﷺ aur Itminan (Sabr)",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Jo gussa roke, Allah usay izzat dega.'",
+        "english_text": "The Prophet ﷺ said: 'He who controls anger, Allah honors him.'",
+        "lesson_urdu": "Gussa rokna badi jeet hai.",
+        "lesson_english": "Controlling anger is victory."
+    },
+    {
+        "id": 18,
+        "title": "Nabi ﷺ aur Sadaqa",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Aadhi khajoor bhi sadaqa hai.'",
+        "english_text": "The Prophet ﷺ said: 'Even half a date given in charity counts.'",
+        "lesson_urdu": "Chhoti neki bhi badi hoti hai.",
+        "lesson_english": "Every small charity matters."
+    },
+    {
+        "id": 19,
+        "title": "Nabi ﷺ aur Ilm ka Shauq",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Ilm hasil karna farz hai.'",
+        "english_text": "The Prophet ﷺ said: 'Seeking knowledge is obligatory.'",
+        "lesson_urdu": "Ilm roshni hai.",
+        "lesson_english": "Knowledge is light."
+    },
+    {
+        "id": 20,
+        "title": "Nabi ﷺ aur Khushboo",
+        "urdu_text": "Aap ﷺ ko khushboo pasand thi.",
+        "english_text": "The Prophet ﷺ loved fragrance.",
+        "lesson_urdu": "Taharat imaan ka hissa hai.",
+        "lesson_english": "Purity is part of faith."
+    },
+    {
+        "id": 21,
+        "title": "Nabi ﷺ aur Dosti",
+        "urdu_text": "Aap ﷺ doston ka khayal rakhte the.",
+        "english_text": "The Prophet ﷺ valued friendship.",
+        "lesson_urdu": "Ache dost insaan ko ache banate hain.",
+        "lesson_english": "Good friends make us better."
+    },
+    {
+        "id": 22,
+        "title": "Nabi ﷺ aur Dua",
+        "urdu_text": "Aap ﷺ ne farmaya: 'Dua ibadat ka maghz hai.'",
+        "english_text": "The Prophet ﷺ said: 'Dua is the essence of worship.'",
+        "lesson_urdu": "Dua se barkat aati hai.",
+        "lesson_english": "Dua brings blessings."
+    },
+    {
+        "id": 23,
+        "title": "Nabi ﷺ aur Sabr",
+        "urdu_text": "Log pathar marte the, aap ﷺ dua dete the.",
+        "english_text": "People threw stones, the Prophet ﷺ prayed for them.",
+        "lesson_urdu": "Sabr se madad aati hai.",
+        "lesson_english": "Patience brings help."
+    },
+    {
+        "id": 24,
+        "title": "Nabi ﷺ aur Amanatdari",
+        "urdu_text": "Aap ﷺ ko 'Al-Ameen' kaha jata tha.",
+        "english_text": "The Prophet ﷺ was called 'The Trustworthy.'",
+        "lesson_urdu": "Amanatdari imandaron ki pehchaan hai.",
+        "lesson_english": "Trustworthiness defines believers."
+    },
+    {
+        "id": 25,
+        "title": "Nabi ﷺ aur Mashwara",
+        "urdu_text": "Aap ﷺ mashwara karke faisla karte the.",
+        "english_text": "The Prophet ﷺ made decisions through consultation.",
+        "lesson_urdu": "Mashwara mein barkat hai.",
+        "lesson_english": "Consultation brings blessings."
+    },
+    {
+        "id": 26,
+        "title": "Aag Thandi Ho Gayi",
+        "urdu_text": "Hazrat Ibrahim (A.S.) ko logon ne aag mein dala, lekin Allah ne farmaya: “Aye aag! Ibrahim par thandi aur salamti wali ho ja.” Aur Ibrahim mehfooz rahe.",
+        "english_text": "When people threw Prophet Ibrahim into the fire, Allah made it cool and safe for him.",
+        "lesson_urdu": "Jo Allah par yaqeen rakhta hai, usse koi nuksan nahi pohcha sakta.",
+        "lesson_english": "Faith protects you from every harm."
+    },
+    {
+        "id": 27,
+        "title": "Khaab Mein Qurbani",
+        "urdu_text": "Ibrahim (A.S.) ne khwab mein dekha ke wo apne bete Ismail ko qurbaan kar rahe hain. Allah ne ram bhej kar unka imtihaan poora kiya.",
+        "english_text": "Allah tested Ibrahim and replaced Ismail with a ram.",
+        "lesson_urdu": "Allah ke hukm par sabr se kamyabi milti hai.",
+        "lesson_english": "Obedience brings Allah’s pleasure."
+    },
+    {
+        "id": 28,
+        "title": "Kaaba ki Tameer",
+        "urdu_text": "Ibrahim aur Ismail (A.S.) ne Kaaba banaya.",
+        "english_text": "Ibrahim and Ismail built the Kaaba.",
+        "lesson_urdu": "Neki mein dua aur ikhlas zaruri hai.",
+        "lesson_english": "Good deeds need sincerity."
+    },
+    {
+        "id": 29,
+        "title": "Dua for Ismail",
+        "urdu_text": "Ibrahim (A.S.) ne dua ki aur Zamzam nikla.",
+        "english_text": "Ibrahim prayed and Zamzam appeared.",
+        "lesson_urdu": "Sachi dua kabhi zaya nahi hoti.",
+        "lesson_english": "Sincere dua never goes to waste."
+    },
+    {
+        "id": 30,
+        "title": "Aman ka Sheher",
+        "urdu_text": "Allah ne Makkah ko aman ka sheher banaya.",
+        "english_text": "Allah made Makkah a city of peace.",
+        "lesson_urdu": "Allah ki raah mein mehnat barkat laati hai.",
+        "lesson_english": "Effort in Allah’s way brings blessings."
+    },
+    {
+        "id": 31,
+        "title": "Tawakkul",
+        "urdu_text": "Hajra (A.S.) ne Allah par bharosa kiya, Allah ne kabhi nahi chhoda.",
+        "english_text": "Hajra trusted Allah, and He never left her.",
+        "lesson_urdu": "Tawakkul se madad aati hai.",
+        "lesson_english": "Trust in Allah always helps."
+    },
+    {
+        "id": 32,
+        "title": "Moortiyon se Nafrat",
+        "urdu_text": "Ibrahim (A.S.) ne moortiyan tor kar sabit kiya ke sirf Allah qadir hai.",
+        "english_text": "Ibrahim broke idols to show only Allah has power.",
+        "lesson_urdu": "Sirf Allah hi qadir hai.",
+        "lesson_english": "Only Allah has power."
+    },
+    {
+        "id": 33,
+        "title": "Sabr aur Yaqeen",
+        "urdu_text": "Ibrahim (A.S.) ne har imtihaan mein sabr kiya.",
+        "english_text": "Ibrahim showed patience in every test.",
+        "lesson_urdu": "Sabr aur yaqeen se mushkil asaan hoti hai.",
+        "lesson_english": "Patience and faith ease trials."
+    },
+    {
+        "id": 34,
+        "title": "Ibrahim aur Namaz",
+        "urdu_text": "Ibrahim (A.S.) ne namaz ke liye dua ki.",
+        "english_text": "Ibrahim prayed for his children to pray.",
+        "lesson_urdu": "Namaz Allah se rishta hai.",
+        "lesson_english": "Prayer connects us to Allah."
+    },
+    {
+        "id": 35,
+        "title": "Allah ke Wali ki Izzat",
+        "urdu_text": "Allah ne Ibrahim (A.S.) ko 'Khalilullah' banaya.",
+        "english_text": "Allah called Ibrahim His friend.",
+        "lesson_urdu": "Jo Allah ka ho, uski izzat hoti hai.",
+        "lesson_english": "Allah honors His friends."
+    },
+    {
+        "id": 36,
+        "title": "Toofan se Nijat",
+        "urdu_text": "Allah ne Firaun ki qaum ko toofan se azaab diya.",
+        "english_text": "Allah sent a storm to warn Pharaoh’s people.",
+        "lesson_urdu": "Allah sirf nek logon ko bachata hai.",
+        "lesson_english": "Allah saves the righteous."
+    },
+    {
+        "id": 37,
+        "title": "Samundar ka Raasta",
+        "urdu_text": "Musa (A.S.) ne asa maara aur samundar do hisson mein bat gaya.",
+        "english_text": "Musa struck the sea and it parted.",
+        "lesson_urdu": "Yaqeen se raasta ban jaata hai.",
+        "lesson_english": "Faith opens paths."
+    },
+    {
+        "id": 38,
+        "title": "Bani Israel ki Bachao Kahani",
+        "urdu_text": "Musa (A.S.) ne apni qaum ko Firaun se bachaya.",
+        "english_text": "Musa saved his people from Pharaoh.",
+        "lesson_urdu": "Shukar ada karo.",
+        "lesson_english": "Always be grateful."
+    },
+    {
+        "id": 39,
+        "title": "Firaun ka Halak Hona",
+        "urdu_text": "Firaun samundar mein doob gaya.",
+        "english_text": "Pharaoh drowned in the sea.",
+        "lesson_urdu": "Tawbah waqt par karo.",
+        "lesson_english": "Repent on time."
+    },
+    {
+        "id": 40,
+        "title": "Koh-e-Toor ki Dua",
+        "urdu_text": "Musa (A.S.) ne Allah se kalam kiya.",
+        "english_text": "Musa spoke to Allah on Mount Sinai.",
+        "lesson_urdu": "Dua Allah se rishta hai.",
+        "lesson_english": "Prayer connects us to Allah."
+    },
+    {
+        "id": 41,
+        "title": "Sabar ka Imtihan",
+        "urdu_text": "Bani Israel shikayat karti thi, Musa sabr karte the.",
+        "english_text": "Musa stayed patient when his people complained.",
+        "lesson_urdu": "Sabr imaan ka hissa hai.",
+        "lesson_english": "Patience is part of faith."
+    },
+    {
+        "id": 42,
+        "title": "Pani ka Chashma",
+        "urdu_text": "Musa (A.S.) ne pathar par asa maara aur paani nikla.",
+        "english_text": "Musa struck a rock and water flowed out.",
+        "lesson_urdu": "Allah har cheez par qadir hai.",
+        "lesson_english": "Allah can do anything."
+    },
+    {
+        "id": 43,
+        "title": "Allah ka Kalam",
+        "urdu_text": "Musa (A.S.) ne Taurat hasil ki.",
+        "english_text": "Musa received the Torah.",
+        "lesson_urdu": "Allah ki kitab par amal karo.",
+        "lesson_english": "Follow Allah's book."
+    },
+    {
+        "id": 44,
+        "title": "Musa aur Haroon ki Bhai-chara",
+        "urdu_text": "Musa aur Haroon ne mil kar kaam kiya.",
+        "english_text": "Musa and Haroon worked together.",
+        "lesson_urdu": "Bhai-chara barkat hai.",
+        "lesson_english": "Brotherhood brings strength."
+    },
+    {
+        "id": 45,
+        "title": "Gunah se Tauba",
+        "urdu_text": "Musa (A.S.) ne ghalti par tauba ki.",
+        "english_text": "Musa repented for a mistake.",
+        "lesson_urdu": "Tauba se maafi milti hai.",
+        "lesson_english": "Repentance brings forgiveness."
+    },
+    {
+        "id": 46,
+        "title": "Kashti ki Tameer",
+        "urdu_text": "Nuh (A.S.) ne Allah ke hukm se kashti banai.",
+        "english_text": "Nuh built the Ark as Allah ordered.",
+        "lesson_urdu": "Jo Allah ka hukm maanta hai wo kabhi nahi darta.",
+        "lesson_english": "Obey Allah without fear."
+    },
+    {
+        "id": 47,
+        "title": "Logon ka Mazaaq",
+        "urdu_text": "Log Nuh (A.S.) ka mazaaq udate the.",
+        "english_text": "People mocked Nuh (A.S.).",
+        "lesson_urdu": "Sabr aur mehnat ka phal milta hai.",
+        "lesson_english": "Patience brings results."
+    },
+    {
+        "id": 48,
+        "title": "Toofan ka Aana",
+        "urdu_text": "Baarish aur paani se sab tabah ho gaya, sirf imandar bache.",
+        "english_text": "The flood came; only believers were saved.",
+        "lesson_urdu": "Allah nek bandon ko bachata hai.",
+        "lesson_english": "Allah saves the righteous."
+    },
+    {
+        "id": 49,
+        "title": "Imandaron ka Bachao",
+        "urdu_text": "Kashti Judi ke pahad par ruki.",
+        "english_text": "The Ark rested on Mount Judi.",
+        "lesson_urdu": "Shukar ada karo.",
+        "lesson_english": "Be thankful."
+    },
+    {
+        "id": 50,
+        "title": "Allah ka Waada Pura",
+        "urdu_text": "Allah ne dobara kabhi toofan na bhejne ka waada kiya.",
+        "english_text": "Allah promised no more global flood.",
+        "lesson_urdu": "Allah apne waade poore karta hai.",
+        "lesson_english": "Allah keeps His promises."
+    },
+    {
+        "id": 51,
+        "title": "Bhaiyon ki Jalan (The Jealous Brothers)",
+        "urdu_text": "Hazrat Yusuf (A.S.) ek paighambar ke bete the — Hazrat Yaqub (A.S.). Unke 11 bhai the, lekin Yusuf (A.S.) sabse pyare aur nek the. Unke bhai unse jalan karte the, kehte: “Hamare walid Yusuf se zyada pyar karte hain.” Yusuf (A.S.) ne ek din kaha: “Maine khwab dekha — sooraj, chand aur 11 sitare mujhe sajda kar rahe hain!” Unke walid ne kaha: “Yeh khwab mat batana, warna bhai jalan se bura sochenge.”",
+        "english_text": "Yusuf’s brothers were jealous because their father loved him. He saw a special dream from Allah.",
+        "lesson_urdu": "Hasad (jalan) dil ko andhera karti hai.",
+        "lesson_english": "Never be jealous of others’ blessings.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Hamesha doosron ki khushi mein khush ho, jalan na karo."
+    },
+    {
+        "id": 52,
+        "title": "Kuaan Mein Yusuf (A.S.) (Thrown into the Well)",
+        "urdu_text": "Bhaiyon ne mil kar bura plan banaya. Ek din kehne lage: “Abba, humein Yusuf ko saath le jaane do, hum khelenge.” Hazrat Yaqub (A.S.) ne ijazat de di. Jab wo door gaye, to unhone Yusuf (A.S.) ko ek gehera kuaan mein daal diya. Phir ghar ja kar jhoot bola: “Abba, Yusuf ko bhediya kha gaya!” Yaqub (A.S.) roye, lekin Allah par bharosa rakha.",
+        "english_text": "Yusuf’s brothers threw him into a deep well. But Allah was with him and kept him safe.",
+        "lesson_urdu": "Jab sab log saath chhod dein, Allah kabhi nahi chhodta.",
+        "lesson_english": "Allah is always with the innocent.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Agar sab log chor dein to bhi Allah humare saath hota hai."
+    },
+    {
+        "id": 53,
+        "title": "Egypt ka Safar (Journey to Egypt)",
+        "urdu_text": "Kuch dino baad, ek caravan (qafila) guzra. Unhone kuaan se paani nikaala to Yusuf (A.S.) bahar aa gaye! Unhone Yusuf (A.S.) ko Misr (Egypt) le jaakar bech diya. Misr ke Wazir (minister) ne unhe khareed liya aur kaha: “Inhe apna beta samajh kar rakho.” Yusuf (A.S.) wahan pale aur bohot aqalmand aur khoobsurat bane.",
+        "english_text": "A caravan found Yusuf and sold him in Egypt. A kind man raised him like a son.",
+        "lesson_urdu": "Jo Allah par bharosa karta hai, uske liye har mushkil nayi manzil ban jaati hai.",
+        "lesson_english": "Trust in Allah turns hardship into opportunity.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Mushkil waqt mein bhi Allah kuch behtar plan karta hai."
+    },
+    {
+        "id": 54,
+        "title": "Jail ka Waqia (The Prison Story)",
+        "urdu_text": "Bade hone par Yusuf (A.S.) par ek jhoota ilzaam lagaya gaya. Logon ne unhe jail mein daal diya. Lekin Yusuf (A.S.) ne wahan bhi sabr kiya aur logon ko Allah ka paigham dene lage. Jail mein do aadmi aaye. Unhone Yusuf (A.S.) se kaha: “Humne ajeeb khwab dekhe hain, unki tabeer batao.” Yusuf (A.S.) ne kaha: “Sirf Allah khwab samjhata hai.” Aur dono ke khwab sach ho gaye.",
+        "english_text": "Yusuf was sent to prison unfairly, but he stayed patient and taught people about Allah.",
+        "lesson_urdu": "Sabr har qaid se azaadi ka pehla qadam hai.",
+        "lesson_english": "Patience brings light even in dark places.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Sabr karne wale ko Allah kabhi akela nahi chhorta."
+    },
+    {
+        "id": 55,
+        "title": "Khwab ki Tabeer (The Dream Interpretation)",
+        "urdu_text": "Ek din Misr ke Badshah ne khwab dekha: “Main ne sapne mein 7 moti gaiyaan aur 7 dubli gaiyaan dekhi hain.” Kisi ko samajh nahi aaya, Phir kisi ne kaha: “Ek banda jail mein tha, Yusuf — wo khwab samjha sakta hai!” Yusuf (A.S.) ne kaha: “Iska matlab hai ke 7 saal fasal bohot hogi, phir 7 saal qahat (sookha) aayega.” Badshah hairan ho gaya — aur unhe jail se nikal kar azad kar diya.",
+        "english_text": "Yusuf explained the king’s dream — about 7 years of plenty and 7 years of famine.",
+        "lesson_urdu": "Ilm aur iman se insaan izzat paata hai.",
+        "lesson_english": "Knowledge and honesty always raise a person’s rank.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Aqalmand aur imaandar log sab ko faida pohchate hain."
+    },
+    {
+        "id": 56,
+        "title": "Badshah ki Pasand (The King’s Choice)",
+        "urdu_text": "Badshah ne Yusuf (A.S.) se kaha: “Tum bohot aqalmand ho, main tumhe apna wazir banata hoon.” Yusuf (A.S.) ne Egypt ke anaaj ka zimma liya. Unhone har saal ke dauran anaaj bacha kar rakha taake qahat ke waqt log bhooke na marein. Unki adalat aur insaaf se sab log khush hue.",
+        "english_text": "The king made Yusuf the ruler of Egypt’s food supply. He helped the people wisely.",
+        "lesson_urdu": "Jo imaandar hota hai, Allah usse izzat aur zimmedari deta hai.",
+        "lesson_english": "Honesty leads to trust and honor.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Imandari se izzat milti hai."
+    },
+    {
+        "id": 57,
+        "title": "Bhaiyon se Mulaqat (Meeting the Brothers)",
+        "urdu_text": "Kuch saal baad, Yusuf (A.S.) ke bhai anaaj lene Misr aaye. Unhone Yusuf (A.S.) ko pehchana nahi — Lekin Yusuf (A.S.) ne unhe pehchan liya! Unhone achha bartao kiya, aur kaha: “Apne chhote bhai Binyamin ko bhi lekar aana.” Wo log wapas chale gaye, aur Yusuf (A.S.) unke imtihan ka intezaar karte rahe.",
+        "english_text": "Yusuf’s brothers came to Egypt. They didn’t recognize him, but he treated them kindly.",
+        "lesson_urdu": "Jo hamara bura kare, humein uske saath bhi nek rehna chahiye.",
+        "lesson_english": "Forgive and stay kind.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Bura karne walon se bhi achha bartao karo."
+    },
+    {
+        "id": 58,
+        "title": "Bap se Milap (Reunion with His Father)",
+        "urdu_text": "Aakhir Yusuf (A.S.) ne apni pehchaan bata di: “Main Yusuf hoon! Allah ne mujhe izzat di hai.” Bhai sharminda hue. Unhone apne walid Hazrat Yaqub (A.S.) ko khabar bheji. Yaqub (A.S.) bohot roye the, unki aankhen kamzor ho gayi thi. Jab Yusuf (A.S.) ne apni kameez bheji, aur unke chehre par rakhi gayi — to unki aankhen phir se roshan ho gayi! Phir sab mil kar Misr aa gaye.",
+        "english_text": "Yusuf’s shirt healed his father’s eyes, and they all met again with love.",
+        "lesson_urdu": "Allah sabr karne walon ke dil zarur roshan karta hai.",
+        "lesson_english": "Patience brings reunion and joy.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Sabr ka phal hamesha meetha hota hai."
+    },
+    {
+        "id": 59,
+        "title": "Maafi aur Pyaar (Forgiveness and Love)",
+        "urdu_text": "Yusuf (A.S.) ne apne bhaiyon se kaha: “Aaj main tumhe maaf karta hoon. Allah bhi tumhe maaf kare.” Bhai rone lage aur unke qadam chume. Unhone kaha: “Tum sabse nek insaan ho.” Sab bhai phir ek ho gaye, aur mohabbat se rehne lage.",
+        "english_text": "Yusuf forgave his brothers and they lived together in peace again.",
+        "lesson_urdu": "Maafi sabse badi jeet hai.",
+        "lesson_english": "Forgiveness brings peace to the heart.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Maafi dena sabse badi himmat hoti hai."
+    },
+    {
+        "id": 60,
+        "title": "Allah ka Inaam (Allah’s Reward)",
+        "urdu_text": "Allah ne Yusuf (A.S.) ko izzat, hukoomat aur pyara ghar diya. Unhone sajda kiya aur kaha: “Ya Allah, tu ne mujh par fazl kiya. Main sirf tera shukar ada karta hoon.” Unke walid, bhai aur poori qaum unke saath khush thi. Aur Yusuf (A.S.) ne apni zindagi Allah ki ibadat mein guzaari.",
+        "english_text": "Allah rewarded Yusuf with honor and peace for his patience and faith.",
+        "lesson_urdu": "Jo sabr kare, iman rakhe, aur maaf kare — Allah usse duniya aur aakhirat dono mein izzat deta hai.",
+        "lesson_english": "Patience and faith bring honor from Allah.",
+        "category": "Hazrat Yusuf (A.S.)",
+        "lesson_for_children": "Jo Allah par yaqeen rakhta hai, wo kabhi nuksan nahi uthata."
+    },
+    {
+        "id": 61,
+        "title": "Bachpan ka Moajiza",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Bachpan ka Moajiza ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Bachpan ka Moajiza shows Allah's power.",
+        "lesson_urdu": "Allah ki qudrat har cheez par haavi hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 62,
+        "title": "Andhon ko Shifa",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Andhon ko Shifa ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Andhon ko Shifa shows Allah's power.",
+        "lesson_urdu": "Shifa sirf Allah deta hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 63,
+        "title": "Murdon ka Zinda Hona",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Murdon ka Zinda Hona ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Murdon ka Zinda Hona shows Allah's power.",
+        "lesson_urdu": "Zindagi aur maut sirf Allah ke haath mein hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 64,
+        "title": "Taam ka Moajiza",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Taam ka Moajiza ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Taam ka Moajiza shows Allah's power.",
+        "lesson_urdu": "Shukar karne walon ke liye rehmat.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 65,
+        "title": "Allah ka Paigham-e-Mohabbat",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Allah ka Paigham-e-Mohabbat ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Allah ka Paigham-e-Mohabbat shows Allah's power.",
+        "lesson_urdu": "Pyaar aur maafi sabse badi taqat hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 66,
+        "title": "Isa (A.S.) aur Talmeez",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Isa (A.S.) aur Talmeez ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Isa (A.S.) aur Talmeez shows Allah's power.",
+        "lesson_urdu": "Acha ustad misaal banta hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 67,
+        "title": "Dua aur Sabr",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Dua aur Sabr ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Dua aur Sabr shows Allah's power.",
+        "lesson_urdu": "Sabr aur dua har gham ka ilaaj hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 68,
+        "title": "Namaz aur Insaf",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Namaz aur Insaf ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Namaz aur Insaf shows Allah's power.",
+        "lesson_urdu": "Insaf aur namaz se roshni milti hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 69,
+        "title": "Shukar aur Tawakkul",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Shukar aur Tawakkul ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Shukar aur Tawakkul shows Allah's power.",
+        "lesson_urdu": "Shukar aur tawakkul sakoon laata hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 70,
+        "title": "Aman aur Rehmat",
+        "urdu_text": "Hazrat Isa (A.S.) ki kahani Aman aur Rehmat ka moajiza bayan karti hai.",
+        "english_text": "Prophet Isa's story about Aman aur Rehmat shows Allah's power.",
+        "lesson_urdu": "Rehmat aur aman Nabi ka paigham hai.",
+        "lesson_english": "Lesson of faith, mercy, and patience.",
+        "category": "Hazrat Isa (A.S.)",
+        "lesson_for_children": "Allah par yaqeen rakho aur sabr karo."
+    },
+    {
+        "id": 71,
+        "title": "Saleh aur Unki Naqat",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Saleh aur Unki Naqat",
+        "english_text": "Story of prophets about Saleh aur Unki Naqat",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 72,
+        "title": "Hud aur A’ad Qaum",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Hud aur A’ad Qaum",
+        "english_text": "Story of prophets about Hud aur A’ad Qaum",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 73,
+        "title": "Shu’aib aur Insaf",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Shu’aib aur Insaf",
+        "english_text": "Story of prophets about Shu’aib aur Insaf",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 74,
+        "title": "Yunus aur Machhli ka Qissa",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Yunus aur Machhli ka Qissa",
+        "english_text": "Story of prophets about Yunus aur Machhli ka Qissa",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 75,
+        "title": "Tauba aur Naja’at",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Tauba aur Naja’at",
+        "english_text": "Story of prophets about Tauba aur Naja’at",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 76,
+        "title": "Sabak-e-Tawakkul",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Sabak-e-Tawakkul",
+        "english_text": "Story of prophets about Sabak-e-Tawakkul",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 77,
+        "title": "Rahmat ka Paigham",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Rahmat ka Paigham",
+        "english_text": "Story of prophets about Rahmat ka Paigham",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 78,
+        "title": "A’ad Qaum ka Anjam",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: A’ad Qaum ka Anjam",
+        "english_text": "Story of prophets about A’ad Qaum ka Anjam",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 79,
+        "title": "Samood ka Nafarman Hona",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Samood ka Nafarman Hona",
+        "english_text": "Story of prophets about Samood ka Nafarman Hona",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 80,
+        "title": "Allah ka Maaf Karna",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Allah ka Maaf Karna",
+        "english_text": "Story of prophets about Allah ka Maaf Karna",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 81,
+        "title": "Extra 1",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Extra 1",
+        "english_text": "Story of prophets about Extra 1",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 82,
+        "title": "Extra 2",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Extra 2",
+        "english_text": "Story of prophets about Extra 2",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 83,
+        "title": "Extra 3",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Extra 3",
+        "english_text": "Story of prophets about Extra 3",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 84,
+        "title": "Extra 4",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Extra 4",
+        "english_text": "Story of prophets about Extra 4",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 85,
+        "title": "Extra 5",
+        "urdu_text": "Hazrat Saleh, Hud, Shu’aib ya Yunus (A.S.) ki kahani: Extra 5",
+        "english_text": "Story of prophets about Extra 5",
+        "lesson_urdu": "Allah par yaqeen rakho, gunaah se bacho.",
+        "lesson_english": "Trust Allah, avoid sin.",
+        "category": "Hazrat Saleh / Hud / Shu’aib / Yunus (A.S.)",
+        "lesson_for_children": "Hamesha Allah se madad maango."
+    },
+    {
+        "id": 86,
+        "title": "Dawood aur Jaloot",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Dawood aur Jaloot",
+        "english_text": "Story of prophets about Dawood aur Jaloot",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 87,
+        "title": "Sulaiman ka Insaaf",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Sulaiman ka Insaaf",
+        "english_text": "Story of prophets about Sulaiman ka Insaaf",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 88,
+        "title": "Panchiyon se Baat",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Panchiyon se Baat",
+        "english_text": "Story of prophets about Panchiyon se Baat",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 89,
+        "title": "Jinnon ka Hukm",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Jinnon ka Hukm",
+        "english_text": "Story of prophets about Jinnon ka Hukm",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 90,
+        "title": "Ayub ka Sabr",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Ayub ka Sabr",
+        "english_text": "Story of prophets about Ayub ka Sabr",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 91,
+        "title": "Bimari mein Shukar",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Bimari mein Shukar",
+        "english_text": "Story of prophets about Bimari mein Shukar",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 92,
+        "title": "Zakariya ki Dua",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Zakariya ki Dua",
+        "english_text": "Story of prophets about Zakariya ki Dua",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 93,
+        "title": "Yahya ka Paigham",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Yahya ka Paigham",
+        "english_text": "Story of prophets about Yahya ka Paigham",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 94,
+        "title": "Sulaiman ka Takht",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Sulaiman ka Takht",
+        "english_text": "Story of prophets about Sulaiman ka Takht",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 95,
+        "title": "Dawood ka Zikr",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Dawood ka Zikr",
+        "english_text": "Story of prophets about Dawood ka Zikr",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 96,
+        "title": "Allah ki Qudrat ka Aitraf",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Allah ki Qudrat ka Aitraf",
+        "english_text": "Story of prophets about Allah ki Qudrat ka Aitraf",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 97,
+        "title": "Ayub ka Shifa Pana",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Ayub ka Shifa Pana",
+        "english_text": "Story of prophets about Ayub ka Shifa Pana",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 98,
+        "title": "Sulaiman ka Narm Dilpan",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Sulaiman ka Narm Dilpan",
+        "english_text": "Story of prophets about Sulaiman ka Narm Dilpan",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 99,
+        "title": "Zakariya ka Beta Milna",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Zakariya ka Beta Milna",
+        "english_text": "Story of prophets about Zakariya ka Beta Milna",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    },
+    {
+        "id": 100,
+        "title": "Paighambaron ka Paigham",
+        "urdu_text": "Hazrat Dawood, Sulaiman, Ayub ya Zakariya (A.S.) ki kahani: Paighambaron ka Paigham",
+        "english_text": "Story of prophets about Paighambaron ka Paigham",
+        "lesson_urdu": "Sabr aur iman se kamiyabi milti hai.",
+        "lesson_english": "Patience and faith bring success.",
+        "category": "Hazrat Dawood / Sulaiman / Ayub / Zakariya (A.S.)",
+        "lesson_for_children": "Sabr aur nek amal se Allah khush hota hai."
+    }
+]
