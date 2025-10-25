@@ -27,7 +27,7 @@ chatForm.addEventListener('submit', async function(e) {
     
     const message = userInput.value.trim();
     if (!message) return;
-    
+    debugger;
     // Display user message
     addMessage(message, 'user');
     

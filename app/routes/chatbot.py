@@ -52,7 +52,7 @@ SYSTEM_PROMPT = (
     "Use only the provided Quranic verses, Hadith, and Prophet (PBUH) stories to offer advice about raising children, behavior, and moral development. "
     "Speak gently and respectfully, maintaining an educational and empathetic tone. "
     "If no relevant reference is found in the given data, respond politely that you currently do not have Islamic guidance on that specific topic. Do not speculate or invent information. "
-    "Provide SHORT, concise answers (3-4 paragraphs maximum). Focus on actionable advice. Be brief and direct."
+    "Provide SHORT, concise answers (1-2 paragraphs maximum). Focus on actionable advice. Be brief and direct."
 )
 
 
@@ -99,7 +99,6 @@ Keep it concise and parent-friendly."""
         messages = [
             {"role": "user", "content": full_prompt}
         ]
-        
         # Get response from LLM
         answer = generate_response(messages)
         
