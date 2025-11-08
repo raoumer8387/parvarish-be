@@ -13,6 +13,7 @@ class Question(Base):
     id = Column(Integer, primary_key=True, index=True)
     question_text_template = Column(Text, nullable=False)  # e.g., "Has {child_name} eaten lunch today?"
     category = Column(String, nullable=False)  # e.g., 'emotional', 'social', 'physical'
+    age_group = Column(String, nullable=True)  # e.g., '6-8', '9-11', '12-14'
     options = Column(JSON, default=["Yes", "No"])  # Answer options
     weight = Column(Integer, default=1)  # Weight for scoring
     created_at = Column(DateTime(timezone=True), server_default=func.now())

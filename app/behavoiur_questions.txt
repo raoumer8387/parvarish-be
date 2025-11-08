@@ -1,0 +1,1011 @@
+
+[
+  {
+    "id": 1,
+    "age_group": "6-8",
+    "question_en": "Does your child get upset easily when things don’t go their way?",
+    "question_ur": "Kya aapka bacha asani se naraz ho jata hai jab baatein uski marzi ke mutabiq na hon?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "anger",
+      "emotional_control"
+    ],
+    "notes": "Helps measure emotional regulation and frustration tolerance."
+  },
+  {
+    "id": 2,
+    "age_group": "6-8",
+    "question_en": "Does your child share toys or snacks with other children?",
+    "question_ur": "Kya aapka bacha apne khilone ya snacks doosre bachon ke sath share karta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "sharing",
+      "social_skills"
+    ],
+    "notes": "Tests early empathy and cooperation."
+  },
+  {
+    "id": 3,
+    "age_group": "6-8",
+    "question_en": "Does your child follow instructions given by elders?",
+    "question_ur": "Kya aapka bacha baron ki baat dhyan se sunta aur manta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "obedience",
+      "discipline"
+    ],
+    "notes": "Measures discipline and respect for authority."
+  },
+  {
+    "id": 4,
+    "age_group": "6-8",
+    "question_en": "Does your child finish homework on time without being reminded?",
+    "question_ur": "Kya aapka bacha yaad dilaye bagair apna homework waqt par kar leta hai?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "responsibility",
+      "routine"
+    ],
+    "notes": "Indicates responsibility and habit-building."
+  },
+  {
+    "id": 5,
+    "age_group": "6-8",
+    "question_en": "Does your child show curiosity about new things?",
+    "question_ur": "Kya aapka bacha nai cheezon ke bare mein dilchaspi rakhta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "curiosity",
+      "learning"
+    ],
+    "notes": "Tests natural learning drive."
+  },
+  {
+    "id": 6,
+    "age_group": "6-8",
+    "question_en": "Does your child help others when they are in trouble?",
+    "question_ur": "Kya aapka bacha doosron ki madad karta hai jab woh mushkil mein hote hain?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "empathy",
+      "helpfulness"
+    ],
+    "notes": "Reflects kindness and empathy."
+  },
+  {
+    "id": 7,
+    "age_group": "6-8",
+    "question_en": "Does your child get scared easily of dark or loud sounds?",
+    "question_ur": "Kya aapka bacha andhere ya tez awaazon se asani se dar jata hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 2,
+    "tags": [
+      "fear_response",
+      "confidence"
+    ],
+    "notes": "Indicates confidence and emotional security."
+  },
+  {
+    "id": 8,
+    "age_group": "6-8",
+    "question_en": "Does your child greet others politely (like saying Salam or Hello)?",
+    "question_ur": "Kya aapka bacha doosron ko adab se salam karta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "manners",
+      "social_etiquette"
+    ],
+    "notes": "Shows early moral and social manners."
+  },
+  {
+    "id": 9,
+    "age_group": "6-8",
+    "question_en": "Does your child enjoy reading picture books or stories?",
+    "question_ur": "Kya aapka bacha tasveeron wali kitaabein ya kahaniyan parhna pasand karta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 2,
+    "tags": [
+      "learning",
+      "reading_interest"
+    ],
+    "notes": "Tests attention span and curiosity."
+  },
+  {
+    "id": 10,
+    "age_group": "6-8",
+    "question_en": "Does your child throw tantrums when told 'No'?",
+    "question_ur": "Kya aapka bacha jab aap 'nahin' kehte hain to zyada zid karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "self_control",
+      "frustration"
+    ],
+    "notes": "Measures emotional maturity."
+  },
+  {
+    "id": 11,
+    "age_group": "6-8",
+    "question_en": "Does your child play outdoor games regularly?",
+    "question_ur": "Kya aapka bacha rozana bahar khelta hai?",
+    "category": "Physical",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 2,
+    "tags": [
+      "physical_activity",
+      "fitness"
+    ],
+    "notes": "Physical health and energy check."
+  },
+  {
+    "id": 12,
+    "age_group": "6-8",
+    "question_en": "Does your child apologize when they make a mistake?",
+    "question_ur": "Kya aapka bacha galti hone par maafi maangta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "honesty",
+      "moral_development"
+    ],
+    "notes": "Tests accountability and moral learning."
+  },
+  {
+    "id": 13,
+    "age_group": "6-8",
+    "question_en": "Does your child prefer playing with others rather than alone?",
+    "question_ur": "Kya aapka bacha akela khelne ke bajaye doosron ke sath khelna pasand karta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "teamwork",
+      "socialization"
+    ],
+    "notes": "Social bonding and interaction measure."
+  },
+  {
+    "id": 14,
+    "age_group": "6-8",
+    "question_en": "Does your child easily remember rhymes or short poems?",
+    "question_ur": "Kya aapka bacha asani se rhymes ya choti poems yaad kar leta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "memory",
+      "language_skills"
+    ],
+    "notes": "Measures early memory and verbal development."
+  },
+  {
+    "id": 15,
+    "age_group": "6-8",
+    "question_en": "Does your child eat meals properly without distraction?",
+    "question_ur": "Kya aapka bacha dhyan se khana khata hai bina idhar-udhar dekhe?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 2,
+    "tags": [
+      "discipline",
+      "focus"
+    ],
+    "notes": "Tests attention and routine habit strength."
+  },
+  {
+    "id": 16,
+    "age_group": "6-8",
+    "question_en": "Does your child respect others’ belongings?",
+    "question_ur": "Kya aapka bacha doosron ki cheezon ka khayal rakhta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "respect",
+      "morality"
+    ],
+    "notes": "Shows understanding of boundaries."
+  },
+  {
+    "id": 17,
+    "age_group": "6-8",
+    "question_en": "Does your child enjoy learning new words or languages?",
+    "question_ur": "Kya aapka bacha naye alfaaz ya zaban seekhna pasand karta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "curiosity",
+      "language_growth"
+    ],
+    "notes": "Shows interest in learning and adaptability."
+  },
+  {
+    "id": 18,
+    "age_group": "6-8",
+    "question_en": "Does your child sleep on time regularly?",
+    "question_ur": "Kya aapka bacha har raat waqt par sota hai?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 2,
+    "tags": [
+      "sleep_routine",
+      "discipline"
+    ],
+    "notes": "Reflects healthy daily habits."
+  },
+  {
+    "id": 19,
+    "age_group": "9-11",
+    "question_en": "Does your child stay calm when losing a game or competition?",
+    "question_ur": "Kya aapka bacha game ya mukabla haarne par pur-sukoon rehta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "anger_control",
+      "emotional_regulation"
+    ],
+    "notes": "Shows emotional balance and acceptance of loss."
+  },
+  {
+    "id": 20,
+    "age_group": "9-11",
+    "question_en": "Does your child take responsibility for their mistakes without blaming others?",
+    "question_ur": "Kya aapka bacha apni galti ka zimma uthata hai bina doosron ko dosh diye?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "honesty",
+      "accountability"
+    ],
+    "notes": "Tests honesty and maturity in handling faults."
+  },
+  {
+    "id": 21,
+    "age_group": "9-11",
+    "question_en": "Does your child help with simple household chores like setting the table?",
+    "question_ur": "Kya aapka bacha chhoti ghar ki madad karta hai, jaise table lagana?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "responsibility",
+      "family_values"
+    ],
+    "notes": "Shows responsibility and cooperation at home."
+  },
+  {
+    "id": 22,
+    "age_group": "9-11",
+    "question_en": "Does your child think before speaking in emotional situations?",
+    "question_ur": "Kya aapka bacha jazbati halat mein bolne se pehle sochta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "self_control",
+      "maturity"
+    ],
+    "notes": "Measures emotional intelligence and restraint."
+  },
+  {
+    "id": 23,
+    "age_group": "9-11",
+    "question_en": "Does your child stand up for what is right, even if friends disagree?",
+    "question_ur": "Kya aapka bacha sach ya sahi baat par qaim rehta hai, chahe dost mukhalif hon?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "integrity",
+      "courage"
+    ],
+    "notes": "Indicates moral confidence and fairness."
+  },
+  {
+    "id": 24,
+    "age_group": "9-11",
+    "question_en": "Does your child focus well on homework without frequent distractions?",
+    "question_ur": "Kya aapka bacha homework karte waqt dhyan banaye rakhta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "focus",
+      "attention"
+    ],
+    "notes": "Reflects cognitive discipline and study habits."
+  },
+  {
+    "id": 25,
+    "age_group": "9-11",
+    "question_en": "Does your child use polite words like 'please' and 'thank you' regularly?",
+    "question_ur": "Kya aapka bacha 'please' aur 'thank you' jese tameez walay alfaaz istimaal karta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "manners",
+      "etiquette"
+    ],
+    "notes": "Tests consistent use of social etiquette."
+  },
+  {
+    "id": 26,
+    "age_group": "9-11",
+    "question_en": "Does your child express gratitude for help or kindness?",
+    "question_ur": "Kya aapka bacha madad milne par shukriya ada karta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "gratitude",
+      "respect"
+    ],
+    "notes": "Shows emotional awareness and moral humility."
+  },
+  {
+    "id": 27,
+    "age_group": "9-11",
+    "question_en": "Does your child manage screen time responsibly?",
+    "question_ur": "Kya aapka bacha apne screen time ko zimmedari se manage karta hai?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "technology_use",
+      "self_control"
+    ],
+    "notes": "Evaluates digital discipline and self-control."
+  },
+  {
+    "id": 28,
+    "age_group": "9-11",
+    "question_en": "Does your child forgive friends after small disagreements?",
+    "question_ur": "Kya aapka bacha chhoti baton par doston ko maaf kar deta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "forgiveness",
+      "empathy"
+    ],
+    "notes": "Assesses empathy and emotional maturity."
+  },
+  {
+    "id": 29,
+    "age_group": "9-11",
+    "question_en": "Does your child stay patient when waiting in lines or turns?",
+    "question_ur": "Kya aapka bacha line mein apni bari ka intezar sabr se karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "patience",
+      "self_control"
+    ],
+    "notes": "Evaluates impulse control."
+  },
+  {
+    "id": 30,
+    "age_group": "9-11",
+    "question_en": "Does your child show interest in learning new academic or creative skills?",
+    "question_ur": "Kya aapka bacha naye taleemi ya creative skills seekhne mein dilchaspi rakhta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "curiosity",
+      "learning_growth"
+    ],
+    "notes": "Represents motivation and intellectual curiosity."
+  },
+  {
+    "id": 31,
+    "age_group": "9-11",
+    "question_en": "Does your child admit when they don’t understand something and ask for help?",
+    "question_ur": "Kya aapka bacha jab kuch samajh na aaye to madad maangta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "humility",
+      "self_awareness"
+    ],
+    "notes": "Shows growth mindset and emotional honesty."
+  },
+  {
+    "id": 32,
+    "age_group": "9-11",
+    "question_en": "Does your child pray (salah) regularly or show interest in religious acts?",
+    "question_ur": "Kya aapka bacha namaz parhta hai ya ibadat mein dilchaspi rakhta hai?",
+    "category": "Spiritual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "religiosity",
+      "discipline"
+    ],
+    "notes": "Indicates spiritual growth and consistency."
+  },
+  {
+    "id": 33,
+    "age_group": "9-11",
+    "question_en": "Does your child show kindness toward animals or younger siblings?",
+    "question_ur": "Kya aapka bacha janwaron ya chhotay bhai-behnon ke sath meharbani se pesh aata hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "kindness",
+      "empathy"
+    ],
+    "notes": "Reflects compassion and emotional sensitivity."
+  },
+  {
+    "id": 34,
+    "age_group": "9-11",
+    "question_en": "Does your child show confidence when speaking in front of others?",
+    "question_ur": "Kya aapka bacha doosron ke saamne bolte waqt pur-aitemad hota hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "confidence",
+      "self_expression"
+    ],
+    "notes": "Measures communication confidence and self-esteem."
+  },
+  {
+    "id": 35,
+    "age_group": "9-11",
+    "question_en": "Does your child show fairness when playing group games?",
+    "question_ur": "Kya aapka bacha group games khelte waqt insaf se kaam leta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "justice",
+      "teamwork"
+    ],
+    "notes": "Tests integrity and moral awareness in play."
+  },
+  {
+    "id": 36,
+    "age_group": "9-11",
+    "question_en": "Does your child manage emotions during disagreements without shouting?",
+    "question_ur": "Kya aapka bacha jhagde ke dauran chillaye bagair baat samjhata hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "anger_management",
+      "communication"
+    ],
+    "notes": "Indicates emotional maturity and control."
+  },
+  {
+    "id": 37,
+    "age_group": "12-14",
+    "question_en": "Does your child manage stress calmly during exams or pressure situations?",
+    "question_ur": "Kya aapka bacha imtihaan ya dabao ke waqt pur-sukoon rehta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "stress_management",
+      "emotional_stability"
+    ],
+    "notes": "Shows emotional regulation under academic or social pressure."
+  },
+  {
+    "id": 38,
+    "age_group": "12-14",
+    "question_en": "Does your child think about the consequences before making a decision?",
+    "question_ur": "Kya aapka bacha faisla lene se pehle uske nateeje par ghour karta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "decision_making",
+      "critical_thinking"
+    ],
+    "notes": "Indicates mature reasoning and foresight."
+  },
+  {
+    "id": 39,
+    "age_group": "12-14",
+    "question_en": "Does your child admit mistakes openly and try to correct them?",
+    "question_ur": "Kya aapka bacha apni ghalti khule taur par manta hai aur usay durust karta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "accountability",
+      "self_improvement"
+    ],
+    "notes": "Reflects honesty and willingness to learn."
+  },
+  {
+    "id": 40,
+    "age_group": "12-14",
+    "question_en": "Does your child balance study and leisure time responsibly?",
+    "question_ur": "Kya aapka bacha taleem aur faraghat ke waqt ko theek tarah balance karta hai?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "time_management",
+      "discipline"
+    ],
+    "notes": "Shows maturity in managing priorities."
+  },
+  {
+    "id": 41,
+    "age_group": "12-14",
+    "question_en": "Does your child respect different opinions even when disagreeing?",
+    "question_ur": "Kya aapka bacha mukhtalif rai ka ehteram karta hai, chahe ikhtilaf ho?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "tolerance",
+      "respect"
+    ],
+    "notes": "Measures social maturity and empathy."
+  },
+  {
+    "id": 42,
+    "age_group": "12-14",
+    "question_en": "Does your child express emotions in a healthy, non-aggressive way?",
+    "question_ur": "Kya aapka bacha apne jazbat sehatmand aur baghair ta'anuq ke izhar karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "emotional_expression",
+      "anger_control"
+    ],
+    "notes": "Tests emotional intelligence and control."
+  },
+  {
+    "id": 43,
+    "age_group": "12-14",
+    "question_en": "Does your child show compassion for friends who are sad or struggling?",
+    "question_ur": "Kya aapka bacha udaas ya pareshaan doston ke liye humdardi dikhata hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "empathy",
+      "kindness"
+    ],
+    "notes": "Evaluates emotional empathy and support behavior."
+  },
+  {
+    "id": 44,
+    "age_group": "12-14",
+    "question_en": "Does your child maintain privacy boundaries and respect others’ privacy?",
+    "question_ur": "Kya aapka bacha apni aur doosron ki privacy ka khayal rakhta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "respect",
+      "boundaries"
+    ],
+    "notes": "Shows awareness of social ethics and personal space."
+  },
+  {
+    "id": 45,
+    "age_group": "12-14",
+    "question_en": "Does your child stay motivated without constant reminders?",
+    "question_ur": "Kya aapka bacha baghair baar baar yaad dilaaye motivated rehta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "self_motivation",
+      "discipline"
+    ],
+    "notes": "Reflects self-driven attitude and internal motivation."
+  },
+  {
+    "id": 46,
+    "age_group": "12-14",
+    "question_en": "Does your child avoid lying even in difficult situations?",
+    "question_ur": "Kya aapka bacha mushkil halat mein bhi jhoot se parhez karta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "honesty",
+      "integrity"
+    ],
+    "notes": "Indicates moral firmness and truthfulness."
+  },
+  {
+    "id": 47,
+    "age_group": "12-14",
+    "question_en": "Does your child handle peer pressure maturely?",
+    "question_ur": "Kya aapka bacha doston ke dabao (peer pressure) ko samajhdari se handle karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "peer_pressure",
+      "confidence"
+    ],
+    "notes": "Shows independence and social strength."
+  },
+  {
+    "id": 48,
+    "age_group": "12-14",
+    "question_en": "Does your child speak respectfully with parents and teachers?",
+    "question_ur": "Kya aapka bacha walidain aur teachers se adab ke sath guftagu karta hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "respect",
+      "communication"
+    ],
+    "notes": "Shows manners and emotional awareness."
+  },
+  {
+    "id": 49,
+    "age_group": "12-14",
+    "question_en": "Does your child show leadership when working in group projects?",
+    "question_ur": "Kya aapka bacha group projects mein rehnumai dikhata hai?",
+    "category": "Social",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "leadership",
+      "teamwork"
+    ],
+    "notes": "Tests confidence and cooperative leadership."
+  },
+  {
+    "id": 50,
+    "age_group": "12-14",
+    "question_en": "Does your child accept constructive criticism positively?",
+    "question_ur": "Kya aapka bacha tanqeed ko sakaratmak taur par qabool karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "maturity",
+      "growth_mindset"
+    ],
+    "notes": "Reflects emotional stability and willingness to improve."
+  },
+  {
+    "id": 51,
+    "age_group": "12-14",
+    "question_en": "Does your child use social media responsibly?",
+    "question_ur": "Kya aapka bacha social media ka zimmedari se istimaal karta hai?",
+    "category": "Habitual",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 3,
+    "tags": [
+      "digital_behavior",
+      "self_control"
+    ],
+    "notes": "Assesses online discipline and judgment."
+  },
+  {
+    "id": 52,
+    "age_group": "12-14",
+    "question_en": "Does your child apologize sincerely when wrong?",
+    "question_ur": "Kya aapka bacha ghalti hone par dil se maafi maangta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "empathy",
+      "humility"
+    ],
+    "notes": "Shows moral responsibility and kindness."
+  },
+  {
+    "id": 53,
+    "age_group": "12-14",
+    "question_en": "Does your child plan and organize school assignments on time?",
+    "question_ur": "Kya aapka bacha school assignments waqt par plan aur complete karta hai?",
+    "category": "Cognitive",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "organization",
+      "discipline"
+    ],
+    "notes": "Tests consistency and work ethics."
+  },
+  {
+    "id": 54,
+    "age_group": "12-14",
+    "question_en": "Does your child understand the difference between right and wrong in complex situations?",
+    "question_ur": "Kya aapka bacha mushkil halat mein sahi aur ghalat ka farq samajhta hai?",
+    "category": "Moral",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "moral_reasoning",
+      "values"
+    ],
+    "notes": "Shows advanced ethical understanding."
+  },
+  {
+    "id": 55,
+    "age_group": "12-14",
+    "question_en": "Does your child show perseverance when tasks are difficult?",
+    "question_ur": "Kya aapka bacha mushkil kaam par sabr aur lagan se kaam karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 4,
+    "tags": [
+      "perseverance",
+      "resilience"
+    ],
+    "notes": "Indicates grit and emotional endurance."
+  },
+  {
+    "id": 56,
+    "age_group": "12-14",
+    "question_en": "Does your child reflect on personal behavior and try to improve?",
+    "question_ur": "Kya aapka bacha apne rawaiye par ghour karta hai aur behtari ki koshish karta hai?",
+    "category": "Emotional",
+    "options": [
+      "Yes",
+      "Sometimes",
+      "No"
+    ],
+    "weight": 5,
+    "tags": [
+      "self_reflection",
+      "personal_growth"
+    ],
+    "notes": "Measures self-awareness and maturity."
+  }
+]

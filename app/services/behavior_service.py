@@ -7,7 +7,10 @@ import logging
 
 from app.db.models.behavior_models import Question, ChildBehaviorResponse
 from app.db.models.child import Child
-from app.schemas.behavior_schemas import PersonalizedQuestion, BehaviorResponseItem
+from app.schemas.behavior_schemas import (
+    PersonalizedQuestion,
+    BehaviorResponseItem,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -67,6 +70,79 @@ def get_personalized_questions(
     return personalized_questions
 
 
+def get_child_questions(
+    db: Session,
+    child_id: int,
+    total_questions: int = 5
+) -> List[PersonalizedQuestion]:
+    """Fetch random questions personalized for a single child.
+
+    Args:
+        db: Database session
+        child_id: Child's user ID
+        total_questions: Total number of random questions to fetch
+
+    Returns:
+        List of personalized questions for the specified child
+    """
+    # Fetch child record
+    child = db.query(Child).filter(Child.id == child_id).first()
+    if not child:
+        logger.info(f"Child {child_id} not found when fetching questions")
+        return []
+
+    # Determine age group based on child's age
+    age_group = None
+    if child.age:
+        if 6 <= child.age <= 8:
+            age_group = "6-8"
+        elif 9 <= child.age <= 11:
+            age_group = "9-11"
+        elif 12 <= child.age <= 14:
+            age_group = "12-14"
+
+    # Fetch random questions, filtered by age_group if available
+    query = db.query(Question)
+    if age_group:
+        # Match questions where age_group contains the target (handles comma-separated values)
+        # e.g., age_group = "6-8,9-11" matches both "6-8" and "9-11"
+        age_specific = query.filter(
+            Question.age_group.ilike(f'%{age_group}%')
+        ).order_by(func.random()).limit(total_questions).all()
+        
+        if len(age_specific) < total_questions:
+            # Fill remaining with any questions
+            remaining = total_questions - len(age_specific)
+            extra = db.query(Question).order_by(func.random()).limit(remaining).all()
+            questions = age_specific + [q for q in extra if q not in age_specific][:remaining]
+        else:
+            questions = age_specific
+    else:
+        questions = query.order_by(func.random()).limit(total_questions).all()
+
+    if not questions:
+        logger.warning("No questions found in database")
+        return []
+
+    # Personalize per child
+    result: List[PersonalizedQuestion] = []
+    for question in questions:
+        personalized_text = question.question_text_template.replace("{child_name}", child.name)
+        result.append(
+            PersonalizedQuestion(
+                child_id=child.id,
+                child_name=child.name,
+                question_id=question.id,
+                question_text=personalized_text,
+                options=question.options,
+                category=question.category,
+            )
+        )
+
+    logger.info(f"Generated {len(result)} personalized questions for child {child_id} (age: {child.age}, age_group: {age_group})")
+    return result
+
+
 def save_behavior_responses(
     db: Session,
     responses: List[BehaviorResponseItem]
@@ -120,6 +196,141 @@ def save_behavior_responses(
     logger.info(f"Saved {saved_count} behavior responses")
     
     return saved_count
+
+
+def submit_child_responses(
+    db: Session,
+    child_id: int,
+    responses: List[Dict]
+) -> Dict[str, int]:
+    """Store parent's answers for a single child and compute totals.
+
+    Args:
+        db: Database session
+        child_id: Child's user ID
+        responses: List of dicts with keys {question_id, answer}
+
+    Returns:
+        Dict with total_score and total_questions saved
+    """
+    # Fetch child once for name replacement
+    child = db.query(Child).filter(Child.id == child_id).first()
+    if not child:
+        logger.warning(f"Child {child_id} not found; cannot submit responses")
+        return {"total_score": 0, "total_questions": 0}
+
+    total_score = 0
+    total_questions = 0
+
+    for item in responses:
+        qid = item.get("question_id")
+        ans = item.get("answer")
+        if qid is None or ans is None:
+            logger.warning("Invalid response item; missing question_id or answer; skipping")
+            continue
+
+        question = db.query(Question).filter(Question.id == qid).first()
+        if not question:
+            logger.warning(f"Question {qid} not found; skipping")
+            continue
+
+        personalized_text = question.question_text_template.replace("{child_name}", child.name)
+        score = calculate_score(str(ans), question.weight)
+
+        behavior_response = ChildBehaviorResponse(
+            child_id=child_id,
+            question_id=qid,
+            question_text=personalized_text,
+            answer=str(ans),
+            score=score,
+        )
+        db.add(behavior_response)
+        total_score += score
+        total_questions += 1
+
+    db.commit()
+    logger.info(
+        f"Saved {total_questions} responses for child {child_id} with total score {total_score}"
+    )
+    return {"total_score": total_score, "total_questions": total_questions}
+
+
+def get_child_behavior_stats(
+    db: Session,
+    child_id: int,
+    days: int | None = None,
+) -> Dict:
+    """Compute behavior stats for a child based on stored responses.
+
+    Stats are calculated as percentage = sum(scores) / sum(max_scores) * 100.
+    Category breakdown is computed similarly using Question.category.
+
+    Args:
+        db: DB session
+        child_id: child's user id
+        days: optional time window to include recent responses only
+
+    Returns:
+        Dict with overall percentage, category breakdown, counts, last updated
+    """
+    from datetime import datetime, timedelta
+
+    q = (
+        db.query(ChildBehaviorResponse, Question)
+        .join(Question, ChildBehaviorResponse.question_id == Question.id)
+        .filter(ChildBehaviorResponse.child_id == child_id)
+    )
+    if days and days > 0:
+        since = datetime.utcnow() - timedelta(days=days)
+        q = q.filter(ChildBehaviorResponse.timestamp >= since)
+
+    rows = q.all()
+    if not rows:
+        return {
+            "child_id": child_id,
+            "total_responses": 0,
+            "behavior_level": 0.0,
+            "islamic_knowledge": 0.0,
+            "categories": {},
+            "last_response_at": None,
+        }
+
+    total_score = 0
+    total_max = 0
+    by_cat: Dict[str, Dict[str, float]] = {}
+    last_ts = None
+
+    for resp, question in rows:
+        weight = max(question.weight or 1, 1)
+        total_score += resp.score or 0
+        total_max += weight
+
+        cat = (question.category or "uncategorized").lower()
+        d = by_cat.setdefault(cat, {"score": 0.0, "max": 0.0})
+        d["score"] += resp.score or 0
+        d["max"] += weight
+
+        if not last_ts or (resp.timestamp and resp.timestamp > last_ts):
+            last_ts = resp.timestamp
+
+    def pct(s: float, m: float) -> float:
+        return round((s / m) * 100.0, 2) if m > 0 else 0.0
+
+    categories_pct = {k: pct(v["score"], v["max"]) for k, v in by_cat.items()}
+    behavior_level = pct(total_score, total_max)
+
+    # Attempt to map an "Islamic Knowledge" category if present
+    isl_keys = [k for k in categories_pct.keys() if k in {"islamic", "knowledge", "islamic_knowledge", "spiritual"}]
+    islamic_knowledge = categories_pct.get(isl_keys[0], 0.0) if isl_keys else 0.0
+
+    return {
+        "child_id": child_id,
+        "total_responses": len(rows),
+        "behavior_level": behavior_level,
+        "islamic_knowledge": islamic_knowledge,
+        "categories": categories_pct,
+        "last_response_at": last_ts.isoformat() if last_ts else None,
+    }
 
 
 def calculate_score(answer: str, weight: int) -> int:

@@ -30,6 +30,26 @@ class BehaviorResponseRequest(BaseModel):
     responses: List[BehaviorResponseItem]
 
 
+class ChildQuestionAnswer(BaseModel):
+    """Answer payload item for a child-specific submission."""
+    question_id: int
+    answer: str
+
+
+class ChildResponsesSubmit(BaseModel):
+    """Schema for submitting responses for a single child."""
+    child_id: int
+    responses: List[ChildQuestionAnswer]
+
+
+class SubmitChildResponsesResult(BaseModel):
+    """Result after submitting child responses."""
+    message: str
+    child_id: int
+    total_score: int
+    total_questions: int
+
+
 class BehaviorResponseResult(BaseModel):
     """Response schema after saving behavior responses."""
     message: str
