@@ -1,0 +1,354 @@
+================================================================================
+         PARVARISH AI - SETTINGS & CHATBOT API DOCUMENTATION
+================================================================================
+
+Base URL: http://localhost:8000/api/v1
+
+================================================================================
+PARENT PROFILE MANAGEMENT
+================================================================================
+
+1. Get Parent Profile
+   --------------------
+   Endpoint: GET /settings/parent/profile
+   Headers: Authorization: Bearer <access_token>
+
+   Response:
+   {
+     "user_id": 1,
+     "name": "John Doe",
+     "email": "john@example.com",
+     "picture": "https://...",
+     "has_profile": true,
+     "profile": {
+       "phone": "+1234567890",
+       "country": "USA",
+       "city": "New York",
+       "father_age": 35,
+       "mother_age": 33,
+       "married_since": 2015,
+       "is_single_parent": false
+     }
+   }
+
+
+2. Update Parent Profile
+   ----------------------
+   Endpoint: PUT /settings/parent/profile
+   Headers: Authorization: Bearer <access_token>
+
+   Request Body (all fields optional):
+   {
+     "name": "John Doe",
+     "phone": "+1234567890",
+     "country": "USA",
+     "city": "New York",
+     "father_age": 35,
+     "mother_age": 33,
+     "married_since": 2015,
+     "is_single_parent": false
+   }
+
+
+================================================================================
+CHILDREN MANAGEMENT
+================================================================================
+
+3. Get All Children
+   ----------------
+   Endpoint: GET /settings/children
+   Headers: Authorization: Bearer <access_token>
+
+   Response:
+   {
+     "total": 2,
+     "children": [
+       {
+         "id": 5,
+         "username": "ali",
+         "name": "Ali",
+         "age": 8,
+         "gender": "male",
+         "school": "ABC School",
+         "class_name": "3rd Grade",
+         "temperament": "calm",
+         "created_at": "2025-11-05T10:30:00"
+       }
+     ]
+   }
+
+
+4. Get Single Child
+   ----------------
+   Endpoint: GET /settings/children/{child_id}
+   Headers: Authorization: Bearer <access_token>
+
+   Response: Same as individual child object from "Get All Children"
+
+
+5. Add New Child
+   -------------
+   Endpoint: POST /settings/children
+   Headers: Authorization: Bearer <access_token>
+
+   Request Body:
+   {
+     "username": "sara",         (REQUIRED)
+     "password": "sara123",      (REQUIRED)
+     "name": "Sara",             (REQUIRED)
+     "age": 6,                   (optional)
+     "gender": "female",         (optional)
+     "school": "ABC School",     (optional)
+     "class_name": "1st Grade",  (optional)
+     "temperament": "energetic"  (optional)
+   }
+
+   Response:
+   {
+     "message": "Child added successfully",
+     "child": {
+       "id": 7,
+       "username": "sara",
+       "name": "Sara",
+       "age": 6,
+       "gender": "female",
+       "school": "ABC School",
+       "class_name": "1st Grade",
+       "temperament": "energetic"
+     }
+   }
+
+
+6. Update Child
+   ------------
+   Endpoint: PUT /settings/children/{child_id}
+   Headers: Authorization: Bearer <access_token>
+
+   Request Body (all fields optional):
+   {
+     "username": "sara_updated",
+     "password": "newpass123",
+     "name": "Sara Updated",
+     "age": 7,
+     "gender": "female",
+     "school": "New School",
+     "class_name": "2nd Grade",
+     "temperament": "calm"
+   }
+
+   Response:
+   {
+     "message": "Child updated successfully",
+     "child": {
+       "id": 5,
+       "username": "sara_updated",
+       "name": "Sara Updated",
+       "age": 7,
+       "gender": "female",
+       "school": "New School",
+       "class_name": "2nd Grade",
+       "temperament": "calm"
+     }
+   }
+
+
+7. Delete Child
+   ------------
+   Endpoint: DELETE /settings/children/{child_id}
+   Headers: Authorization: Bearer <access_token>
+
+   Response:
+   {
+     "message": "Child deleted successfully",
+     "child_id": 5
+   }
+
+   WARNING: This permanently deletes the child's user account and profile!
+
+
+================================================================================
+CHATBOT
+================================================================================
+
+8. Chat Endpoint
+   -------------
+   Endpoint: POST /chatbot/chat
+   Headers: Authorization: Bearer <access_token>
+
+   Request Body:
+   {
+     "message": "How should I discipline my child?",
+     "context": "optional previous conversation"
+   }
+
+   Response:
+   {
+     "response": "According to Islamic teachings...",
+     "references": ["Quran 31:13", "Hadith Bukhari 5997"]
+   }
+
+
+================================================================================
+CHILD BEHAVIOR TRACKING
+================================================================================
+
+9. Get Personalized Questions
+   ---------------------------
+   Endpoint: GET /behavior/questions/personalized/{parent_id}
+   Query Params: total_questions (optional, default=5)
+
+   Purpose: Fetch random questions personalized for each child
+
+   Response:
+   [
+     {
+       "child_id": 1,
+       "child_name": "Ali",
+       "question_id": 3,
+       "question_text": "Does Ali get angry quickly?",
+       "options": ["Yes", "No", "Sometimes"],
+       "category": "emotional"
+     },
+     {
+       "child_id": 2,
+       "child_name": "Sara",
+       "question_id": 3,
+       "question_text": "Does Sara get angry quickly?",
+       "options": ["Yes", "No", "Sometimes"],
+       "category": "emotional"
+     }
+   ]
+
+
+10. Submit Behavior Responses
+    --------------------------
+    Endpoint: POST /behavior/submit-responses
+
+    Purpose: Store parent's answers for each child
+
+    Request Body:
+    {
+      "responses": [
+        { "child_id": 1, "question_id": 3, "answer": "Yes" },
+        { "child_id": 2, "question_id": 3, "answer": "No" },
+        { "child_id": 1, "question_id": 5, "answer": "Sometimes" }
+      ]
+    }
+
+    Response:
+    {
+      "message": "Responses saved successfully",
+      "saved_count": 3
+    }
+
+
+11. Get Child Behavior History
+    ---------------------------
+    Endpoint: GET /behavior/child/{child_id}/history
+    Query Params: limit (optional, default=20)
+
+    Purpose: View past behavior responses for a specific child
+
+    Response:
+    {
+      "child_id": 1,
+      "total": 15,
+      "responses": [
+        {
+          "id": 45,
+          "question_text": "Has Ali eaten lunch today?",
+          "answer": "Yes",
+          "score": 1,
+          "timestamp": "2025-11-06T14:30:00"
+        }
+      ]
+    }
+
+
+12. Create Question (Admin)
+    ------------------------
+    Endpoint: POST /behavior/questions
+
+    Purpose: Add new behavior question to database
+
+    Request Body:
+    {
+      "question_text_template": "Does {child_name} help with chores?",
+      "category": "behavioral",
+      "options": ["Yes", "No", "Sometimes"],
+      "weight": 2
+    }
+
+
+13. List All Questions (Admin)
+    ---------------------------
+    Endpoint: GET /behavior/questions
+    Query Params: category (optional), limit (optional, default=50)
+
+    Purpose: View all behavior questions in system
+
+
+14. Get Single Question (Admin)
+    ----------------------------
+    Endpoint: GET /behavior/questions/{question_id}
+
+    Purpose: View specific question details
+
+
+15. Delete Question (Admin)
+    ------------------------
+    Endpoint: DELETE /behavior/questions/{question_id}
+
+    Purpose: Remove question from database
+
+
+================================================================================
+AUTHENTICATION
+================================================================================
+
+Authorization Header (Required for all endpoints):
+   Authorization: Bearer <access_token>
+
+How to get access_token:
+   - Parent: POST /api/v1/auth/google-login (Google OAuth)
+   - Child: POST /api/v1/auth/login with username/password
+
+
+================================================================================
+ERROR RESPONSES
+================================================================================
+
+400 Bad Request:
+   {
+     "detail": "Missing required field: username"
+   }
+
+401 Unauthorized:
+   {
+     "detail": "Could not validate credentials"
+   }
+
+403 Forbidden:
+   {
+     "detail": "Only parents can access this endpoint"
+   }
+
+404 Not Found:
+   {
+     "detail": "Child not found or does not belong to this parent"
+   }
+
+
+================================================================================
+NOTES
+================================================================================
+
+- All endpoints require JWT token in Authorization header
+- Token expiration: 30 minutes (configurable)
+- Server: http://localhost:8000
+- API Version: v1
+- All timestamps are in ISO 8601 format
+- Only parents can access settings endpoints
+- Children are validated to belong to the logged-in parent
+
+================================================================================

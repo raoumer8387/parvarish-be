@@ -3,16 +3,22 @@
 Expose endpoints for sending user messages and retrieving bot responses using RAG.
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional
+from sqlalchemy.orm import Session
 
 from app.rag.data_loader import DataLoader
 from app.rag.embedder import Embedder, VectorStoreConfig
 from app.rag.retriever import Retriever
 from app.services.llm_client import generate_response
+from app.db.session import get_db
+from app.db.models.child import Child
+from app.services.behavior_service import get_child_behavior_stats
+from app.core.security import get_current_user
+from app.db.models.user import User
 
-router = APIRouter(prefix="/api", tags=["chatbot"])
+router = APIRouter(tags=["chatbot"])
 
 # Initialize RAG components (singleton pattern)
 _retriever = None
@@ -39,6 +45,7 @@ def get_retriever() -> Retriever:
 class ChatRequest(BaseModel):
     message: str
     user_id: Optional[str] = "anonymous"
+    child_id: Optional[int] = None  # Optional: specific child context
 
 
 class ChatResponse(BaseModel):
@@ -52,16 +59,51 @@ SYSTEM_PROMPT = (
     "Use only the provided Quranic verses, Hadith, and Prophet (PBUH) stories to offer advice about raising children, behavior, and moral development. "
     "Speak gently and respectfully, maintaining an educational and empathetic tone. "
     "If no relevant reference is found in the given data, respond politely that you currently do not have Islamic guidance on that specific topic. Do not speculate or invent information. "
-    "Provide SHORT, concise answers (3-4 paragraphs maximum). Focus on actionable advice. Be brief and direct."
+    "Provide SHORT, concise answers (1-2 paragraphs maximum). Focus on actionable advice. Be brief and direct."
 )
 
 
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest):
-    """Accept a user message and return chatbot response using RAG."""
+async def chat(
+    request: ChatRequest,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Accept a user message and return chatbot response using RAG with optional child context."""
     try:
         if not request.message or not request.message.strip():
             raise HTTPException(status_code=400, detail="Message cannot be empty")
+        
+        # Build child context if child_id provided
+        child_context = ""
+        if request.child_id:
+            child = db.query(Child).filter(Child.id == request.child_id).first()
+            if child:
+                # Verify parent owns this child
+                if current_user.user_type == "parent" and child.parent_id != current_user.id:
+                    raise HTTPException(status_code=403, detail="Access denied to this child's data")
+                
+                # Get behavior stats
+                stats = get_child_behavior_stats(db, request.child_id, days=30)
+                
+                child_context = f"""
+CHILD PROFILE:
+- Name: {child.name}
+- Age: {child.age} years old
+- Gender: {child.gender or 'Not specified'}
+- School: {child.school or 'Not specified'}
+- Class: {child.class_name or 'Not specified'}
+- Temperament: {child.temperament or 'Not specified'}
+
+RECENT BEHAVIOR DATA (Last 30 days):
+- Behavior Level: {stats['behavior_level']:.1f}%
+- Islamic Knowledge: {stats['islamic_knowledge']:.1f}%
+- Total Responses: {stats['total_responses']}
+- Last Assessment: {stats['last_response_at'] or 'Never'}
+- Category Breakdown: {', '.join([f'{k}: {v:.0f}%' for k, v in stats['categories'].items()])}
+
+Use this context to provide PERSONALIZED advice for {child.name}. Reference their age, temperament, and current behavior patterns when relevant.
+"""
         
         # Get retriever
         retriever = get_retriever()
@@ -75,8 +117,9 @@ async def chat(request: ChatRequest):
         if len(context) > max_context_length:
             context = context[:max_context_length] + "\n[Context truncated...]"
         
-        # Build prompt
+        # Build prompt with child context
         full_prompt = f"""{SYSTEM_PROMPT}
+{child_context}
 
 Here are relevant Islamic references to help answer the question:
 
@@ -86,7 +129,7 @@ Question: {request.message}
 
 Provide a SHORT answer (3-4 paragraphs max) with:
 1. One key Islamic principle from the references
-2. Brief practical advice (2-3 actionable tips)
+2. Brief practical advice (2-3 actionable tips) {"SPECIFICALLY for " + child.name if request.child_id else ""}
 
 IMPORTANT: When citing sources, include the FULL reference details from the [Source X: ...] headers above.
 Examples:
@@ -99,7 +142,6 @@ Keep it concise and parent-friendly."""
         messages = [
             {"role": "user", "content": full_prompt}
         ]
-        
         # Get response from LLM
         answer = generate_response(messages)
         

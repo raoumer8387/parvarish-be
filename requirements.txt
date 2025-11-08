@@ -7,3 +7,12 @@ requests
 sentence-transformers
 chromadb
 openai
+passlib[bcrypt]
+python-jose[cryptography]
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+authlib
+httpx
+itsdangerous
+alembic
