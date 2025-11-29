@@ -17,3 +17,9 @@ class Child(Base):
 
     user = relationship("User", backref="child_profile", uselist=False)
     parent = relationship("Parent", backref="children")
+    # Relationship to behavior responses
+    behavior_responses = relationship(
+        "ChildBehaviorResponse",
+        back_populates="child",
+        cascade="all, delete-orphan"
+    )

@@ -413,6 +413,7 @@ async def delete_child(
             detail="Only parents can access this endpoint"
         )
     
+    # Find the child to ensure it belongs to the parent
     child = db.query(Child).filter(
         Child.id == child_id,
         Child.parent_id == current_user.id
@@ -424,19 +425,29 @@ async def delete_child(
             detail="Child not found or does not belong to this parent"
         )
     
-    # Delete child profile first (due to foreign key)
-    db.delete(child)
-    db.commit()
-    
-    # Delete user account
+    # The user corresponding to the child
     user = db.query(User).filter(User.id == child_id).first()
-    if user:
-        db.delete(user)
+
+    try:
+        # Delete child profile first (due to foreign key)
+        db.delete(child)
+        
+        # Delete user account
+        if user:
+            db.delete(user)
+        
         db.commit()
-    
-    logger.info(f"Child {child_id} deleted by parent {current_user.id}")
-    
-    return {
-        "message": "Child deleted successfully",
-        "child_id": child_id
-    }
+        
+        logger.info(f"Child {child_id} deleted by parent {current_user.id}")
+        
+        return {
+            "message": "Child deleted successfully",
+            "child_id": child_id
+        }
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Failed to delete child {child_id}: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to delete child. Please try again."
+        )

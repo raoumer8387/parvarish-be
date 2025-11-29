@@ -36,4 +36,4 @@ class ChildBehaviorResponse(Base):
     
     # Relationships
     question = relationship("Question", back_populates="responses")
-    child = relationship("Child", backref="behavior_responses")
+    child = relationship("Child", back_populates="behavior_responses")
