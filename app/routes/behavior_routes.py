@@ -24,6 +24,7 @@ from app.services.behavior_service import (
     get_child_questions,
     submit_child_responses,
     get_child_behavior_stats,
+    get_child_questions_full_coverage,
 )
 from app.core.security import get_current_user
 from app.db.models.behavior_models import Question
@@ -70,21 +71,16 @@ def get_personalized_behavior_questions(
     return questions
 
 
-@router.get("/questions/{child_id}", response_model=List[PersonalizedQuestion])
-def get_child_behavior_questions(
+@router.get("/questions/{child_id}/daily-full", response_model=List[PersonalizedQuestion])
+def get_child_behavior_questions_full_coverage(
     child_id: int,
     db: Session = Depends(get_db),
-    total_questions: int = 5,
-    current_user: User = Depends(get_current_user)
+    per_category: int = 1,
+    current_user: User = Depends(get_current_user),
 ):
-    """Get personalized behavior questions for a single child.
+    """Get daily questions ensuring every behavior aspect is covered.
 
-    Args:
-        child_id: Child's user ID
-        total_questions: Number of random questions to fetch
-        current_user: Authenticated parent user
-    Returns:
-        List of personalized questions for the child
+    Returns at least `per_category` questions per category (age-aware, with fallback).
     """
     if current_user.user_type != "parent":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Only parents can access child questions.")
@@ -95,10 +91,43 @@ def get_child_behavior_questions(
     if child.parent_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="You do not have access to this child")
 
-    questions = get_child_questions(db, child_id, total_questions=total_questions)
-    if not questions:
-        return []
-    logger.info(f"Returning {len(questions)} questions for child {child_id}")
+    questions = get_child_questions_full_coverage(db, child_id, per_category=per_category)
+    return questions
+
+
+@router.get("/questions/{child_id}", response_model=List[PersonalizedQuestion])
+def get_child_behavior_questions(
+    child_id: int,
+    db: Session = Depends(get_db),
+    total_questions: int = 5,
+    all_aspects: bool = False,
+    per_category: int = 1,
+    current_user: User = Depends(get_current_user)
+):
+    """Get behavior questions for a child.
+
+    Modes:
+    - Default (all_aspects = false): return `total_questions` random personalized questions.
+    - Full coverage (all_aspects = true): return at least `per_category` question per aspect
+      across: emotional, social, physical, behavioral, religious.
+    """
+    if current_user.user_type != "parent":
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Only parents can access child questions.")
+
+    child = db.query(Child).filter(Child.id == child_id).first()
+    if not child:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Child {child_id} not found")
+    if child.parent_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="You do not have access to this child")
+
+    if all_aspects:
+        questions = get_child_questions_full_coverage(db, child_id, per_category=per_category)
+    else:
+        questions = get_child_questions(db, child_id, total_questions=total_questions)
+
+    logger.info(
+        f"Returning {len(questions)} questions for child {child_id} (all_aspects={all_aspects}, per_category={per_category if all_aspects else 'n/a'})"
+    )
     return questions
 
 

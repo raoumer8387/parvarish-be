@@ -12,6 +12,8 @@ from app.rag.data_loader import DataLoader
 from app.rag.embedder import Embedder, VectorStoreConfig
 from app.rag.retriever import Retriever
 from app.services.llm_client import generate_response
+from app.db.crud.message import create_message, list_messages_for_user
+from app.schemas.chat import ChatHistoryResponse, ChatMessage
 from app.db.session import get_db
 from app.db.models.child import Child
 from app.services.behavior_service import get_child_behavior_stats
@@ -145,14 +147,45 @@ Keep it concise and parent-friendly."""
         # Get response from LLM
         answer = generate_response(messages)
         
-        return ChatResponse(
-            response=answer,
-            user_id=request.user_id
-        )
-        
+        # Persist user message and assistant reply
+        try:
+            create_message(db, user_id=current_user.id, role="user", content=request.message, child_id=request.child_id)
+            create_message(db, user_id=current_user.id, role="assistant", content=answer, child_id=request.child_id)
+        except Exception as db_err:
+            # Log but don't fail the response generation
+            print(f"WARNING: Failed to persist chat messages: {db_err}")
+
+        return ChatResponse(response=answer, user_id=request.user_id)
     except Exception as e:
         import traceback
         error_details = traceback.format_exc()
         print(f"ERROR in chat endpoint: {error_details}")
         raise HTTPException(status_code=500, detail=f"Error processing request: {str(e)}")
+
+@router.get("/chat/history", response_model=ChatHistoryResponse)
+async def chat_history(
+    child_id: Optional[int] = None,
+    limit: int = 100,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Return chat history for the current user.
+
+    If child_id is provided, verify parent owns the child. Otherwise return general advice messages.
+    """
+    # Child ownership check (if requested)
+    if child_id is not None:
+        child = db.query(Child).filter(Child.id == child_id).first()
+        if not child:
+            raise HTTPException(status_code=404, detail="Child not found")
+        if current_user.user_type == "parent" and child.parent_id != current_user.id:
+            raise HTTPException(status_code=403, detail="Access denied to this child's data")
+
+    messages = list_messages_for_user(db, user_id=current_user.id, child_id=child_id, limit=limit)
+    # Map ORM to schema
+    schema_messages = [
+        ChatMessage(role=m.role, content=m.content, created_at=m.created_at, child_id=m.child_id)
+        for m in messages
+    ]
+    return ChatHistoryResponse(messages=schema_messages)
 

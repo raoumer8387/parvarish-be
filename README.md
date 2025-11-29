@@ -85,10 +85,11 @@ See **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** for:
 | POST | `/add-child` | Parent JWT | Create child account |
 | POST | `/login-child` | None | Child login with username/password |
 
-#### Chatbot (`/api/chat`)
+#### Chatbot (`/chat`)
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| POST | `/chat` | Parent JWT | Islamic parenting advice (RAG-powered) |
+| POST | `/chat` | Parent JWT | Islamic parenting advice (RAG + child context) |
+| GET | `/chat/history` | Parent JWT | Returns JSON array of past messages; filter by `child_id` query param for specific child or omit for general advice |
 
 ---
 

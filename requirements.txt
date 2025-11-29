@@ -16,3 +16,4 @@ authlib
 httpx
 itsdangerous
 alembic
+email-validator
