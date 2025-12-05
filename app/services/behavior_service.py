@@ -143,6 +143,120 @@ def get_child_questions(
     return result
 
 
+def get_child_questions_full_coverage(
+    db: Session,
+    child_id: int,
+    per_category: int = 1,
+    categories: List[str] | None = None,
+) -> List[PersonalizedQuestion]:
+    """Fetch personalized questions ensuring coverage across all categories.
+
+    Strategy:
+    - Determine child's age_group (same logic as get_child_questions).
+    - For each category, attempt to fetch `per_category` random questions matching age_group.
+      If insufficient, fill remaining from any age.
+    - Personalize with child name.
+    """
+    # Fetch child record
+    child = db.query(Child).filter(Child.id == child_id).first()
+    if not child:
+        logger.info(f"Child {child_id} not found when fetching full-coverage questions")
+        return []
+
+    # Determine age group
+    age_group = None
+    if child.age:
+        if 6 <= child.age <= 8:
+            age_group = "6-8"
+        elif 9 <= child.age <= 11:
+            age_group = "9-11"
+        elif 12 <= child.age <= 14:
+            age_group = "12-14"
+
+    # Desired ordering of full 9 aspects (extendable later)
+    desired_order = [
+        "emotional", "social", "physical", "behavioral", "religious",
+        "moral", "habitual", "cognitive", "spiritual"
+    ]
+
+    if not categories:
+        # Fetch distinct existing categories (case-sensitive original values)
+        existing_rows = [c[0] for c in db.query(Question.category).distinct().all() if c[0]]
+        existing_normalized = {c.lower(): c for c in existing_rows}
+
+        # Auto-seed missing categories so endpoint can always show all aspects
+        missing = [cat for cat in desired_order if cat not in existing_normalized]
+        if missing:
+            logger.info(f"Seeding placeholder questions for missing categories: {missing}")
+            for cat in missing:
+                # Create a generic placeholder question template; age_group left null for broad applicability
+                placeholder = Question(
+                    question_text_template=f"Placeholder: How is {{child_name}} doing in {cat} today?",
+                    category=cat,
+                    options=["Yes", "No", "Sometimes"],
+                    weight=1,
+                )
+                db.add(placeholder)
+            db.commit()
+            # Refresh existing categories after seeding
+            existing_rows = [c[0] for c in db.query(Question.category).distinct().all() if c[0]]
+            existing_normalized = {c.lower(): c for c in existing_rows}
+
+        # Order according to desired_order, using original casing if present
+        categories = [existing_normalized.get(cat, cat) for cat in desired_order]
+
+    results: List[PersonalizedQuestion] = []
+
+    for cat in categories:
+        # First try age-specific
+        q = db.query(Question).filter(Question.category == cat)
+        age_specific: List[Question] = []
+        if age_group:
+            age_specific = (
+                q.filter(Question.age_group.ilike(f"%{age_group}%"))
+                .order_by(func.random())
+                .limit(per_category)
+                .all()
+            )
+
+        selected: List[Question] = list(age_specific)
+        if len(selected) < per_category:
+            remaining = per_category - len(selected)
+            extra = (
+                db.query(Question)
+                .filter(Question.category == cat)
+                .order_by(func.random())
+                .limit(remaining)
+                .all()
+            )
+            # Avoid duplicates
+            for qx in extra:
+                if qx not in selected:
+                    selected.append(qx)
+                if len(selected) >= per_category:
+                    break
+
+        # Personalize
+        for question in selected:
+            personalized_text = question.question_text_template.replace("{child_name}", child.name)
+            results.append(
+                PersonalizedQuestion(
+                    child_id=child.id,
+                    child_name=child.name,
+                    question_id=question.id,
+                    question_text=personalized_text,
+                    options=question.options,
+                    category=question.category,
+                )
+            )
+
+    logger.info(
+        f"Generated {len(results)} full-coverage questions for child {child_id} "
+        f"(per_category={per_category}, age_group={age_group})"
+    )
+    return results
+
+
 def save_behavior_responses(
     db: Session,
     responses: List[BehaviorResponseItem]
