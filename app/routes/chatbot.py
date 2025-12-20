@@ -56,12 +56,19 @@ class ChatResponse(BaseModel):
 
 
 SYSTEM_PROMPT = (
-    "You are Parvarish AI â€” an Islamic parenting companion. "
+    "You are Parvarish AI – an Islamic parenting companion. "
     "Your role is to guide parents with wisdom and compassion based on authentic Islamic teachings. "
-    "Use only the provided Quranic verses, Hadith, and Prophet (PBUH) stories to offer advice about raising children, behavior, and moral development. "
+    "Use the provided Quranic verses, Hadith, Prophet (PBUH) stories, AND Islamic Scholar References (from classical books like Ihya Ulum ad-Din, Tafsir Ibn Kathir, Adab al-Mufrad, etc.) to offer advice about raising children, behavior, and moral development. "
+    "MULTILINGUAL REQUIREMENT: Always provide your response in THREE languages: "
+    "1. English (EN) "
+    "2. Urdu (UR) "
+    "3. Roman Urdu (RM) "
+    "Format each language section clearly with headers. "
+    "CITATION REQUIREMENT: When referencing Islamic scholars, ALWAYS include the book title and author name like: [Book Title – Author]. "
+    "Example: 'As mentioned in Ihya Ulum ad-Din by Imam Al-Ghazali...' "
     "Speak gently and respectfully, maintaining an educational and empathetic tone. "
     "If no relevant reference is found in the given data, respond politely that you currently do not have Islamic guidance on that specific topic. Do not speculate or invent information. "
-    "Provide SHORT, concise answers (1-2 paragraphs maximum). Focus on actionable advice. Be brief and direct."
+    "Provide SHORT, concise answers (1-2 paragraphs maximum PER LANGUAGE). Focus on actionable advice. Be brief and direct."
 )
 
 
@@ -110,12 +117,12 @@ Use this context to provide PERSONALIZED advice for {child.name}. Reference thei
         # Get retriever
         retriever = get_retriever()
         
-        # Retrieve relevant context
-        chunks = retriever.query(request.message, k=2)
+        # Retrieve relevant context (increased k to get diverse sources including scholars)
+        chunks = retriever.query(request.message, k=8)
         context = Retriever.format_context(chunks) if chunks else "No specific references found in the database."
         
         # Limit context length
-        max_context_length = 1200
+        max_context_length = 2000  # Increased to accommodate more diverse sources
         if len(context) > max_context_length:
             context = context[:max_context_length] + "\n[Context truncated...]"
         
@@ -129,17 +136,25 @@ Here are relevant Islamic references to help answer the question:
 
 Question: {request.message}
 
-Provide a SHORT answer (3-4 paragraphs max) with:
-1. One key Islamic principle from the references
-2. Brief practical advice (2-3 actionable tips) {"SPECIFICALLY for " + child.name if request.child_id else ""}
+Provide your answer in THREE LANGUAGES (English, Urdu, Roman Urdu) with clear section headers:
 
-IMPORTANT: When citing sources, include the FULL reference details from the [Source X: ...] headers above.
-Examples:
+## English (EN):
+[Provide 2-3 paragraphs with key Islamic principle and 2-3 actionable tips {"SPECIFICALLY for " + child.name if request.child_id else ""}]
+
+## Urdu (UR):
+[Same content in Urdu script]
+
+## Roman Urdu (RM):
+[Same content in Roman Urdu]
+
+CITATION REQUIREMENTS:
 - For Quran: "As Allah says in Quran 17:23..."
-- For Hadith: "The Prophet (PBUH) said in Sahih Bukhari, Book 78, Hadith #5997..."
-- Always mention the classification [Sahih/Hasan] if provided.
+- For Hadith: "The Prophet (PBUH) said in Sahih Bukhari, Book 78, Hadith #5997..." (include classification [Sahih/Hasan] if provided)
+- For Scholar References: "As mentioned in [Book Title] by [Author]..." or "[Author] writes in [Book Title]..."
+- ALWAYS include the FULL reference details from the [Source X: ...] headers above.
+- PRIORITY: Try to use AT LEAST ONE reference from each source type (Quran/Hadith, Scholars, Stories) if available in the context above.
 
-Keep it concise and parent-friendly."""
+Keep each language section concise and parent-friendly."""
         
         messages = [
             {"role": "user", "content": full_prompt}

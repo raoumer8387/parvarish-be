@@ -22,7 +22,7 @@ load_dotenv()
 
 _API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
 _MODEL = os.getenv("OPENROUTER_MODEL", "google/gemini-2.5-flash")
-_MAX_TOKENS = int(os.getenv("OPENROUTER_MAX_TOKENS", "300"))
+_MAX_TOKENS = int(os.getenv("OPENROUTER_MAX_TOKENS", "800"))  # Increased for multilingual responses
 _BASE_URL = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
 _REFERER = os.getenv("OPENROUTER_REFERER", "http://localhost:8000")
 _TITLE = os.getenv("OPENROUTER_TITLE", "Parvarish-AI")

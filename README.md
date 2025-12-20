@@ -8,7 +8,10 @@ A scalable FastAPI backend for an Islamic parenting chatbot with **role-based au
   - **Children**: Username/password login, access to educational games
 - **FastAPI** with modular architecture
 - **PostgreSQL** via SQLAlchemy ORM
-- **RAG System**: Sentence transformers + ChromaDB for Quranic/Hadith references
+- **RAG System**: Sentence transformers + ChromaDB for Quranic/Hadith references + **Islamic Scholar References**
+  - **NEW**: 53+ scholarly references from classical Islamic literature (Ihya Ulum ad-Din, Tafsir Ibn Kathir, Adab al-Mufrad, etc.)
+  - **Multilingual**: All responses in English + Urdu + Roman Urdu
+  - **Proper Citations**: Book titles and author names in all responses
 - **JWT Authentication** with role-based access control
 - **Database Migrations** with Alembic
 - **Clean separation**: routes, db models, services, schemas, utils
@@ -75,6 +78,11 @@ See **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** for:
 - Security best practices
 - Troubleshooting
 
+### Frontend Integration Guides
+- **[FRONTEND_CHATBOT_INTEGRATION.md](./FRONTEND_CHATBOT_INTEGRATION.md)** - Complete chatbot UI implementation guide with React/Vanilla JS examples
+- **[FRONTEND_QUICK_REF.md](./FRONTEND_QUICK_REF.md)** - Quick reference card for chatbot API
+- **[FRONTEND_HANDOFF.md](./FRONTEND_HANDOFF.md)** - Games API integration guide
+
 ### API Endpoints
 
 #### Authentication (`/api/v1/auth/`)
@@ -88,8 +96,18 @@ See **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** for:
 #### Chatbot (`/chat`)
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| POST | `/chat` | Parent JWT | Islamic parenting advice (RAG + child context) |
+| POST | `/chat` | Parent JWT | Islamic parenting advice (RAG + child context) with **multilingual responses** (EN/UR/RM) and **scholar citations** |
 | GET | `/chat/history` | Parent JWT | Returns JSON array of past messages; filter by `child_id` query param for specific child or omit for general advice |
+
+**NEW: Enhanced RAG System**
+- Responses now include references from:
+  - Quran & Hadith (existing)
+  - Prophet Stories (existing)
+  - **Islamic Scholars** (NEW): Imam Al-Ghazali, Ibn Kathir, Imam Bukhari, Abdullah Nasih Ulwan, and more
+- All responses in **3 languages**: English, Urdu, Roman Urdu
+- Proper citations with book titles and author names
+
+See **[SCHOLAR_INTEGRATION_SUMMARY.md](./SCHOLAR_INTEGRATION_SUMMARY.md)** for details.
 
 ---
 
@@ -134,8 +152,9 @@ parvarish-be/
 │       ├── embedder.py          # Sentence transformers
 │       └── retriever.py         # Vector search
 ├── data/
-│   ├── hadith_quranic.json      # Islamic references
-│   └── prophet_stories.json     # Story corpus
+│   ├── hadith_quranic.json      # Islamic references (Quran & Hadith)
+│   ├── prophet_stories.json     # Story corpus
+│   └── islamic_refrences.json   # NEW: Scholar references (53+ entries)
 ├── frontend/                     # Simple HTML frontend
 ├── main.py                       # FastAPI app entry
 ├── requirements.txt              # Python dependencies
@@ -282,6 +301,10 @@ APP_ENV=development
 - JWT-based authorization
 - Database models for all entities
 - Auth endpoints
+- **Islamic Scholar References Integration** (Dec 2025)
+  - 53+ scholarly references from classical Islamic books
+  - Multilingual support (English + Urdu + Roman Urdu)
+  - Enhanced citation system with book/author attribution
 
 ### In Progress 🚧
 - Role-based access control on chatbot endpoint
@@ -292,7 +315,7 @@ APP_ENV=development
 - Email notifications for parents
 - Behavior tracking analytics
 - Game recommendation engine
-- Multi-language support (Urdu)
+- Enhanced multilingual UI support
 
 ---
 

@@ -42,7 +42,27 @@ class Retriever:
             # Build detailed citation header
             citation_parts = []
             
-            # Category/Type
+            # Check if this is a scholar reference
+            source_type = ch.metadata.get('source_type', '')
+            if source_type == 'islamic_scholar':
+                # Format: [Islamic Scholar | Book Title – Author | Topic]
+                book = ch.metadata.get('book_title', '')
+                author = ch.metadata.get('author', '')
+                topic = ch.metadata.get('topic', '')
+                
+                citation_parts.append("Islamic Scholar")
+                if book and author:
+                    citation_parts.append(f"{book} – {author}")
+                elif book:
+                    citation_parts.append(book)
+                if topic:
+                    citation_parts.append(f"Topic: {topic}")
+                
+                header = f"[Source {i}: {' | '.join(citation_parts)}]"
+                parts.append(f"{header}\n{ch.text}")
+                continue
+            
+            # Original logic for Quran/Hadith/Stories
             category = ch.metadata.get('category', ch.metadata.get('type', 'unknown'))
             citation_parts.append(category)
             

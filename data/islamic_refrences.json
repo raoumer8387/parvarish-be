@@ -1,0 +1,584 @@
+[
+  {
+    "id": "ref-001",
+    "book_title": "Ihya Ulum ad-Din",
+    "author": "Imam Al-Ghazali",
+    "topic": "Mercy in Parenting",
+    "text_en": "Children must be raised with mercy and love, because harshness closes their hearts and weakens their moral character. A soft approach develops trust and obedience.",
+    "text_ur": "بچوں کی تربیت نرمی اور محبت سے کرنی چاہیے کیونکہ سختی ان کے دل بند کردیتی ہے اور ان کے اخلاق کمزور ہو جاتے ہیں۔",
+    "text_roman": "Bachon ki tarbiyat narmi aur mohabbat se karni chahiye kyun ke sakhti un ke dil band kar deti hai aur un ke akhlaq kamzor ho jate hain.",
+    "tags": ["mercy", "parenting_style", "love", "emotional_support"],
+    "age_range": "all"
+  },
+  {
+    "id": "ref-002",
+    "book_title": "Tafsir Ibn Kathir",
+    "author": "Imam Ibn Kathir",
+    "topic": "Respect for Parents",
+    "text_en": "The Quran emphasizes showing kindness to parents, and this value must be taught to children from a young age through modeling and example.",
+    "text_ur": "قرآن والدین کے ساتھ حسن سلوک کی تاکید کرتا ہے اور یہ بات بچوں کو بچپن سے سکھانی چاہیے عملی مثال کے ذریعے۔",
+    "text_roman": "Quran walidain ke sath husn e sulook ki takeed karta hai aur yeh baat bachon ko bachpan se sikhaani chahiye amli misaal ke zariye.",
+    "tags": ["respect", "parents", "quran", "manners"],
+    "age_range": "6-14"
+  },
+  {
+    "id": "ref-003",
+    "book_title": "Adab al-Mufrad",
+    "author": "Imam Bukhari",
+    "topic": "Teaching Manners",
+    "text_en": "Good manners must be planted in children early. Teaching them to speak kindly, greet others, and respect elders is part of Islamic upbringing.",
+    "text_ur": "اچھے اخلاق بچوں میں شروع سے ڈالنے چاہئیں، جیسے نرمی سے بات کرنا، سلام کرنا اور بڑوں کا احترام۔",
+    "text_roman": "Achay ikhlaq bachon mein shuru se daalne chahiye, jaise narmi se baat karna, salaam karna aur baron ka ehtaram.",
+    "tags": ["manners", "akhlaq", "respect", "communication"],
+    "age_range": "6-10"
+  },
+  {
+    "id": "ref-004",
+    "book_title": "Bidayat al-Mujtahid",
+    "author": "Ibn Rushd",
+    "topic": "Discipline Balance",
+    "text_en": "Islam encourages balanced discipline — not too hard, and not too lenient — so that a child grows with responsibility and respect.",
+    "text_ur": "اسلام اعتدال والی تربیت کی تعلیم دیتا ہے — نہ زیادہ سختی، نہ زیادہ نرمی — تاکہ بچہ ذمہ دار بنے۔",
+    "text_roman": "Islam aitadal wali tarbiyat ki taleem deta hai — na zyada sakhti, na zyada narmi — taa ke bacha zimedaar bane.",
+    "tags": ["discipline", "balance", "responsibility"],
+    "age_range": "7-14"
+  },
+  {
+    "id": "ref-005",
+    "book_title": "Sharh Sahih Muslim",
+    "author": "Imam An-Nawawi",
+    "topic": "Gentleness with Children",
+    "text_en": "The Prophet ﷺ always used gentleness with children, and scholars explain that kindness is the best tool for teaching.",
+    "text_ur": "نبی ﷺ بچوں کے ساتھ ہمیشہ نرمی فرماتے تھے اور علما نے وضاحت کی ہے کہ محبت تربیت کا بہترین ذریعہ ہے۔",
+    "text_roman": "Nabi ﷺ bachon ke sath hamesha narmi farmatay thay aur ulama ne wazahat ki hai ke mohabbat tarbiyat ka behtareen zariya hai.",
+    "tags": ["gentleness", "sunnah", "kindness"],
+    "age_range": "all"
+  },
+
+  {
+    "id": "ref-006",
+    "book_title": "Minhaj al-Qasidin",
+    "author": "Ibn Qudamah",
+    "topic": "Protecting Child's Heart",
+    "text_en": "A child's heart is pure and should be protected from bad influence. Parents decide whether it grows good or corrupted.",
+    "text_ur": "بچے کا دل پاک ہوتا ہے اور والدین کی ذمہ داری ہے کہ وہ اسے برے اثر سے بچائیں۔",
+    "text_roman": "Bachay ka dil paak hota hai aur walidain ki zimmedari hai ke wo usay buray asar se bachain.",
+    "tags": ["heart", "environment", "purity"],
+    "age_range": "all"
+  },
+  {
+    "id": "ref-007",
+    "book_title": "Al-Taqrib",
+    "author": "Imam Nawawi",
+    "topic": "Teaching Prayer",
+    "text_en": "Children should be guided towards regular prayer gently before it becomes an obligation.",
+    "text_ur": "بچوں کو نرمی سے نماز کی عادت ڈالنی چاہیے فرض ہونے سے پہلے۔",
+    "text_roman": "Bachon ko narmi se namaz ki aadat daalni chahiye farz honay se pehle.",
+    "tags": ["prayer", "salah", "habit"],
+    "age_range": "6-12"
+  },
+  {
+    "id": "ref-008",
+    "book_title": "Usul al-Tarbiyah al-Islamiyyah",
+    "author": "Abdullah Nasih Ulwan",
+    "topic": "Role Modeling",
+    "text_en": "Children learn more from what they see than what they hear, so a parent must be an example of good character.",
+    "text_ur": "بچے وہی سیکھتے ہیں جو وہ دیکھتے ہیں، اس لیے والدین کو بہترین نمونہ ہونا چاہیے۔",
+    "text_roman": "Bachay wohi seekhtay hain jo woh dekhtay hain, is liye walidain ko behtareen namoona hona chahiye.",
+    "tags": ["role_model", "example", "behavior"],
+    "age_range": "all"
+  },
+  {
+    "id": "ref-009",
+    "book_title": "Al-Adab Al-Shar’iyyah",
+    "author": "Ibn Muflih",
+    "topic": "Controlling Anger",
+    "text_en": "Teaching children how to control anger is a foundation of strong moral character.",
+    "text_ur": "بچوں کو غصہ کنٹرول کرنا سکھانا مضبوط اخلاق کی بنیاد ہے۔",
+    "text_roman": "Bachon ko ghussa control karna sikhana mazboot ikhlaq ki bunyaad hai.",
+    "tags": ["anger", "emotional_control"],
+    "age_range": "7-14"
+  },
+  {
+    "id": "ref-010",
+    "book_title": "Fath al-Bari",
+    "author": "Ibn Hajar al-Asqalani",
+    "topic": "Loving Children",
+    "text_en": "The Prophet showed affection to children publicly, showing that love strengthens their confidence.",
+    "text_ur": "نبی بچوں سے محبت کا اظہار فرماتے تھے جس سے ان کا اعتماد بڑھتا ہے۔",
+    "text_roman": "Nabi bachon se mohabbat ka izhar farmatay thay jisse un ka itmaad barhta hai.",
+    "tags": ["love", "confidence", "prophetic_way"],
+    "age_range": "all"
+  },
+
+  {
+    "id": "ref-011",
+    "book_title": "Risalat al-Muallim",
+    "author": "Ibn Sahnun",
+    "topic": "Teaching Etiquette",
+    "text_en": "Children should be taught discipline and etiquette from an early stage in life.",
+    "text_ur": "بچوں کو ابتدائی عمر سے ہی ضبط نفس اور آداب سکھانے چاہئیں۔",
+    "text_roman": "Bachon ko ibtidaai umar se hi zabt e nafs aur adaab sikhane chahiye.",
+    "tags": ["discipline", "etiquette", "control"],
+    "age_range": "5-10"
+  },
+  {
+    "id": "ref-012",
+    "book_title": "Tarbiyat al-Awlad",
+    "author": "Abdullah Nasih Ulwan",
+    "topic": "Social Behavior",
+    "text_en": "Teaching children how to behave with others is one of the most important responsibilities of parents.",
+    "text_ur": "بچوں کو لوگوں کے ساتھ اچھے برتاؤ کی تعلیم دینا والدین کی بڑی ذمہ داری ہے۔",
+    "text_roman": "Bachon ko logon ke sath acha bartao sikhaana walidain ki bari zimmedari hai.",
+    "tags": ["social_skills", "manners"],
+    "age_range": "6-14"
+  },
+
+  {
+    "id": "ref-013",
+    "book_title": "Mukhtasar Minhaj al-Qasidin",
+    "author": "Ibn Qudamah",
+    "topic": "Time Management",
+    "text_en": "If children are left without guidance, they waste their time. Structure leads to wisdom.",
+    "text_ur": "اگر بچوں کی رہنمائی نہ ہو تو وہ اپنا وقت ضائع کرتے ہیں، ترتیب انہیں دانشمند بناتی ہے۔",
+    "text_roman": "Agar bachon ki rehnumai na ho to woh apna waqt zaya kartay hain, tarteeb unhein daanishmand banati hai.",
+    "tags": ["routine", "time", "discipline"],
+    "age_range": "7-14"
+  },
+
+  {
+    "id": "ref-014",
+    "book_title": "Majmoo al-Fatawa",
+    "author": "Ibn Taymiyyah",
+    "topic": "Limits & Boundaries",
+    "text_en": "Children need clear boundaries to feel secure. These limits must be just and wise.",
+    "text_ur": "بچوں کو محفوظ محسوس کرنے کے لیے واضح حدود کی ضرورت ہے، جو منصفانہ اور حکمت والی ہوں۔",
+    "text_roman": "Bachon ko mehfooz mehsoos karne ke liye wazeh hudood ki zarurat hoti hai jo munasif aur hikmat wali hon.",
+    "tags": ["boundaries", "rules"],
+    "age_range": "all"
+  },
+
+  {
+    "id": "ref-015",
+    "book_title": "Ibn Sina – Kitab al-Nafs",
+    "author": "Ibn Sina",
+    "topic": "Child Psychology",
+    "text_en": "A child’s mind grows through gradual development and needs care, patience and moral teaching.",
+    "text_ur": "بچے کا ذہن آہستہ آہستہ نشوونما پاتا ہے اور اسے صبر اور اخلاقی تربیت کی ضرورت ہوتی ہے۔",
+    "text_roman": "Bachay ka zehan ahista ahista nashonuma paata hai aur usay sabr aur ikhlaqi tarbiyat ki zarurat hoti hai.",
+    "tags": ["psychology", "mind", "development"],
+    "age_range": "all"
+  },
+
+  
+  {
+    "id": "ref-016",
+    "scholar": "Imam Al-Ghazali",
+    "book_title": "Ihya Ulum ad-Din",
+    "topic": "Love and mercy towards children",
+    "excerpt_en": "The heart of a child is pure and ready to accept whatever is planted in it. If good is planted, he will grow in goodness.",
+    "excerpt_ur": "بچے کا دل صاف ہوتا ہے اور اس میں جو بویا جائے وہی اگتا ہے۔ اگر اچھائی بوئی جائے تو بھلائی ہی اگے گی۔",
+    "excerpt_roman": "Bachay ka dil saaf hota hai aur us mein jo boya jaye wahi ugta hai. Agar achai boya jaye to bhalai hi ugti hai.",
+    "parenting_application": "Teach good habits and values early, before bad habits form.",
+    "tags": ["early_training", "tarbiyah", "positive_habits"]
+  },
+  {
+    "id": "ref-017",
+    "scholar": "Ibn Qayyim al-Jawziyya",
+    "book_title": "Tuhfat al-Mawdud",
+    "topic": "Right of child to education",
+    "excerpt_en": "One of the greatest injustices to a child is neglecting their education and upbringing.",
+    "excerpt_ur": "بچے پر سب سے بڑا ظلم اس کی تعلیم و تربیت کو نظر انداز کرنا ہے۔",
+    "excerpt_roman": "Bachay par sab se bara zulm uski taleem aur tarbiyat ko nazar andaz karna hai.",
+    "parenting_application": "Pay attention to your child’s moral and academic growth.",
+    "tags": ["education", "neglect", "child_rights"]
+  },
+  {
+    "id": "ref-018",
+    "scholar": "Imam An-Nawawi",
+    "book_title": "Sharh Sahih Muslim",
+    "topic": "Gentle correction",
+    "excerpt_en": "Gentleness in teaching is more effective than severity or harshness.",
+    "excerpt_ur": "تعلیم میں نرمی سختی سے زیادہ مؤثر ہوتی ہے۔",
+    "excerpt_roman": "Taleem mein narmi sakhti se zyada moassar hoti hai.",
+    "parenting_application": "Avoid shouting. Teach with kindness.",
+    "tags": ["gentleness", "teaching", "love"]
+  },
+  {
+    "id": "ref-019",
+    "scholar": "Imam Malik",
+    "book_title": "Al-Muwatta",
+    "topic": "Prayer training",
+    "excerpt_en": "Children should be encouraged towards prayer before discipline is enforced.",
+    "excerpt_ur": "بچوں کو سختی سے پہلے نرمی سے نماز کا عادی بنانا چاہیے۔",
+    "excerpt_roman": "Bachon ko sakhti se pehle narmi se namaz ka aadi banana chahiye.",
+    "parenting_application": "Make prayer enjoyable in early years.",
+    "tags": ["prayer_training", "habits", "discipline"]
+  },
+  {
+    "id": "ref-020",
+    "scholar": "Imam Ibn Hazm",
+    "book_title": "Al-Akhlaq was-Siyar",
+    "topic": "Manners over punishment",
+    "excerpt_en": "Good manners come from good modeling, not from beating.",
+    "excerpt_ur": "اچھا اخلاق مار پیٹ سے نہیں بلکہ اچھے نمونے سے پیدا ہوتا ہے۔",
+    "excerpt_roman": "Acha akhlaq maar peet se nahi balkay acha namoona dekhne se paida hota hai.",
+    "parenting_application": "Children copy your behavior — be their role model.",
+    "tags": ["role_model", "manners", "non_violence"]
+  },
+  {
+    "id": "ref-021",
+    "scholar": "Imam Al-Shafi’i",
+    "book_title": "Diwan al-Shafi'i",
+    "topic": "Teaching wisdom",
+    "excerpt_en": "A child brought up without wisdom becomes a burden on himself and others.",
+    "excerpt_ur": "اگر بچے کو دانائی نہ سکھائی جائے تو وہ اپنے اور دوسروں کے لیے بوجھ بن جاتا ہے۔",
+    "excerpt_roman": "Agar bachay ko danai na sikhai jaye to woh apne aur doosron ke liye bojh ban jata hai.",
+    "parenting_application": "Teach child how to think, not only what to do.",
+    "tags": ["wisdom", "thinking", "mental_growth"]
+  },
+  {
+    "id": "ref-022",
+    "scholar": "Imam Ahmad ibn Hanbal",
+    "book_title": "Musnad Ahmad",
+    "topic": "Mercy for children",
+    "excerpt_en": "Whoever does not show mercy to children will not be shown mercy.",
+    "excerpt_ur": "جو بچوں پر رحم نہیں کرتا، اس پر رحم نہیں کیا جاتا۔",
+    "excerpt_roman": "Jo bachon par reham nahi karta, us par reham nahi kiya jata.",
+    "parenting_application": "Show affection daily to children.",
+    "tags": ["mercy", "love", "emotional_security"]
+  },
+  {
+    "id": "ref-023",
+    "scholar": "Imam Ibn Kathir",
+    "book_title": "Tafsir Ibn Kathir",
+    "topic": "Obedience & respect",
+    "excerpt_en": "Children should be taught respect for parents as part of worship.",
+    "excerpt_ur": "بچوں کو والدین کا احترام عبادت کا حصہ سکھانا چاہیے۔",
+    "excerpt_roman": "Bachon ko walidain ka ehtram ibadat ka hissa sikhana chahiye.",
+    "parenting_application": "Explain why respecting parents is important in Islam.",
+    "tags": ["obedience", "respect", "family"]
+  },
+  {
+    "id": "ref-024",
+    "scholar": "Imam Al-Qurtubi",
+    "book_title": "Al-Jami’ li Ahkam al-Quran",
+    "topic": "Protecting children",
+    "excerpt_en": "Parents are guardians entrusted with protecting children’s minds and souls.",
+    "excerpt_ur": "والدین کو بچوں کے ذہن اور روح کی حفاظت کی ذمہ داری دی گئی ہے۔",
+    "excerpt_roman": "Walidain ko bachon ke zehan aur rooh ki hifazat ki zimadari di gayi hai.",
+    "parenting_application": "Monitor content children consume.",
+    "tags": ["protection", "screen_time", "guardian"]
+  },
+  {
+    "id": "ref-025",
+    "scholar": "Shaykh Abdul Qadir Jilani",
+    "book_title": "Ghunyat-ut-Talibin",
+    "topic": "Good companions",
+    "excerpt_en": "Keep children away from bad company as poison ruins the heart.",
+    "excerpt_ur": "برے ساتھیوں سے بچوں کو دور رکھو کیونکہ وہ دل کو زہر کی طرح خراب کرتے ہیں۔",
+    "excerpt_roman": "Bure sathiyon se bachon ko door rakho kyun ke woh dil ko zeher ki tarah kharab karte hain.",
+    "parenting_application": "Supervise child’s friends.",
+    "tags": ["peer_pressure", "companions", "environment"]
+  },
+  {
+    "id": "ref-026",
+    "scholar": "Mufti Muhammad Shafi",
+    "book_title": "Ma’ariful Quran",
+    "topic": "Balanced discipline",
+    "excerpt_en": "Islam teaches a balance between love and discipline in raising children.",
+    "excerpt_ur": "اسلام بچوں کی تربیت میں محبت اور نظم و ضبط کے درمیان توازن سکھاتا ہے۔",
+    "excerpt_roman": "Islam bachon ki tarbiyat mein mohabbat aur discipline ke darmiyan tawazun sikhata hai.",
+    "parenting_application": "Do not be too strict or too lenient.",
+    "tags": ["balance", "discipline", "islamic_method"]
+  },
+  {
+    "id": "ref-027",
+    "scholar": "Dr. Tariq Ramadan",
+    "book_title": "In the Footsteps of the Prophet",
+    "topic": "Prophetic parenting model",
+    "excerpt_en": "The Prophet's method was dialogue, not dictatorship.",
+    "excerpt_ur": "نبی ﷺ کا طریقہ مکالمہ تھا، آمریت نہیں۔",
+    "excerpt_roman": "Nabi ﷺ ka tareeqa mukalma tha, aamiriyat nahi.",
+    "parenting_application": "Talk to children, don't command blindly.",
+    "tags": ["communication", "prophetic_method", "dialogue"]
+  },
+  {
+    "id": "ref-028",
+    "scholar": "Imam Al-Ghazali",
+    "book_title": "Ayyuha al-Walad",
+    "topic": "Advice to youth",
+    "excerpt_en": "Knowledge without action will burden the child instead of helping.",
+    "excerpt_ur": "عمل کے بغیر علم بچے پر بوجھ بن جاتا ہے۔",
+    "excerpt_roman": "Amal ke baghair ilm bachay par bojh ban jata hai.",
+    "parenting_application": "Teach action with knowledge.",
+    "tags": ["action", "knowledge", "tarbiyah"]
+  },
+  {
+    "id": "ref-029",
+    "scholar": "Imam Ibn Taymiyyah",
+    "book_title": "Majmu’ al-Fatawa",
+    "topic": "Time management",
+    "excerpt_en": "A child wastes time because no one taught him its value.",
+    "excerpt_ur": "بچہ وقت ضائع کرتا ہے کیونکہ کسی نے اسے اس کی قدر نہ سکھائی۔",
+    "excerpt_roman": "Bacha waqt zaya karta hai kyun ke kisi ne use qadr nahi sikhai.",
+    "parenting_application": "Teach discipline & schedule.",
+    "tags": ["time_management", "routine", "discipline"]
+  },
+  {
+    "id": "ref-030",
+    "scholar": "Imam Hasan al-Basri",
+    "book_title": "Adab al-Hasan al-Basri",
+    "topic": "Character",
+    "excerpt_en": "A child's character is their greatest asset.",
+    "excerpt_ur": "بچے کا کردار اس کی سب سے بڑی دولت ہے۔",
+    "excerpt_roman": "Bachay ka kirdar uski sab se bari dolat hai.",
+    "parenting_application": "Focus on character over grades.",
+    "tags": ["character", "akhlaq", "values"]
+  },
+
+  {
+    "id": "ref-031",
+    "scholar": "Ibn Qayyim al-Jawziyya",
+    "book_title": "Madarij as-Salikeen",
+    "topic": "Anger management",
+    "excerpt_en": "Uncontrolled anger in youth leads to lifelong damage.",
+    "excerpt_ur": "قابو سے باہر غصہ زندگی بھر نقصان دیتا ہے۔",
+    "excerpt_roman": "Qabu se bahar gussa zindagi bhar nuqsaan deta hai.",
+    "parenting_application": "Teach calm response.",
+    "tags": ["anger", "control", "emotions"]
+  },
+  {
+    "id": "ref-032",
+    "scholar": "Mufti Menk",
+    "book_title": "Talks on Parenting",
+    "topic": "Understanding children",
+    "excerpt_en": "Children need understanding more than punishment.",
+    "excerpt_ur": "بچوں کو سزا سے زیادہ سمجھ کی ضرورت ہوتی ہے۔",
+    "excerpt_roman": "Bachon ko saza se zyada samajh ki zarurat hoti hai.",
+    "parenting_application": "Listen more to your child.",
+    "tags": ["empathy", "listening", "bond"]
+  },
+
+  {
+    "id": "ref-033",
+    "scholar": "Nouman Ali Khan",
+    "book_title": "Tarbiyah Talks",
+    "topic": "Spiritual upbringing",
+    "excerpt_en": "Children connect to deen through love, not fear.",
+    "excerpt_ur": "بچے دین سے محبت کے ذریعے جڑتے ہیں، خوف سے نہیں۔",
+    "excerpt_roman": "Bachay deen se mohabbat ke zariye jurtay hain, khauf se nahi.",
+    "parenting_application": "Make Islam beautiful in their hearts.",
+    "tags": ["deen", "spiritual_connection", "love"]
+  },
+
+  {
+    "id": "ref-034",
+    "scholar": "Imam Bayhaqi",
+    "book": "Shuab-ul-Iman",
+    "topic": "Teaching Respect",
+    "text_en": "Children learn respect mostly by observing the behavior of adults around them.",
+    "text_ur": "بچے زیادہ تر بڑوں کے رویے کو دیکھ کر احترام سیکھتے ہیں۔",
+    "text_roman": "Bachay aksar baron ka rawaiya dekh kar izzat seekhtay hain.",
+    "tags": ["respect", "role-model", "behavior"]
+  },
+  {
+    "id": "ref-035",
+    "scholar": "Sheikh Abdul Fattah Abu Ghuddah",
+    "book": "Prophetic Parenting",
+    "topic": "Gentleness",
+    "text_en": "The Prophet ﷺ corrected children with a smile, never with anger.",
+    "text_ur": "نبی ﷺ بچوں کی اصلاح مسکراہٹ سے کرتے، غصے سے نہیں۔",
+    "text_roman": "Nabi ﷺ bachon ki islah muskurahat se karte thay, ghussay se nahi.",
+    "tags": ["gentleness", "sunnah", "parenting"]
+  },
+  {
+    "id": "ref-036",
+    "scholar": "Imam Malik",
+    "book": "Al-Muwatta",
+    "topic": "Early Manners",
+    "text_en": "Good manners should be taught before formal knowledge.",
+    "text_ur": "اچھے آداب علم سے پہلے سکھائے جانے چاہئیں۔",
+    "text_roman": "Achay adaab ilm se pehle sikhaye janay chahiye.",
+    "tags": ["akhlaq", "manners", "early_training"]
+  },
+  {
+    "id": "ref-037",
+    "scholar": "Imam Al-Qurtubi",
+    "book": "Al-Jami' li Ahkam al-Quran",
+    "topic": "Family Environment",
+    "text_en": "The environment of a child forms his beliefs and habits.",
+    "text_ur": "بچے کا ماحول اس کے عقائد اور عادات بناتا ہے۔",
+    "text_roman": "Bachay ka mahol uske aqaid aur aadat banata hai.",
+    "tags": ["environment", "beliefs", "habits"]
+  },
+  {
+    "id": "ref-038",
+    "scholar": "Ibn Qayyim",
+    "book": "Tuhfat al-Mawdood",
+    "topic": "Balanced Discipline",
+    "text_en": "Excessive strictness kills love; excessive softness destroys discipline.",
+    "text_ur": "زیادہ سختی محبت کو مار دیتی ہے اور زیادہ نرمی نظم کو ختم کر دیتی ہے۔",
+    "text_roman": "Zyada sakhti mohabbat ko maar deti hai aur zyada narmi discipline khatam kar deti hai.",
+    "tags": ["discipline", "balance", "parenting"]
+  },
+  {
+    "id": "ref-039",
+    "scholar": "Imam Nawawi",
+    "book": "Riyadh-us-Saliheen",
+    "topic": "Compassion",
+    "text_en": "The one who does not show mercy to children is not among us.",
+    "text_ur": "جو بچوں پر رحم نہیں کرتا وہ ہم میں سے نہیں۔",
+    "text_roman": "Jo bachon par rehm nahi karta wo hum mein se nahi.",
+    "tags": ["mercy", "compassion", "hadith"]
+  },
+  {
+    "id": "ref-040",
+    "scholar": "Sheikh Ibn Uthaymeen",
+    "book": "Fatawa Noor alad Darb",
+    "topic": "Screen Time",
+    "text_en": "Anything that harms a child's mind and soul must be controlled by the parent.",
+    "text_ur": "ہر وہ چیز جو بچے کے ذہن یا روح کو نقصان دے اسے والدین کنٹرول کریں۔",
+    "text_roman": "Har wo cheez jo bachay ke zehan ya rooh ko nuksan pohanchaye, use control karna zaroori hai.",
+    "tags": ["screen_control", "technology", "health"]
+  },
+  {
+    "id": "ref-041",
+    "scholar": "Imam Shafi'i",
+    "book": "Al-Umm",
+    "topic": "Intentions in Training",
+    "text_en": "Every form of discipline must have a pure intention to correct, not to hurt.",
+    "text_ur": "ہر تربیت کی نیت اصلاح ہونی چاہیے، تکلیف نہیں۔",
+    "text_roman": "Har tarbiyat ki niyyat islah honi chahiye, takleef nahi.",
+    "tags": ["intention", "discipline", "ethics"]
+  },
+  {
+    "id": "ref-042",
+    "scholar": "Imam Hasan al-Basri",
+    "book": "Akhlaq Collection",
+    "topic": "Truthfulness",
+    "text_en": "Teach the child truth even if it is difficult.",
+    "text_ur": "بچے کو سچ سکھاؤ چاہے وہ مشکل ہی کیوں نہ ہو۔",
+    "text_roman": "Bachay ko sach sikhau chahay mushkil hi kyun na ho.",
+    "tags": ["truth", "honesty", "character"]
+  },
+  {
+    "id": "ref-043",
+    "scholar": "Ibn Taymiyyah",
+    "book": "Majmu al-Fatawa",
+    "topic": "Child Psychology",
+    "text_en": "Children learn faster through love than through fear.",
+    "text_ur": "بچے خوف سے زیادہ محبت کے ذریعے سیکھتے ہیں۔",
+    "text_roman": "Bachay khauf ke bajaye mohabbat ke zariye zyada seekhtay hain.",
+    "tags": ["psychology", "learning", "love"]
+  },
+
+  {
+    "id": "ref-044",
+    "scholar": "Sheikh Salman al-Oadah",
+    "book": "Islamic Family Education",
+    "topic": "Communication",
+    "text_en": "Listening to a child builds trust and self-confidence.",
+    "text_ur": "بچے کی بات سننا اس کا اعتماد بڑھاتا ہے۔",
+    "text_roman": "Bachay ki baat sunna uska itimad barhata hai.",
+    "tags": ["communication", "confidence"]
+  },
+  {
+    "id": "ref-045",
+    "scholar": "Imam Ahmad Ibn Hanbal",
+    "book": "Musnad Ahmad",
+    "topic": "Manners",
+    "text_en": "Teach children to greet others; it increases humility.",
+    "text_ur": "بچوں کو سلام سکھاؤ، یہ عاجزی پیدا کرتا ہے۔",
+    "text_roman": "Bachon ko salam sikhau, yeh aajzi paida karta hai.",
+    "tags": ["akhlaq", "greetings"]
+  },
+  {
+    "id": "ref-046",
+    "scholar": "Muhammad Al-Ghazali",
+    "book": "Islamic Character",
+    "topic": "Anger Control",
+    "text_en": "A child who learns to control anger becomes a strong believer.",
+    "text_ur": "جو بچہ غصہ کنٹرول کرنا سیکھے وہ مضبوط مومن بنتا ہے۔",
+    "text_roman": "Jo bacha ghussa control karna seekhta hai wo mazboot momin banta hai.",
+    "tags": ["anger_control", "self_regulation"]
+  },
+  {
+    "id": "ref-047",
+    "scholar": "Dr. Tariq Ramadan",
+    "book": "Parenting in Islam",
+    "topic": "Modern Challenges",
+    "text_en": "Technology must support learning, not replace family values.",
+    "text_ur": "ٹیکنالوجی تعلیم میں مدد کرے، خاندانی اقدار کو ختم نہ کرے۔",
+    "text_roman": "Technology taleem mein madadgar ho, family values ko khatam na kare.",
+    "tags": ["technology", "modern_parenting"]
+  },
+
+  {
+    "id": "ref-048",
+    "scholar": "Imam Ibn Hazm",
+    "book": "Al-Akhlaq wal Siyar",
+    "topic": "Self Control",
+    "text_en": "The best discipline starts with self-discipline of the parent.",
+    "text_ur": "بہترین تربیت والدین کی اپنی تربیت سے شروع ہوتی ہے۔",
+    "text_roman": "Behtareen tarbiyat walidain ki apni tarbiyat se shuru hoti hai.",
+    "tags": ["self_control", "role_model"]
+  },
+
+  {
+    "id": "ref-049",
+    "scholar": "Sheikh Nouman Ali Khan",
+    "book": "Family Tafsir Talks",
+    "topic": "Positive Language",
+    "text_en": "Words shape a child's future more than punishment.",
+    "text_ur": "الفاظ سزا سے زیادہ بچے کا مستقبل بناتے ہیں۔",
+    "text_roman": "Alfaaz saza se zyada bachay ka mustaqbil banate hain.",
+    "tags": ["language", "positive_parenting"]
+  },
+
+  {
+    "id": "ref-050",
+    "scholar": "Imam Al-Awzaai",
+    "book": "Ethics of the Righteous",
+    "topic": "Patience",
+    "text_en": "Patience with children is a form of worship.",
+    "text_ur": "بچوں کے ساتھ صبر عبادت کی ایک قسم ہے۔",
+    "text_roman": "Bachon ke sath sabr ibadat ki aik qism hai.",
+    "tags": ["patience", "parenting"]
+  },
+
+  {
+    "id": "ref-051",
+    "scholar": "Sheikh Abdallah Nasih Ulwan",
+    "book": "Child Education in Islam",
+    "topic": "Moral Development",
+    "text_en": "Character is built through repetition and example.",
+    "text_ur": "کردار تکرار اور مثال سے بنتا ہے۔",
+    "text_roman": "Kirdaar takraar aur misaal se banta hai.",
+    "tags": ["character_building", "moral"]
+  },
+
+  {
+    "id": "ref-052",
+    "scholar": "Ibn Abbas",
+    "book": "Wisdom Narrations",
+    "topic": "Teaching through Stories",
+    "text_en": "Stories are the best doors to a child’s heart.",
+    "text_ur": "کہانیاں بچے کے دل کا بہترین دروازہ ہیں۔",
+    "text_roman": "Kahaniyan bachay ke dil ka behtareen darwaza hoti hain.",
+    "tags": ["storytelling", "learning"]
+  },
+
+  {
+    "id": "ref-053",
+    "scholar": "Imam Suyuti",
+    "book": "Al-Durr al-Manthur",
+    "topic": "Love & Duas",
+    "text_en": "Dua for children is the strongest form of protection.",
+    "text_ur": "بچوں کے لیے دعا سب سے مضبوط حفاظت ہے۔",
+    "text_roman": "Bachon ke liye dua sab se mazboot hifazat hai.",
+    "tags": ["dua", "spiritual_protection"]
+  }
+
+]
+
