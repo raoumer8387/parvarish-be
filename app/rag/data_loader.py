@@ -35,6 +35,7 @@ class DataLoader:
         self.base_dir = base
         self.hadith_file = self.base_dir / "hadith_quranic.json"
         self.stories_file = self.base_dir / "prophet_stories.json"
+        self.scholars_file = self.base_dir / "islamic_refrences.json"
 
     def load(self) -> List[Document]:
         docs: List[Document] = []
@@ -48,6 +49,11 @@ class DataLoader:
             with self.stories_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._normalize_prophet_stories(data))
+        # islamic_scholars (NEW)
+        if self.scholars_file.exists():
+            with self.scholars_file.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            docs.extend(self._load_islamic_scholars(data))
         return docs
 
     def _normalize_hadith_quranic(self, data: Dict[str, Any]) -> List[Document]:
@@ -106,6 +112,7 @@ class DataLoader:
                         return _json.dumps(val, ensure_ascii=False)
                     return val
                 metadata = {
+                    "source_type": "quran_hadith",  # Add this field for retriever
                     "category": fix_meta(cat_name),
                     "type": fix_meta(entry.get("type")),
                     "tags": fix_meta(entry.get("tags")),
@@ -145,9 +152,66 @@ class DataLoader:
                 parts.append("Key Points: " + "; ".join(key_points))
             full_text = "\n".join(parts)
             metadata = {
+                "source_type": "prophet_story",  # Add this field for retriever
                 "source": fix_meta(story.get("source")),
                 "tags": fix_meta(story.get("tags")),
                 "category": "Prophet Stories",
             }
             docs.append(Document(id=f"story:{sid}", text=full_text, metadata=metadata))
+        return docs
+
+    def _load_islamic_scholars(self, data: Any) -> List[Document]:
+        """Load Islamic scholarly references on Tarbiyah and Parenting.
+        
+        Combines English + Urdu + Roman Urdu texts for multilingual support.
+        Each reference becomes a Document with rich metadata for citations.
+        """
+        docs: List[Document] = []
+        if not isinstance(data, list):
+            return docs
+        
+        import json as _json
+        def fix_meta(val):
+            if val is None:
+                return ""
+            if isinstance(val, list):
+                return ", ".join(str(v) for v in val)
+            if isinstance(val, dict):
+                return _json.dumps(val, ensure_ascii=False)
+            return val
+        
+        for ref in data:
+            ref_id = ref.get("id") or f"scholar-{len(docs)+1}"
+            
+            # Combine multilingual texts into one field for embeddings
+            parts: List[str] = []
+            
+            text_en = ref.get("text_en", "")
+            text_ur = ref.get("text_ur", "")
+            text_roman = ref.get("text_roman", "")
+            
+            if text_en:
+                parts.append(f"EN: {text_en}")
+            if text_ur:
+                parts.append(f"UR: {text_ur}")
+            if text_roman:
+                parts.append(f"RM: {text_roman}")
+            
+            # Combine all text
+            combined_text = "\n".join(parts)
+            
+            # Build metadata with all relevant fields
+            metadata = {
+                "source_type": "islamic_scholar",
+                "book_title": fix_meta(ref.get("book_title")),
+                "author": fix_meta(ref.get("author")),
+                "topic": fix_meta(ref.get("topic")),
+                "tags": fix_meta(ref.get("tags")),
+                "age_range": fix_meta(ref.get("age_range")),
+                "language_support": "en, ur, rm",
+                "category": "Islamic Scholar Reference"
+            }
+            
+            docs.append(Document(id=f"scholar:{ref_id}", text=combined_text, metadata=metadata))
+        
         return docs
