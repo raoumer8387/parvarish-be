@@ -187,7 +187,12 @@ def get_checkin_status(
         
         if last_response and last_response.timestamp:
             last_ts = last_response.timestamp
-            hours_since = (now - last_ts).total_seconds() / 3600
+            # Handle timezone-aware datetime by removing timezone info for comparison
+            if last_ts.tzinfo is not None:
+                last_ts_naive = last_ts.replace(tzinfo=None)
+            else:
+                last_ts_naive = last_ts
+            hours_since = (now - last_ts_naive).total_seconds() / 3600
             needs_checkin = hours_since >= 24
         else:
             last_ts = None

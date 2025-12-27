@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Dict, Any
+import logging
 
 import os
 
@@ -13,6 +14,7 @@ from chromadb.utils import embedding_functions
 
 from .data_loader import Document
 
+logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL_NAME = "all-MiniLM-L6-v2"
 DEFAULT_DB_DIR = Path(os.getenv("PARVARISH_CHROMA_DIR", Path.home() / ".parvarish_chroma"))
@@ -32,11 +34,36 @@ class Embedder:
     def __init__(self, config: VectorStoreConfig | None = None) -> None:
         self.config = config or VectorStoreConfig()
         self.config.persist_directory.mkdir(parents=True, exist_ok=True)
-        self.model = SentenceTransformer(self.config.model_name)
+        
+        # Initialize model with device handling for PyTorch compatibility
+        try:
+            import torch
+            # Force CPU device to avoid meta tensor issues
+            device = 'cpu'
+            self.model = SentenceTransformer(self.config.model_name, device=device)
+            logger.info(f"Loaded SentenceTransformer model: {self.config.model_name} on {device}")
+        except Exception as e:
+            logger.warning(f"Error loading SentenceTransformer with device: {e}, trying default initialization")
+            try:
+                self.model = SentenceTransformer(self.config.model_name)
+            except Exception as e2:
+                logger.error(f"Failed to load SentenceTransformer: {e2}")
+                raise RuntimeError(f"Could not initialize embeddings model: {e2}")
+        
         self.client = chromadb.PersistentClient(path=str(self.config.persist_directory))
-        self.embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name=self.config.model_name
-        )
+        
+        # Use ChromaDB's embedding function with device specification
+        try:
+            self.embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
+                model_name=self.config.model_name,
+                device='cpu'  # Force CPU to avoid GPU tensor issues
+            )
+        except TypeError:
+            # Fallback if device parameter not supported in older versions
+            self.embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
+                model_name=self.config.model_name
+            )
+        
         # attempt to get or create collection
         self.collection = self.client.get_or_create_collection(
             name=self.config.collection_name,

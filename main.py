@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 import os
 
-from app.routes import auth_router, chatbot_router, games_router
+from app.routes import auth_router, chatbot_router, games_router, lacking_router
 from app.routes.google_auth import router as google_auth_router
 from app.routes.settings import router as settings_router
 from app.routes.parent_routes import router as parent_router
@@ -52,6 +52,7 @@ app.include_router(tasks_router, prefix="/api/v1")  # Task generation from chatb
 app.include_router(child_progress_router, prefix="/api/v1")  # Child progress dashboard
 app.include_router(chatbot_router, prefix="/api/v1")  # Chatbot with child awareness
 app.include_router(games_router, prefix="/api/v1")  # Games submission & analysis
+app.include_router(lacking_router, prefix="/api/v1")  # Lacking analysis & task generation
 
 # Serve static frontend files (must be last to not override API routes)
 try:

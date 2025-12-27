@@ -249,11 +249,37 @@ def list_child_tasks(
     limit: int = 50,
 ):
     """List tasks for a child, optionally filtered by status, ordered by newest."""
-    q = db.query(ChildTask).filter(ChildTask.child_id == child_id).order_by(ChildTask.created_at.desc())
-    if status in {"pending", "completed"}:
+    from app.db.models.child import Child
+    
+    q = db.query(ChildTask, Child.name).join(
+        Child, ChildTask.child_id == Child.id
+    ).filter(ChildTask.child_id == child_id).order_by(ChildTask.created_at.desc())
+    
+    if status in {"pending", "completed", "incomplete"}:
         q = q.filter(ChildTask.status == status)
-    tasks = q.limit(limit).all()
-    return tasks
+    
+    results = q.limit(limit).all()
+    
+    # Convert to dict with child_name
+    tasks_with_names = []
+    for task, child_name in results:
+        task_dict = {
+            "id": task.id,
+            "child_id": task.child_id,
+            "child_name": child_name,
+            "title": task.title,
+            "description": task.description,
+            "category": task.category,
+            "xp_reward": task.xp_reward,
+            "difficulty": task.difficulty,
+            "status": task.status,
+            "source": task.source,
+            "meta": task.meta,
+            "created_at": task.created_at
+        }
+        tasks_with_names.append(task_dict)
+    
+    return tasks_with_names
 
 
 def mark_task_completed(db: Session, task_id: int) -> ChildTask | None:
@@ -267,6 +293,34 @@ def mark_task_completed(db: Session, task_id: int) -> ChildTask | None:
     meta = task.meta or {}
     meta["completed_at"] = now_iso
     task.meta = meta
+    db.add(task)
+    db.commit()
+    db.refresh(task)
+    return task
+
+
+def update_task_status(db: Session, task_id: int, new_status: str) -> ChildTask | None:
+    """Update task status. Returns the updated task or None if not found."""
+    task = db.query(ChildTask).filter(ChildTask.id == task_id).first()
+    if not task:
+        return None
+    
+    old_status = task.status
+    task.status = new_status
+    now_iso = datetime.utcnow().isoformat()
+    meta = task.meta or {}
+    
+    # Track status changes
+    if new_status == "completed":
+        meta["completed_at"] = now_iso
+    elif new_status == "incomplete" and "completed_at" in meta:
+        # Remove completion timestamp if marking as incomplete
+        del meta["completed_at"]
+    
+    meta["last_status_change"] = now_iso
+    meta["previous_status"] = old_status
+    task.meta = meta
+    
     db.add(task)
     db.commit()
     db.refresh(task)
