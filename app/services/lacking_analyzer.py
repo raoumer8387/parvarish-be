@@ -40,9 +40,9 @@ MIN_GAMES_FOR_ANALYSIS = {
 
 # Score adjustments based on task completion
 TASK_COMPLETION_BONUS = {
-    "completed": 5,      # +5 points per completed task
-    "incomplete": -2,    # -2 points per incomplete task
-    "max_adjustment": 20  # Maximum total adjustment
+    "completed": 10,      # +10 points per completed task (increased from 5)
+    "incomplete": -3,     # -3 points per incomplete task (increased penalty)
+    "max_adjustment": 40  # Maximum total adjustment (increased from 20)
 }
 
 
@@ -77,12 +77,21 @@ def get_task_completion_adjustment(db: Session, child_id: int, lacking_area: str
     completed_count = 0
     incomplete_count = 0
     
+    logger.info(f"Checking task adjustments for child {child_id}, area {lacking_area}")
+    logger.info(f"Found {len(tasks)} tasks with source=lacking_analysis in last {days} days")
+    
     for task in tasks:
+        task_lacking_area = task.meta.get("lacking_area") if task.meta else None
+        logger.info(f"  Task {task.id}: status={task.status}, lacking_area={task_lacking_area}")
+        
         if task.meta and task.meta.get("lacking_area") == lacking_area:
+            logger.info(f"    ✓ Matches area {lacking_area}")
             if task.status == "completed":
                 completed_count += 1
             elif task.status == "incomplete":
                 incomplete_count += 1
+        else:
+            logger.info(f"    ✗ Doesn't match area {lacking_area}")
     
     # Calculate adjustment
     adjustment = (
@@ -337,6 +346,8 @@ def get_child_lacking_analysis(
         .all()
     )
     
+    logger.info(f"Lacking analysis for child {child_id}: Found {len(results)} game results in last {days} days")
+    
     # Group results by game type
     game_groups = {
         "memory": [],
@@ -347,8 +358,12 @@ def get_child_lacking_analysis(
     
     for result in results:
         game_type = result.game_type
+        logger.info(f"Game result {result.id}: type={game_type}, raw_result={result.raw_result}")
         if game_type in game_groups:
             game_groups[game_type].append(result)
+    
+    logger.info(f"Game groups: memory={len(game_groups['memory'])}, mood={len(game_groups['mood'])}, "
+                f"scenario={len(game_groups['scenario'])}, islamic_quiz={len(game_groups['islamic_quiz'])}")
     
     # Analyze each area
     presence_analysis = analyze_presence_of_mind(game_groups["memory"])
@@ -433,6 +448,54 @@ def get_child_lacking_analysis(
     # Sort by priority and score
     lacking_areas.sort(key=lambda x: (0 if x["priority"] == "high" else 1, x["score"]))
     
+    # Create all_areas array to show ALL scores, not just lacking ones
+    all_areas = []
+    
+    # Add all areas with their scores
+    if presence_analysis["score"] is not None:
+        all_areas.append({
+            "area": "presence_of_mind",
+            "label": "Presence of Mind",
+            "score": presence_analysis["score"],
+            "status": presence_analysis["status"],
+            "game_type": "memory",
+            "task_adjustment": presence_analysis.get("task_adjustment", 0),
+            "is_lacking": presence_analysis["status"] == "lacking"
+        })
+    
+    if mood_analysis["score"] is not None:
+        all_areas.append({
+            "area": "mood_identification",
+            "label": "Mood Identification",
+            "score": mood_analysis["score"],
+            "status": mood_analysis["status"],
+            "game_type": "mood",
+            "task_adjustment": mood_analysis.get("task_adjustment", 0),
+            "is_lacking": mood_analysis["status"] == "lacking"
+        })
+    
+    if learning_analysis["score"] is not None:
+        all_areas.append({
+            "area": "learning_capability",
+            "label": "Learning Capability",
+            "score": learning_analysis["score"],
+            "status": learning_analysis["status"],
+            "game_type": "islamic_quiz",
+            "task_adjustment": learning_analysis.get("task_adjustment", 0),
+            "is_lacking": learning_analysis["status"] == "lacking"
+        })
+    
+    if behavior_analysis["score"] is not None:
+        all_areas.append({
+            "area": "behavior_identification",
+            "label": "Behavior Identification",
+            "score": behavior_analysis["score"],
+            "status": behavior_analysis["status"],
+            "game_type": "scenario",
+            "task_adjustment": behavior_analysis.get("task_adjustment", 0),
+            "is_lacking": behavior_analysis["status"] == "lacking"
+        })
+    
     return {
         "child_id": child_id,
         "child_name": child.name,
@@ -440,6 +503,7 @@ def get_child_lacking_analysis(
         "total_games_played": len(results),
         "games_by_type": {k: len(v) for k, v in game_groups.items()},
         "lacking_areas": lacking_areas,
+        "all_areas": all_areas,  # NEW: All areas with scores
         "detailed_analysis": {
             "presence_of_mind": presence_analysis,
             "mood_identification": mood_analysis,

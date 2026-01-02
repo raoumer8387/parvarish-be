@@ -99,6 +99,21 @@ See **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** for:
 | POST | `/chat` | Parent JWT | Islamic parenting advice (RAG + child context) with **multilingual responses** (EN/UR/RM) and **scholar citations** |
 | GET | `/chat/history` | Parent JWT | Returns JSON array of past messages; filter by `child_id` query param for specific child or omit for general advice |
 
+#### Activity History (`/activity-history`)
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| GET | `/{child_id}` | Parent/Child JWT | Get comprehensive 30-day activity history (games, tasks, behaviors, chats) |
+| GET | `/{child_id}/summary` | Parent/Child JWT | Get aggregated statistics only (lighter endpoint) |
+
+**Features:**
+- **30-day activity tracking** (configurable 1-90 days)
+- **All activities included**: games played, tasks completed, behavior responses, chat messages
+- **Timeline view**: Combined chronological view of all activities
+- **Statistics dashboard**: Games by type, task completion rates, XP earned, most active day
+- **Dual access**: Parents can monitor children, children can view their own progress
+
+See **[ACTIVITY_HISTORY_API.md](./ACTIVITY_HISTORY_API.md)** for detailed documentation and examples.
+
 **NEW: Enhanced RAG System**
 - Responses now include references from:
   - Quran & Hadith (existing)
@@ -306,6 +321,13 @@ APP_ENV=development
   - Multilingual support (English + Urdu + Roman Urdu)
   - Enhanced citation system with book/author attribution
 
+### Latest Features ✨
+- **Activity History API** (Jan 2026)
+  - 30-day activity tracking for children
+  - Comprehensive view of games, tasks, behaviors, and chats
+  - Timeline view and statistics dashboard
+  - Accessible by both parents and children
+
 ### In Progress 🚧
 - Role-based access control on chatbot endpoint
 - Dashboard endpoints (parent view children stats)
@@ -313,7 +335,7 @@ APP_ENV=development
 
 ### Planned 📋
 - Email notifications for parents
-- Behavior tracking analytics
+- Advanced behavior analytics and insights
 - Game recommendation engine
 - Enhanced multilingual UI support
 

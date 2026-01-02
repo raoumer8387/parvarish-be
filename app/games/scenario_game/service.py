@@ -47,8 +47,24 @@ def save_scenario_result(
     scenario_id: int,
     selected_option: str,
 ) -> ChildGameResult:
-    raw = {"scenario_id": scenario_id, "selected_option": selected_option}
     analysis = analyze_scenario(db, scenario_id, selected_option)
+    
+    # Calculate if answer is correct (average of moral, social, emotional > 70 = good choice)
+    avg_score = (
+        analysis.get("moral", 0) +
+        analysis.get("social", 0) +
+        analysis.get("emotional", 0)
+    ) / 3
+    is_correct = avg_score >= 70
+    
+    raw = {
+        "scenario_id": scenario_id,
+        "selected_option": selected_option,
+        "is_correct": is_correct,
+        "score": avg_score,
+        "choice_quality": avg_score
+    }
+    
     result = ChildGameResult(
         child_id=child_id,
         game_type="scenario",

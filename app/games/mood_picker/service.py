@@ -29,8 +29,19 @@ def save_mood_result(
     scenario_id: int,
     selected_mood: str,
 ) -> ChildGameResult:
-    raw = {"scenario_id": scenario_id, "selected_mood": selected_mood}
     analysis = analyze_mood(db, scenario_id, selected_mood)
+    
+    # Calculate if answer is correct (emotional_control + empathy > 70 = good choice)
+    avg_score = (analysis.get("emotional_control", 0) + analysis.get("empathy", 0)) / 2
+    is_correct = avg_score >= 70
+    
+    raw = {
+        "scenario_id": scenario_id,
+        "selected_mood": selected_mood,
+        "is_correct": is_correct,
+        "score": avg_score
+    }
+    
     result = ChildGameResult(
         child_id=child_id,
         game_type="mood",
