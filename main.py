@@ -9,13 +9,14 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 import os
 
-from app.routes import auth_router, chatbot_router, games_router
+from app.routes import auth_router, chatbot_router, games_router, lacking_router
 from app.routes.google_auth import router as google_auth_router
 from app.routes.settings import router as settings_router
 from app.routes.parent_routes import router as parent_router
 from app.routes.behavior_routes import router as behavior_router
 from app.routes.tasks import router as tasks_router
 from app.routes.child_progress import router as child_progress_router
+from app.routes.activity_history import router as activity_history_router
 from app.core.config import settings
 
 app = FastAPI(title="Parvarish AI", version="0.1.0")
@@ -50,8 +51,10 @@ app.include_router(parent_router, prefix="/api/v1")  # Parent-specific aliases
 app.include_router(behavior_router, prefix="/api/v1")  # Child behavior tracking
 app.include_router(tasks_router, prefix="/api/v1")  # Task generation from chatbot & behavior
 app.include_router(child_progress_router, prefix="/api/v1")  # Child progress dashboard
+app.include_router(activity_history_router, prefix="/api/v1")  # Child activity history (30-day tracking)
 app.include_router(chatbot_router, prefix="/api/v1")  # Chatbot with child awareness
 app.include_router(games_router, prefix="/api/v1")  # Games submission & analysis
+app.include_router(lacking_router, prefix="/api/v1")  # Lacking analysis & task generation
 
 # Serve static frontend files (must be last to not override API routes)
 try:

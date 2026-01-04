@@ -5,8 +5,13 @@ from typing import List, Optional, Literal, Dict, Any
 from datetime import datetime
 
 
-AllowedTaskStatus = Literal["pending", "completed"]
-AllowedTaskSource = Literal["chatbot", "daily_question"]
+AllowedTaskStatus = Literal["pending", "completed", "incomplete"]
+AllowedTaskSource = Literal["chatbot", "daily_question", "lacking_analysis"]
+
+
+class UpdateTaskStatusRequest(BaseModel):
+    """Request to update task status."""
+    status: AllowedTaskStatus = Field(..., description="New status for the task")
 
 
 class TaskFromChatRequest(BaseModel):
@@ -27,6 +32,7 @@ class ChildTaskOut(BaseModel):
     """Outgoing schema representing a created child task."""
     id: int
     child_id: int
+    child_name: Optional[str] = None
     title: str
     description: str
     category: str
@@ -52,7 +58,8 @@ class TasksFromChatResponse(BaseModel):
 
 class ChildTaskListResponse(BaseModel):
     """List tasks for a child (for dashboard)."""
-    child_id: int
+    child_id: Optional[int] = None
+    child_name: Optional[str] = None
     total: int
     tasks: List[ChildTaskOut]
 
