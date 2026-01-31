@@ -159,9 +159,6 @@ parvarish-be/
 │   │   ├── security.py          # JWT & password hashing
 │   │   ├── config.py            # Environment settings
 │   │   └── logging.py           # Logging configuration
-│   ├── nlp/
-│   │   ├── intent_detection.py  # Intent classification
-│   │   └── reference_fetcher.py # Quranic/Hadith retrieval
 │   └── rag/
 │       ├── data_loader.py       # Load JSON datasets
 │       ├── embedder.py          # Sentence transformers
