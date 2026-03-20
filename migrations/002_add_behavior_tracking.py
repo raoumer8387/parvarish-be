@@ -1,5 +1,9 @@
 """Migration: Add behavior tracking tables."""
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from sqlalchemy import inspect, text
 from app.db.session import engine
 from app.db.base import Base

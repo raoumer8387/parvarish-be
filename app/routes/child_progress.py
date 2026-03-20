@@ -189,21 +189,31 @@ def get_child_progress_dashboard(
     for game_type in game_performance:
         for category in game_performance[game_type]["avg_scores"]:
             scores = game_performance[game_type]["avg_scores"][category]
-            game_performance[game_type]["avg_scores"][category] = round(sum(scores) / len(scores), 1)
+            if len(scores) > 0:
+                game_performance[game_type]["avg_scores"][category] = round(sum(scores) / len(scores), 1)
         
         # Simple trend calculation (comparing first half vs second half of recent scores)
         recent = game_performance[game_type]["recent_scores"]
         if len(recent) >= 4:
             mid = len(recent) // 2
-            first_half_avg = sum(s["total_score"] for s in recent[:mid]) / mid
-            second_half_avg = sum(s["total_score"] for s in recent[mid:]) / (len(recent) - mid)
+            first_half_sum = sum(s["total_score"] for s in recent[:mid])
+            second_half_sum = sum(s["total_score"] for s in recent[mid:])
             
-            if second_half_avg > first_half_avg * 1.1:
-                game_performance[game_type]["improvement_trend"] = "improving"
-            elif second_half_avg < first_half_avg * 0.9:
-                game_performance[game_type]["improvement_trend"] = "declining"
+            # Avoid division by zero
+            if mid > 0 and (len(recent) - mid) > 0:
+                first_half_avg = first_half_sum / mid
+                second_half_avg = second_half_sum / (len(recent) - mid)
+                
+                if second_half_avg > first_half_avg * 1.1:
+                    game_performance[game_type]["improvement_trend"] = "improving"
+                elif second_half_avg < first_half_avg * 0.9:
+                    game_performance[game_type]["improvement_trend"] = "declining"
+                else:
+                    game_performance[game_type]["improvement_trend"] = "stable"
             else:
                 game_performance[game_type]["improvement_trend"] = "stable"
+        else:
+            game_performance[game_type]["improvement_trend"] = "stable"
     
     # Overall category strengths and weaknesses
     category_averages = {}

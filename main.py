@@ -21,19 +21,22 @@ from app.core.config import settings
 
 app = FastAPI(title="Parvarish AI", version="0.1.0")
 
-# Add session middleware (required for OAuth)
-app.add_middleware(
-    SessionMiddleware,
-    secret_key=settings.SECRET_KEY or "your-secret-key-for-sessions"
-)
-
-# Configure CORS to allow frontend to communicate with backend
+# Configure CORS FIRST (before session middleware) to allow frontend to communicate with backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with your frontend domain
+    allow_origins=["http://localhost:3000", "http://localhost:8000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+# Add session middleware (required for OAuth) - must be after CORS
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=settings.SECRET_KEY or "your-secret-key-for-sessions",
+    same_site="lax",
+    https_only=False,
+    max_age=86400,
 )
 
 

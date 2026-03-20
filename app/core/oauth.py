@@ -13,5 +13,8 @@ oauth.register(
     client_kwargs={
         'scope': 'openid email profile',
         'prompt': 'select_account',
+    },
+    authorize_params={
+        'access_type': 'offline',
     }
 )

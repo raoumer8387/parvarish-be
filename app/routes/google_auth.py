@@ -32,13 +32,9 @@ async def google_login(request: Request):
     Returns:
         Redirect response to Google OAuth page
     """
-    # Prefer dynamic redirect URI based on current host (works with ngrok)
-    # Falls back to settings.GOOGLE_REDIRECT_URI if url_for fails
-    try:
-        redirect_uri = str(request.url_for("google_callback"))
-    except Exception:
-        redirect_uri = settings.GOOGLE_REDIRECT_URI
-
+    # Always use the configured redirect URI for consistency
+    redirect_uri = settings.GOOGLE_REDIRECT_URI
+    
     logger.info(
         f"Initiating Google OAuth login (PARENT) with redirect_uri: {redirect_uri}"
     )
