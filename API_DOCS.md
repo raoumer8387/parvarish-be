@@ -122,6 +122,11 @@ Multilingual chatbot with child-aware responses and Islamic guidance.
 
 Supports English, Urdu, and Roman Urdu with automatic language detection.
 
+#### Voice Chat Endpoint
+**POST** `/chatbot/chat/voice`
+
+Send `multipart/form-data` with an `audio` file and optional `child_id` to let the chatbot answer spoken questions. The response includes the generated reply and the recognized transcription.
+
 #### Chat History
 **GET** `/chatbot/history/{child_id}`
 

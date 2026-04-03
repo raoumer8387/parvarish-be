@@ -97,6 +97,7 @@ See **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** for:
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
 | POST | `/chat` | Parent JWT | Islamic parenting advice (RAG + child context) with **multilingual responses** (EN/UR/RM) and **scholar citations** |
+| POST | `/chat/voice` | Parent JWT | Upload an audio question (`multipart/form-data`), transcribe it with **Whisper**, and return the same multilingual chatbot response plus the recognized transcript |
 | GET | `/chat/history` | Parent JWT | Returns JSON array of past messages; filter by `child_id` query param for specific child or omit for general advice |
 
 #### Activity History (`/activity-history`)

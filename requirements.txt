@@ -7,6 +7,7 @@ requests
 sentence-transformers
 chromadb
 openai
+google-genai
 passlib[bcrypt]
 python-jose[cryptography]
 google-auth
@@ -17,3 +18,5 @@ httpx
 itsdangerous
 alembic
 email-validator
+openai-whisper
+python-multipart

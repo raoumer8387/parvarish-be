@@ -1,18 +1,21 @@
-﻿"""Chatbot routes for Parvarish AI.
+"""Chatbot routes for Parvarish AI.
 
 Expose endpoints for sending user messages and retrieving bot responses using RAG.
 """
 
+import base64
+import os
+
 from fastapi import APIRouter, HTTPException, Depends, File, Form, UploadFile
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, Field
+from typing import List, Literal, Optional, Tuple
 from sqlalchemy.orm import Session
 from pathlib import Path
 
 from app.rag.data_loader import DataLoader
 from app.rag.embedder import Embedder, VectorStoreConfig
 from app.rag.retriever import Retriever
-from app.services.llm_client import generate_response
+from app.services.llm_client import generate_response, get_attachment_model
 from app.db.crud.message import create_message, list_messages_for_user
 from app.schemas.chat import ChatHistoryResponse, ChatMessage
 from app.db.session import get_db
@@ -49,6 +52,23 @@ SUPPORTED_AUDIO_EXTENSIONS = {
     ".oga",
 }
 
+# Chat attachments (images + PDF) for OpenRouter multimodal
+MAX_ATTACHMENT_BYTES = 15 * 1024 * 1024  # 15 MB per file
+MAX_CHAT_ATTACHMENTS = 5
+SUPPORTED_IMAGE_TYPES = {
+    "image/png",
+    "image/jpeg",
+    "image/jpg",
+    "image/webp",
+    "image/gif",
+}
+SUPPORTED_IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
+PDF_MIME_TYPES = {"application/pdf"}
+PDF_EXT = {".pdf"}
+_DEFAULT_ATTACHMENT_PROMPT = (
+    "Please review the attached file(s) and provide Islamic parenting guidance where relevant."
+)
+
 def get_retriever() -> Retriever:
     """Get or initialize the RAG retriever."""
     global _retriever
@@ -82,6 +102,12 @@ class ChatResponse(BaseModel):
 class VoiceChatResponse(ChatResponse):
     transcription: str
     filename: Optional[str] = None
+
+
+class ChatWithAttachmentsResponse(ChatResponse):
+    """Same as ChatResponse plus filenames of processed attachments."""
+
+    attachment_names: List[str] = Field(default_factory=list)
 
 
 SYSTEM_PROMPT = (
@@ -204,6 +230,137 @@ def _generate_chat_response(
     return ChatResponse(response=answer, user_id=user_id)
 
 
+def _normalize_user_message_for_attachments(message: Optional[str]) -> str:
+    text = (message or "").strip()
+    return text if text else _DEFAULT_ATTACHMENT_PROMPT
+
+
+def _mime_from_image_upload(filename: str, content_type: Optional[str]) -> str:
+    normalized = (content_type or "").split(";", 1)[0].strip().lower()
+    if normalized in SUPPORTED_IMAGE_TYPES:
+        if normalized == "image/jpg":
+            return "image/jpeg"
+        return normalized
+    ext = Path(filename or "").suffix.lower()
+    if ext == ".jpg":
+        return "image/jpeg"
+    if ext == ".png":
+        return "image/png"
+    if ext == ".webp":
+        return "image/webp"
+    if ext == ".gif":
+        return "image/gif"
+    return "image/jpeg"
+
+
+def _classify_chat_attachment(filename: str, content_type: Optional[str]) -> Optional[Literal["image", "pdf"]]:
+    ext = Path(filename or "").suffix.lower()
+    normalized = (content_type or "").split(";", 1)[0].strip().lower()
+    if normalized in PDF_MIME_TYPES or ext in PDF_EXT:
+        return "pdf"
+    if normalized in SUPPORTED_IMAGE_TYPES or (
+        normalized == "application/octet-stream" and ext in SUPPORTED_IMAGE_EXT
+    ):
+        return "image"
+    if ext in SUPPORTED_IMAGE_EXT:
+        return "image"
+    if ext in PDF_EXT:
+        return "pdf"
+    return None
+
+
+def _validate_chat_attachment_file(
+    upload: UploadFile,
+    raw: bytes,
+    *,
+    index: int,
+) -> Tuple[Literal["image", "pdf"], str, bytes, Optional[str]]:
+    if not raw:
+        raise HTTPException(status_code=400, detail=f"Attachment {index + 1} is empty")
+    if len(raw) > MAX_ATTACHMENT_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Attachment {index + 1} exceeds maximum size of {MAX_ATTACHMENT_BYTES // (1024 * 1024)} MB",
+        )
+    name = upload.filename or f"file_{index + 1}"
+    kind = _classify_chat_attachment(name, upload.content_type)
+    if not kind:
+        raise HTTPException(
+            status_code=415,
+            detail=f"Unsupported attachment type for '{name}'. Use PNG, JPEG, WebP, GIF, or PDF.",
+        )
+    return kind, name, raw, upload.content_type
+
+
+def _build_multimodal_user_content(
+    full_prompt: str,
+    parts: List[Tuple[Literal["image", "pdf"], str, bytes, Optional[str]]],
+) -> list:
+    """OpenRouter multimodal user message: text first, then images, then PDFs."""
+    content: list = [{"type": "text", "text": full_prompt}]
+    image_parts: list = []
+    pdf_parts: list = []
+    for kind, filename, raw, declared_type in parts:
+        if kind == "image":
+            mime = _mime_from_image_upload(filename, declared_type)
+            b64 = base64.b64encode(raw).decode("ascii")
+            data_url = f"data:{mime};base64,{b64}"
+            image_parts.append({"type": "image_url", "image_url": {"url": data_url}})
+        else:
+            b64 = base64.b64encode(raw).decode("ascii")
+            data_url = f"data:application/pdf;base64,{b64}"
+            safe_name = filename if filename.lower().endswith(".pdf") else f"{filename}.pdf"
+            pdf_parts.append(
+                {
+                    "type": "file",
+                    "file": {"filename": safe_name, "file_data": data_url},
+                }
+            )
+    content.extend(image_parts)
+    content.extend(pdf_parts)
+    return content
+
+
+def _generate_chat_response_with_attachments(
+    *,
+    message: Optional[str],
+    parsed_files: List[Tuple[Literal["image", "pdf"], str, bytes, Optional[str]]],
+    user_id: str,
+    child_id: Optional[int],
+    db: Session,
+    current_user: User,
+) -> ChatWithAttachmentsResponse:
+    user_text = _normalize_user_message_for_attachments(message)
+    child_context = _get_child_context(db, current_user, child_id)
+    full_prompt = _build_prompt(user_text, child_context, child_id, db)
+    user_message = {"role": "user", "content": _build_multimodal_user_content(full_prompt, parsed_files)}
+
+    has_pdf = any(k == "pdf" for k, _, _, _ in parsed_files)
+    plugins = None
+    if has_pdf:
+        engine = os.getenv("OPENROUTER_PDF_ENGINE", "cloudflare-ai")
+        plugins = [{"id": "file-parser", "pdf": {"engine": engine}}]
+
+    answer = generate_response(
+        [user_message],
+        plugins=plugins,
+        model=get_attachment_model(),
+    )
+
+    names = [name for _, name, _, _ in parsed_files]
+    persist_user = user_text
+    if names:
+        persist_user = f"{user_text}\n[Attachments: {', '.join(names)}]"
+
+    try:
+        create_message(db, user_id=current_user.id, role="user", content=persist_user, child_id=child_id)
+        create_message(db, user_id=current_user.id, role="assistant", content=answer, child_id=child_id)
+    except Exception as db_err:
+        print(f"WARNING: Failed to persist chat messages: {db_err}")
+
+    return ChatWithAttachmentsResponse(response=answer, user_id=user_id, attachment_names=names)
+
+
 def _validate_audio_upload(audio: UploadFile, audio_bytes: bytes) -> None:
     """Validate uploaded audio file metadata and size."""
     if not audio.filename:
@@ -257,6 +414,48 @@ async def chat(
         error_details = traceback.format_exc()
         print(f"ERROR in chat endpoint: {error_details}")
         raise HTTPException(status_code=500, detail=f"Error processing request: {str(e)}")
+
+
+@router.post("/chat/with-attachments", response_model=ChatWithAttachmentsResponse)
+async def chat_with_attachments(
+    files: List[UploadFile] = File(..., description="One or more images (PNG, JPEG, WebP, GIF) or PDFs"),
+    message: str = Form("", description="User question; optional if you only want the model to review files"),
+    user_id: Optional[str] = Form("anonymous"),
+    child_id: Optional[int] = Form(None),
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Chat with RAG + optional child context, sending images/PDFs to OpenRouter (multimodal)."""
+    if not files:
+        raise HTTPException(status_code=400, detail="At least one file is required")
+    if len(files) > MAX_CHAT_ATTACHMENTS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Too many attachments. Maximum is {MAX_CHAT_ATTACHMENTS} files per request.",
+        )
+
+    try:
+        parsed: List[Tuple[Literal["image", "pdf"], str, bytes, Optional[str]]] = []
+        for i, upload in enumerate(files):
+            raw = await upload.read()
+            parsed.append(_validate_chat_attachment_file(upload, raw, index=i))
+
+        return _generate_chat_response_with_attachments(
+            message=message or None,
+            parsed_files=parsed,
+            user_id=user_id or "anonymous",
+            child_id=child_id,
+            db=db,
+            current_user=current_user,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+
+        error_details = traceback.format_exc()
+        print(f"ERROR in chat with attachments: {error_details}")
+        raise HTTPException(status_code=500, detail=f"Error processing request: {str(e)}") from e
 
 
 @router.post("/chat/voice", response_model=VoiceChatResponse)
