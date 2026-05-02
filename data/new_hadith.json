@@ -1,0 +1,731 @@
+[
+  {
+    "id": "H001",
+    "topic": "love",
+    "subtopic": "mercy",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "Whoever does not show mercy will not be shown mercy.",
+    "text_urdu": "جو رحم نہیں کرتا اس پر رحم نہیں کیا جاتا۔",
+    "text_roman_urdu": "Jo reham nahi karta us par reham nahi kiya jata.",
+    "parenting_insight": "Show affection and emotional warmth to children.",
+    "tags": [
+      "mercy",
+      "love"
+    ],
+    "embedding_text": "mercy compassion children islam parenting hadith",
+    "reference": "5997"
+  },
+  {
+    "id": "H002",
+    "topic": "emotional_intelligence",
+    "subtopic": "anger",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "The strong person is the one who controls himself when angry.",
+    "text_urdu": "طاقتور وہ ہے جو غصے کے وقت خود پر قابو رکھے۔",
+    "text_roman_urdu": "Taqatwar woh hai jo ghussay ke waqt qabu rakhe.",
+    "parenting_insight": "Teach kids to regulate anger.",
+    "tags": [
+      "anger",
+      "self_control"
+    ],
+    "embedding_text": "anger control emotional intelligence islam hadith",
+    "reference": "6114"
+  },
+  {
+    "id": "H003",
+    "topic": "discipline",
+    "subtopic": "gentleness",
+    "source": "Sahih Muslim",
+    "authenticity": "Sahih",
+    "text_en": "Allah is gentle and loves gentleness.",
+    "text_urdu": "اللہ نرمی کرنے والا ہے اور نرمی کو پسند کرتا ہے۔",
+    "text_roman_urdu": "Allah narmi ko pasand karta hai.",
+    "parenting_insight": "Use gentle discipline methods.",
+    "tags": [
+      "gentleness"
+    ],
+    "embedding_text": "gentle parenting islam hadith narmi",
+    "reference": "2593"
+  },
+  {
+    "id": "H004",
+    "topic": "siblings",
+    "subtopic": "justice",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "Be just between your children.",
+    "text_urdu": "اپنی اولاد میں انصاف کرو۔",
+    "text_roman_urdu": "Apni aulaad mein insaf karo.",
+    "parenting_insight": "Avoid favoritism.",
+    "tags": [
+      "justice",
+      "siblings"
+    ],
+    "embedding_text": "siblings fairness justice islam hadith",
+    "reference": "2587"
+  },
+  {
+    "id": "H005",
+    "topic": "manners",
+    "subtopic": "character",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Hasan",
+    "text_en": "No father gives a better gift than good manners.",
+    "text_urdu": "باپ اپنی اولاد کو اچھے اخلاق سے بہتر تحفہ نہیں دیتا۔",
+    "text_roman_urdu": "Baap behtareen tohfa akhlaq deta hai.",
+    "parenting_insight": "Prioritize character building.",
+    "tags": [
+      "akhlaq"
+    ],
+    "embedding_text": "akhlaq manners islam parenting hadith",
+    "reference": "1952"
+  },
+  {
+    "id": "H006",
+    "topic": "play",
+    "subtopic": "bonding",
+    "source": "Sahih Muslim",
+    "authenticity": "Sahih",
+    "text_en": "The Prophet used to play with children.",
+    "text_urdu": "نبی ﷺ بچوں کے ساتھ کھیلتے تھے۔",
+    "text_roman_urdu": "Nabi ﷺ bachon ke sath khelte thay.",
+    "parenting_insight": "Play strengthens bonding.",
+    "tags": [
+      "play"
+    ],
+    "embedding_text": "play bonding children islam hadith",
+    "reference": "675"
+  },
+  {
+    "id": "H007",
+    "topic": "responsibility",
+    "subtopic": "accountability",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "Each of you is a shepherd and responsible.",
+    "text_urdu": "تم میں سے ہر ایک ذمہ دار ہے۔",
+    "text_roman_urdu": "Har aik zimmedar hai.",
+    "parenting_insight": "Teach responsibility early.",
+    "tags": [
+      "responsibility"
+    ],
+    "embedding_text": "responsibility accountability parenting islam",
+    "reference": "893"
+  },
+  {
+    "id": "H008",
+    "topic": "communication",
+    "subtopic": "speech",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "Speak good or remain silent.",
+    "text_urdu": "اچھی بات کرو یا خاموش رہو۔",
+    "text_roman_urdu": "Achi baat karo ya khamosh raho.",
+    "parenting_insight": "Teach respectful communication.",
+    "tags": [
+      "speech"
+    ],
+    "embedding_text": "communication respect islam hadith speech",
+    "reference": "6138"
+  },
+  {
+    "id": "H009",
+    "topic": "empathy",
+    "subtopic": "children",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Sahih",
+    "text_en": "He is not one of us who does not show mercy to our young.",
+    "text_urdu": "وہ ہم میں سے نہیں جو بچوں پر رحم نہ کرے۔",
+    "text_roman_urdu": "Woh hum mein se nahi jo bachon par reham na kare.",
+    "parenting_insight": "Be emotionally responsive.",
+    "tags": [
+      "empathy"
+    ],
+    "embedding_text": "children empathy mercy islam hadith",
+    "reference": "1919"
+  },
+  {
+    "id": "H010",
+    "topic": "honesty",
+    "subtopic": "truth",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "Truthfulness leads to righteousness.",
+    "text_urdu": "سچائی نیکی کی طرف لے جاتی ہے۔",
+    "text_roman_urdu": "Sachai neki ki taraf le jati hai.",
+    "parenting_insight": "Encourage honesty.",
+    "tags": [
+      "truth"
+    ],
+    "embedding_text": "truth honesty islam hadith",
+    "reference": "6094"
+  },
+  {
+    "id": "H011",
+    "topic": "lying",
+    "text_en": "Lying leads to wickedness.",
+    "text_urdu": "جھوٹ برائی کی طرف لے جاتا ہے۔",
+    "text_roman_urdu": "Jhoot burai ki taraf le jata hai.",
+    "parenting_insight": "Discourage lying.",
+    "tags": [
+      "lying"
+    ],
+    "embedding_text": "lying bad behavior islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6094"
+  },
+  {
+    "id": "H012",
+    "topic": "kindness",
+    "text_en": "Smiling is charity.",
+    "text_urdu": "مسکرانا صدقہ ہے۔",
+    "text_roman_urdu": "Muskurana sadaqa hai.",
+    "parenting_insight": "Promote positivity.",
+    "tags": [
+      "kindness"
+    ],
+    "embedding_text": "kindness positivity islam",
+    "source": "Jami at-Tirmidhi",
+    "reference": "1956"
+  },
+  {
+    "id": "H013",
+    "topic": "sharing",
+    "text_en": "Love for your brother what you love for yourself.",
+    "text_urdu": "اپنے بھائی کے لیے وہی پسند کرو جو اپنے لیے کرتے ہو۔",
+    "text_roman_urdu": "Apne bhai ke liye wohi pasand karo.",
+    "parenting_insight": "Teach sharing.",
+    "tags": [
+      "sharing"
+    ],
+    "embedding_text": "sharing empathy islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "13"
+  },
+  {
+    "id": "H014",
+    "topic": "cleanliness",
+    "text_en": "Cleanliness is half of faith.",
+    "text_urdu": "صفائی نصف ایمان ہے۔",
+    "text_roman_urdu": "Safai nisf iman hai.",
+    "parenting_insight": "Teach hygiene.",
+    "tags": [
+      "cleanliness"
+    ],
+    "embedding_text": "cleanliness hygiene islam",
+    "source": "Sahih Muslim",
+    "reference": "223"
+  },
+  {
+    "id": "H015",
+    "topic": "patience",
+    "text_en": "Patience is at the first strike.",
+    "text_urdu": "صبر پہلی چوٹ پر ہوتا ہے۔",
+    "text_roman_urdu": "Sabr pehli museebat par hota hai.",
+    "parenting_insight": "Teach patience.",
+    "tags": [
+      "sabr"
+    ],
+    "embedding_text": "patience sabr islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "1283"
+  },
+  {
+    "id": "H016",
+    "text_en": "Allah helps those who help others.",
+    "text_urdu": "اللہ ان کی مدد کرتا ہے جو دوسروں کی مدد کرتے ہیں۔",
+    "text_roman_urdu": "Allah madad karta hai jo dusron ki madad kare.",
+    "parenting_insight": "Encourage helping behavior",
+    "tags": [
+      "helping"
+    ],
+    "embedding_text": "helping others islam",
+    "source": "Sahih Muslim",
+    "reference": "2699"
+  },
+  {
+    "id": "H017",
+    "text_en": "He who does not thank people does not thank Allah.",
+    "text_urdu": "جو لوگوں کا شکر ادا نہیں کرتا وہ اللہ کا شکر ادا نہیں کرتا۔",
+    "text_roman_urdu": "Jo logon ka shukar nahi karta woh Allah ka shukar nahi karta.",
+    "parenting_insight": "Teach gratitude",
+    "tags": [
+      "gratitude"
+    ],
+    "embedding_text": "gratitude islam",
+    "source": "Jami at-Tirmidhi",
+    "reference": "1955"
+  },
+  {
+    "id": "H018",
+    "text_en": "Modesty is part of faith.",
+    "text_urdu": "حیا ایمان کا حصہ ہے۔",
+    "text_roman_urdu": "Haya iman ka hissa hai.",
+    "parenting_insight": "Teach modesty",
+    "tags": [
+      "haya"
+    ],
+    "embedding_text": "modesty islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "9"
+  },
+  {
+    "id": "H019",
+    "text_en": "Make things easy, do not make them difficult.",
+    "text_urdu": "آسانی پیدا کرو، سختی نہ کرو۔",
+    "text_roman_urdu": "Asani paida karo, sakhti na karo.",
+    "parenting_insight": "Avoid harsh parenting",
+    "tags": [
+      "ease"
+    ],
+    "embedding_text": "easy parenting islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6125"
+  },
+  {
+    "id": "H020",
+    "text_en": "Give gifts and you will love one another.",
+    "text_urdu": "تحفے دو، محبت بڑھے گی۔",
+    "text_roman_urdu": "Tohfay do mohabbat barhay gi.",
+    "parenting_insight": "Use rewards positively",
+    "tags": [
+      "love"
+    ],
+    "embedding_text": "love bonding islam",
+    "source": "Al-Adab Al-Mufrad",
+    "reference": "594"
+  },
+  {
+    "id": "H021",
+    "topic": "family",
+    "subtopic": "kindness",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Hasan",
+    "text_en": "The best of you are those who are best to their families.",
+    "text_urdu": "تم میں بہترین وہ ہے جو اپنے گھر والوں کے لیے بہترین ہو۔",
+    "text_roman_urdu": "Behtareen woh hai jo apne ghar walon ke liye behtareen ho.",
+    "parenting_insight": "Model kindness within family.",
+    "tags": [
+      "family",
+      "kindness"
+    ],
+    "embedding_text": "family kindness parenting islam hadith",
+    "reference": "3895"
+  },
+  {
+    "id": "H022",
+    "topic": "focus",
+    "subtopic": "self_control",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Hasan",
+    "text_en": "Part of good Islam is leaving what does not concern you.",
+    "text_urdu": "اچھے اسلام میں بے فائدہ چیز چھوڑ دینا شامل ہے۔",
+    "text_roman_urdu": "Be-fazool cheez chhor dena acha islam hai.",
+    "parenting_insight": "Teach focus and avoid distractions.",
+    "tags": [
+      "focus"
+    ],
+    "embedding_text": "focus discipline islam",
+    "reference": "2317"
+  },
+  {
+    "id": "H023",
+    "topic": "safety",
+    "subtopic": "behavior",
+    "source": "Sahih al-Bukhari",
+    "authenticity": "Sahih",
+    "text_en": "A Muslim is one from whose tongue and hand people are safe.",
+    "text_urdu": "مسلمان وہ ہے جس کی زبان اور ہاتھ سے لوگ محفوظ رہیں۔",
+    "text_roman_urdu": "Muslim woh hai jisse log mehfooz rahen.",
+    "parenting_insight": "Teach safe and respectful behavior.",
+    "tags": [
+      "safety"
+    ],
+    "embedding_text": "safe behavior islam",
+    "reference": "10"
+  },
+  {
+    "id": "H024",
+    "topic": "faith",
+    "subtopic": "taqwa",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Hasan",
+    "text_en": "Be mindful of Allah wherever you are.",
+    "text_urdu": "جہاں بھی ہو اللہ سے ڈرو۔",
+    "text_roman_urdu": "Jahan bhi ho Allah se daro.",
+    "parenting_insight": "Develop inner accountability.",
+    "tags": [
+      "taqwa"
+    ],
+    "embedding_text": "taqwa awareness islam",
+    "reference": "1987"
+  },
+  {
+    "id": "H025",
+    "topic": "growth",
+    "subtopic": "mistakes",
+    "source": "Jami at-Tirmidhi",
+    "authenticity": "Hasan",
+    "text_en": "Follow a bad deed with a good one.",
+    "text_urdu": "برائی کے بعد نیکی کرو۔",
+    "text_roman_urdu": "Burai ke baad neki karo.",
+    "parenting_insight": "Teach recovery from mistakes.",
+    "tags": [
+      "growth"
+    ],
+    "embedding_text": "learning mistakes islam",
+    "reference": "1987"
+  },
+  {
+    "id": "H026",
+    "topic": "mercy",
+    "text_en": "The merciful are shown mercy.",
+    "text_urdu": "رحم کرنے والوں پر رحم کیا جاتا ہے۔",
+    "text_roman_urdu": "Reham karne walon par reham hota hai.",
+    "parenting_insight": "Encourage empathy.",
+    "tags": [
+      "mercy"
+    ],
+    "embedding_text": "mercy empathy islam",
+    "source": "Jami at-Tirmidhi",
+    "reference": "1924"
+  },
+  {
+    "id": "H027",
+    "topic": "social",
+    "text_en": "Spread peace among yourselves.",
+    "text_urdu": "آپس میں سلام کو عام کرو۔",
+    "text_roman_urdu": "Salam ko aam karo.",
+    "parenting_insight": "Teach social connection.",
+    "tags": [
+      "social"
+    ],
+    "embedding_text": "social behavior islam",
+    "source": "Sahih Muslim",
+    "reference": "54"
+  },
+  {
+    "id": "H028",
+    "topic": "emotion",
+    "text_en": "Do not envy one another.",
+    "text_urdu": "ایک دوسرے سے حسد نہ کرو۔",
+    "text_roman_urdu": "Hasad na karo.",
+    "parenting_insight": "Teach contentment.",
+    "tags": [
+      "envy"
+    ],
+    "embedding_text": "envy islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6064"
+  },
+  {
+    "id": "H029",
+    "topic": "emotion",
+    "text_en": "Do not hate one another.",
+    "text_urdu": "ایک دوسرے سے بغض نہ رکھو۔",
+    "text_roman_urdu": "Bugz na rakho.",
+    "parenting_insight": "Promote harmony.",
+    "tags": [
+      "hate"
+    ],
+    "embedding_text": "peace harmony islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6065"
+  },
+  {
+    "id": "H030",
+    "topic": "charity",
+    "text_en": "The best charity is that given secretly.",
+    "text_urdu": "بہترین صدقہ وہ ہے جو چھپ کر دیا جائے۔",
+    "text_roman_urdu": "Behtareen sadaqa chup kar diya jaye.",
+    "parenting_insight": "Teach sincerity.",
+    "tags": [
+      "charity"
+    ],
+    "embedding_text": "charity sincerity islam",
+    "source": "At-Tabarani (Al-Kabir)",
+    "reference": "10307"
+  },
+  {
+    "id": "H031",
+    "topic": "trust",
+    "text_en": "Avoid suspicion.",
+    "text_urdu": "بدگمانی سے بچو۔",
+    "text_roman_urdu": "Badgumani se bacho.",
+    "parenting_insight": "Build trust mindset.",
+    "tags": [
+      "trust"
+    ],
+    "embedding_text": "trust islam",
+    "source": "Sahih Muslim",
+    "reference": "2563"
+  },
+  {
+    "id": "H032",
+    "topic": "discipline",
+    "text_en": "Facilitate and do not complicate.",
+    "text_urdu": "آسانی پیدا کرو، مشکل نہ کرو۔",
+    "text_roman_urdu": "Asani paida karo, mushkil na karo.",
+    "parenting_insight": "Keep rules simple.",
+    "tags": [
+      "discipline"
+    ],
+    "embedding_text": "easy discipline islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6125"
+  },
+  {
+    "id": "H033",
+    "topic": "honesty",
+    "text_en": "Be truthful.",
+    "text_urdu": "سچ بولو۔",
+    "text_roman_urdu": "Sach bolo.",
+    "parenting_insight": "Reinforce honesty daily.",
+    "tags": [
+      "honesty"
+    ],
+    "embedding_text": "truth islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6094"
+  },
+  {
+    "id": "H034",
+    "topic": "family",
+    "text_en": "Maintain ties of kinship.",
+    "text_urdu": "رشتہ داروں سے تعلق جوڑے رکھو۔",
+    "text_roman_urdu": "Rishtay jor kar rakho.",
+    "parenting_insight": "Teach family bonds.",
+    "tags": [
+      "family"
+    ],
+    "embedding_text": "family relations islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "5985"
+  },
+  {
+    "id": "H035",
+    "topic": "values",
+    "text_en": "The best provision is piety.",
+    "text_urdu": "بہترین زاد راہ تقویٰ ہے۔",
+    "text_roman_urdu": "Behtareen zakhira taqwa hai.",
+    "parenting_insight": "Focus on values over materialism.",
+    "tags": [
+      "taqwa"
+    ],
+    "embedding_text": "values islam",
+    "source": "Quranic Basis / Hadith",
+    "reference": "(Surah Al-A'raf 7:26)"
+  },
+  {
+    "id": "H036",
+    "topic": "balance",
+    "text_en": "Do not waste.",
+    "text_urdu": "فضول خرچی نہ کرو۔",
+    "text_roman_urdu": "Fuzool kharchi na karo.",
+    "parenting_insight": "Teach financial responsibility.",
+    "tags": [
+      "balance"
+    ],
+    "embedding_text": "balance spending islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6473 (General Prohibition)"
+  },
+  {
+    "id": "H037",
+    "topic": "patience",
+    "text_en": "Be patient and you will be rewarded.",
+    "text_urdu": "صبر کرو، اجر ملے گا۔",
+    "text_roman_urdu": "Sabr karo ajar mile ga.",
+    "parenting_insight": "Encourage patience mindset.",
+    "tags": [
+      "sabr"
+    ],
+    "embedding_text": "patience islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "1469"
+  },
+  {
+    "id": "H038",
+    "topic": "compassion",
+    "text_en": "Show mercy to those on earth.",
+    "text_urdu": "زمین والوں پر رحم کرو۔",
+    "text_roman_urdu": "Zameen walon par reham karo.",
+    "parenting_insight": "Teach universal compassion.",
+    "tags": [
+      "compassion"
+    ],
+    "embedding_text": "compassion islam",
+    "source": "Jami at-Tirmidhi",
+    "reference": "1924"
+  },
+  {
+    "id": "H039",
+    "topic": "civic",
+    "text_en": "Remove harm from the road.",
+    "text_urdu": "راستے سے تکلیف دہ چیز ہٹا دو۔",
+    "text_roman_urdu": "Raste se takleef hata do.",
+    "parenting_insight": "Teach responsibility in society.",
+    "tags": [
+      "civic"
+    ],
+    "embedding_text": "social responsibility islam",
+    "source": "Sahih Muslim",
+    "reference": "1914"
+  },
+  {
+    "id": "H040",
+    "topic": "sincerity",
+    "text_en": "Religion is sincere advice.",
+    "text_urdu": "دین خیرخواہی ہے۔",
+    "text_roman_urdu": "Deen khairkhwahi hai.",
+    "parenting_insight": "Promote sincerity.",
+    "tags": [
+      "sincerity"
+    ],
+    "embedding_text": "sincerity islam",
+    "source": "Sahih Muslim",
+    "reference": "55"
+  },
+  {
+    "id": "H041",
+    "topic": "honesty",
+    "text_en": "Whoever cheats is not one of us.",
+    "text_urdu": "دھوکہ دینے والا ہم میں سے نہیں۔",
+    "text_roman_urdu": "Dhoka dene wala hum mein se nahi.",
+    "parenting_insight": "Teach integrity.",
+    "tags": [
+      "honesty"
+    ],
+    "embedding_text": "integrity islam",
+    "source": "Sahih Muslim",
+    "reference": "101"
+  },
+  {
+    "id": "H042",
+    "topic": "balance",
+    "text_en": "Be moderate.",
+    "text_urdu": "اعتدال اختیار کرو۔",
+    "text_roman_urdu": "Itedaal ikhtiyar karo.",
+    "parenting_insight": "Teach balance in life.",
+    "tags": [
+      "balance"
+    ],
+    "embedding_text": "moderation islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "6063"
+  },
+  {
+    "id": "H043",
+    "topic": "learning",
+    "text_en": "Seek knowledge.",
+    "text_urdu": "علم حاصل کرو۔",
+    "text_roman_urdu": "Ilm hasil karo.",
+    "parenting_insight": "Encourage curiosity.",
+    "tags": [
+      "learning"
+    ],
+    "embedding_text": "learning education islam",
+    "source": "Sunan Ibn Majah",
+    "reference": "224"
+  },
+  {
+    "id": "H044",
+    "topic": "intentions",
+    "text_en": "Actions are judged by intentions.",
+    "text_urdu": "اعمال کا دارومدار نیتوں پر ہے۔",
+    "text_roman_urdu": "Amaal ka daromadar niyat par hai.",
+    "parenting_insight": "Teach intention awareness.",
+    "tags": [
+      "niyyah"
+    ],
+    "embedding_text": "intentions islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "1"
+  },
+  {
+    "id": "H045",
+    "topic": "respect",
+    "text_en": "He who does not respect elders is not one of us.",
+    "text_urdu": "جو بڑوں کا احترام نہ کرے وہ ہم میں سے نہیں۔",
+    "text_roman_urdu": "Jo baron ka ehtram na kare woh hum mein se nahi.",
+    "parenting_insight": "Teach respect.",
+    "tags": [
+      "respect"
+    ],
+    "embedding_text": "respect elders islam",
+    "source": "Jami at-Tirmidhi",
+    "reference": "1919"
+  },
+  {
+    "id": "H046",
+    "topic": "compassion",
+    "text_en": "Allah will not be merciful to those who are not merciful.",
+    "text_urdu": "اللہ اس پر رحم نہیں کرتا جو دوسروں پر رحم نہیں کرتا۔",
+    "text_roman_urdu": "Allah us par reham nahi karta jo dusron par reham nahi karta.",
+    "parenting_insight": "Reinforce kindness.",
+    "tags": [
+      "mercy"
+    ],
+    "embedding_text": "mercy islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "5997"
+  },
+  {
+    "id": "H047",
+    "topic": "friendship",
+    "text_en": "A person follows the religion of his close friend.",
+    "text_urdu": "انسان اپنے دوست کے دین پر ہوتا ہے۔",
+    "text_roman_urdu": "Insan apne dost ke deen par hota hai.",
+    "parenting_insight": "Guide children in choosing friends.",
+    "tags": [
+      "friends"
+    ],
+    "embedding_text": "friends influence islam",
+    "source": "Sunan Abi Dawud",
+    "reference": "4833"
+  },
+  {
+    "id": "H048",
+    "topic": "helping",
+    "text_en": "The best people are those most beneficial to others.",
+    "text_urdu": "بہترین لوگ وہ ہیں جو دوسروں کے لیے فائدہ مند ہوں۔",
+    "text_roman_urdu": "Behtareen log woh hain jo dusron ke liye faida mand hon.",
+    "parenting_insight": "Encourage helpfulness.",
+    "tags": [
+      "helping"
+    ],
+    "embedding_text": "helpful islam",
+    "source": "At-Tabarani (Al-Awsat)",
+    "reference": "5787"
+  },
+  {
+    "id": "H049",
+    "topic": "speech",
+    "text_en": "A good word is charity.",
+    "text_urdu": "اچھی بات صدقہ ہے۔",
+    "text_roman_urdu": "Achi baat sadaqa hai.",
+    "parenting_insight": "Promote kind speech.",
+    "tags": [
+      "speech"
+    ],
+    "embedding_text": "kind speech islam",
+    "source": "Sahih al-Bukhari",
+    "reference": "2989"
+  },
+  {
+    "id": "H050",
+    "topic": "forgiveness",
+    "text_en": "Show mercy and you will be shown mercy.",
+    "text_urdu": "رحم کرو تم پر رحم کیا جائے گا۔",
+    "text_roman_urdu": "Reham karo tum par reham kiya jaye ga.",
+    "parenting_insight": "Teach forgiveness and empathy.",
+    "tags": [
+      "forgiveness"
+    ],
+    "embedding_text": "forgiveness mercy islam",
+    "source": "Musnad Ahmad",
+    "reference": "7047"
+  }
+]

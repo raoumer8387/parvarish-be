@@ -123,7 +123,14 @@ def transcribe_audio_bytes(filename: str, audio_bytes: bytes) -> str:
                     print("DEBUG: Transcribed locally with Whisper")
                     return text
                 else:
-                    print("WARNING: Local Whisper returned empty transcription, falling back to remote API")
+                    print("WARNING: Local Whisper returned empty transcription")
+                    # If there's no remote API key configured, fail fast with an actionable message
+                    if not api_key or not str(api_key).strip():
+                        raise RuntimeError(
+                            "Local Whisper returned an empty transcription and no remote TRANSCRIPTION_API_KEY is configured. "
+                            "Improve audio quality or set TRANSCRIPTION_API_KEY to enable remote transcription fallback."
+                        )
+                    print("Falling back to remote API because TRANSCRIPTION_API_KEY is configured")
             except Exception as loc_exc:
                 print(f"ERROR: Local Whisper transcription failed: {repr(loc_exc)}")
                 # If there's no remote API key configured, fail fast with actionable message

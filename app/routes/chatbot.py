@@ -5,13 +5,14 @@ Expose endpoints for sending user messages and retrieving bot responses using RA
 
 import base64
 import os
+import random
+import json
+from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Depends, File, Form, UploadFile
 from pydantic import BaseModel, Field
 from typing import List, Literal, Optional, Tuple
 from sqlalchemy.orm import Session
-from pathlib import Path
-
 from app.rag.data_loader import DataLoader
 from app.rag.embedder import Embedder, VectorStoreConfig
 from app.rag.retriever import Retriever
@@ -24,6 +25,7 @@ from app.services.behavior_service import get_child_behavior_stats
 from app.core.security import get_current_user
 from app.db.models.user import User
 from app.services.speech_to_text import transcribe_audio_bytes
+from app.utils.language_detector import detect_language  # Import the detector
 
 router = APIRouter(tags=["chatbot"])
 
@@ -88,6 +90,44 @@ def get_retriever() -> Retriever:
     return _retriever
 
 
+def _markdown_link_label(text: str) -> str:
+    """Escape characters that would break [label](url) markdown link text."""
+    return text.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
+
+
+def _get_random_video_suggestions(lang: Literal["en", "ur", "rm"], count: int = 2) -> str:
+    """Append random playlist videos; titles use markdown links so URLs are clickable in markdown-capable clients."""
+    root = Path(__file__).resolve().parents[2]
+    playlist_path = root / "data" / "parvarish_playlist_tagged.json"
+    headers = {
+        "en": "Recommended videos",
+        "ur": "تجویز کردہ ویڈیوز",
+        "rm": "Mashwara videos",
+    }
+    try:
+        with open(playlist_path, encoding="utf-8") as f:
+            playlist = json.load(f)
+
+        if not playlist:
+            return ""
+
+        suggestions = random.sample(playlist, min(count, len(playlist)))
+        if not suggestions:
+            return ""
+
+        header = headers.get(lang, headers["en"])
+        lines = ["\n\n", header, "\n\n"]
+        for n, video in enumerate(suggestions, start=1):
+            title = str(video.get("Title") or "Video").strip() or "Video"
+            url = (video.get("URL") or "").strip() or "#"
+            safe = _markdown_link_label(title)
+            lines.append(f"{n}. [{safe}]({url})\n")
+        return "".join(lines)
+    except (OSError, json.JSONDecodeError, ValueError) as e:
+        print(f"Could not generate video suggestions: {e}")
+        return ""
+
+
 class ChatRequest(BaseModel):
     message: str
     user_id: Optional[str] = "anonymous"
@@ -114,16 +154,14 @@ SYSTEM_PROMPT = (
     "You are Parvarish AI – an Islamic parenting companion. "
     "Your role is to guide parents with wisdom and compassion based on authentic Islamic teachings. "
     "Use the provided Quranic verses, Hadith, Prophet (PBUH) stories, AND Islamic Scholar References (from classical books like Ihya Ulum ad-Din, Tafsir Ibn Kathir, Adab al-Mufrad, etc.) to offer advice about raising children, behavior, and moral development. "
-    "MULTILINGUAL REQUIREMENT: Always provide your response in THREE languages: "
-    "1. English (EN) "
-    "2. Urdu (UR) "
-    "3. Roman Urdu (RM) "
-    "Format each language section clearly with headers. "
+    "LANGUAGE: You MUST write the entire reply in exactly ONE language — the language named in RESPONSE INSTRUCTIONS below "
+    "(English, Urdu in Arabic script, or Roman Urdu using Latin letters). "
+    "Do not repeat the answer in other languages; do not add EN/UR/RM sections unless the user explicitly asks for multiple languages. "
     "CITATION REQUIREMENT: When referencing Islamic scholars, ALWAYS include the book title and author name like: [Book Title – Author]. "
     "Example: 'As mentioned in Ihya Ulum ad-Din by Imam Al-Ghazali...' "
     "Speak gently and respectfully, maintaining an educational and empathetic tone. "
     "If no relevant reference is found in the given data, respond politely that you currently do not have Islamic guidance on that specific topic. Do not speculate or invent information. "
-    "Provide SHORT, concise answers (1-2 paragraphs maximum PER LANGUAGE). Focus on actionable advice. Be brief and direct."
+    "Provide SHORT, concise answers (1-2 paragraphs maximum). Focus on actionable advice. Be brief and direct."
 )
 
 
@@ -160,8 +198,8 @@ Use this context to provide PERSONALIZED advice for {child.name}. Reference thei
 """
 
 
-def _build_prompt(message: str, child_context: str, child_id: Optional[int], db: Session) -> str:
-    """Construct the full prompt for the LLM."""
+def _build_prompt(message: str, child_context: str, child_id: Optional[int], db: Session) -> Tuple[str, Literal["en", "ur", "rm"]]:
+    """Construct the full prompt for the LLM, tailored to the detected language."""
     retriever = get_retriever()
     chunks = retriever.query(message, k=8)
     context = Retriever.format_context(chunks) if chunks else "No specific references found in the database."
@@ -170,39 +208,38 @@ def _build_prompt(message: str, child_context: str, child_id: Optional[int], db:
     if len(context) > max_context_length:
         context = context[:max_context_length] + "\n[Context truncated...]"
 
-    child_name = None
-    if child_id:
-        child = db.query(Child).filter(Child.id == child_id).first()
-        child_name = child.name if child else None
+    lang: Literal["en", "ur", "rm"] = detect_language(message)
 
-    return f"""{SYSTEM_PROMPT}
+    lang_instructions: dict[str, str] = {
+        "en": "Write your entire answer in English only.",
+        "ur": "اپنا پورا جواب صرف اردو میں لکھیں (عربی رسم الخط میں)۔ انگریزی یا رومن اردو میں مت لکھیں۔",
+        "rm": "Apna poora jawab sirf Roman Urdu mein likhein (Latin letters). English ya Urdu script mein mat likhein.",
+    }
+
+    prompt = f"""{SYSTEM_PROMPT}
 {child_context}
 
 Here are relevant Islamic references to help answer the question:
-
 {context}
 
 Question: {message}
 
-Provide your answer in THREE LANGUAGES (English, Urdu, Roman Urdu) with clear section headers:
+**RESPONSE INSTRUCTIONS:**
+- {lang_instructions.get(lang, lang_instructions["en"])}
+- Keep the answer concise (2-3 paragraphs).
+- Do not add a "Recommended Videos" list yourself; video links will be appended separately after your reply.
 
-## English (EN):
-[Provide 2-3 paragraphs with key Islamic principle and 2-3 actionable tips {"SPECIFICALLY for " + child_name if child_name else ""}]
-
-## Urdu (UR):
-[Same content in Urdu script]
-
-## Roman Urdu (RM):
-[Same content in Roman Urdu]
-
-CITATION REQUIREMENTS:
-- For Quran: "As Allah says in Quran 17:23..."
-- For Hadith: "The Prophet (PBUH) said in Sahih Bukhari, Book 78, Hadith #5997..." (include classification [Sahih/Hasan] if provided)
-- For Scholar References: "As mentioned in [Book Title] by [Author]..." or "[Author] writes in [Book Title]..."
-- ALWAYS include the FULL reference details from the [Source X: ...] headers above.
-- PRIORITY: Try to use AT LEAST ONE reference from each source type (Quran/Hadith, Scholars, Stories) if available in the context above.
-
-Keep each language section concise and parent-friendly."""
+---
+**CRITICAL: CITATION REQUIREMENTS**
+You MUST cite your sources. Follow these rules exactly:
+- For Quran: "As Allah says in the Quran (Surah Al-Isra, 17:23)..."
+- For Hadith: "The Prophet (PBUH) said..." and then cite the reference, like "(Sahih al-Bukhari, 5997)".
+- For any other text, use the source information provided in the context, for example: "(Source: Ihya Ulum ad-Din by Imam Al-Ghazali)".
+- If the context provides a `[Source X: ...]` header, you MUST use it to cite the information. For example, if you use text from `[Source 1: Quran, 17:23]`, you must cite it as `(Quran, 17:23)`.
+- Aim to use at least one reference in your answer if relevant sources are provided in the context.
+---
+"""
+    return prompt, lang
 
 
 def _generate_chat_response(
@@ -218,8 +255,9 @@ def _generate_chat_response(
         raise HTTPException(status_code=400, detail="Message cannot be empty")
 
     child_context = _get_child_context(db, current_user, child_id)
-    full_prompt = _build_prompt(message, child_context, child_id, db)
+    full_prompt, reply_lang = _build_prompt(message, child_context, child_id, db)
     answer = generate_response([{"role": "user", "content": full_prompt}])
+    answer = answer.rstrip() + _get_random_video_suggestions(reply_lang, count=2)
 
     try:
         create_message(db, user_id=current_user.id, role="user", content=message, child_id=child_id)
@@ -332,7 +370,7 @@ def _generate_chat_response_with_attachments(
 ) -> ChatWithAttachmentsResponse:
     user_text = _normalize_user_message_for_attachments(message)
     child_context = _get_child_context(db, current_user, child_id)
-    full_prompt = _build_prompt(user_text, child_context, child_id, db)
+    full_prompt, reply_lang = _build_prompt(user_text, child_context, child_id, db)
     user_message = {"role": "user", "content": _build_multimodal_user_content(full_prompt, parsed_files)}
 
     has_pdf = any(k == "pdf" for k, _, _, _ in parsed_files)
@@ -346,6 +384,7 @@ def _generate_chat_response_with_attachments(
         plugins=plugins,
         model=get_attachment_model(),
     )
+    answer = answer.rstrip() + _get_random_video_suggestions(reply_lang, count=2)
 
     names = [name for _, name, _, _ in parsed_files]
     persist_user = user_text

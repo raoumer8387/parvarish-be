@@ -36,6 +36,7 @@ class DataLoader:
         self.hadith_file = self.base_dir / "hadith_quranic.json"
         self.stories_file = self.base_dir / "prophet_stories.json"
         self.scholars_file = self.base_dir / "islamic_refrences.json"
+        self.playlist_file = self.base_dir / "parvarish_playlist_tagged.json"
 
     def load(self) -> List[Document]:
         docs: List[Document] = []
@@ -54,6 +55,52 @@ class DataLoader:
             with self.scholars_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._load_islamic_scholars(data))
+        
+        # Load playlist data
+        if self.playlist_file.exists():
+            with self.playlist_file.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            docs.extend(self._normalize_playlist(data))
+            
+        return docs
+
+    def _format_source(self, source: Optional[Dict[str, Any]]) -> str:
+        if not source:
+            return ""
+        
+        parts = []
+        if "book" in source and source["book"] == "Qur'an":
+            parts.append(f"Qur'an {source.get('surah')}:{source.get('ayah')}")
+        elif "collection" in source:
+            parts.append(f"{source.get('collection')}, Hadith {source.get('hadith_number')}")
+        elif "note" in source:
+            parts.append(source.get("note"))
+            
+        return ", ".join(parts)
+
+    def _normalize_playlist(self, data: List[Dict[str, Any]]) -> List[Document]:
+        """Normalizes playlist data into Document objects."""
+        docs: List[Document] = []
+        for item in data:
+            video_id = item.get("Video Number")
+            title = item.get("Title")
+            url = item.get("URL")
+            tags = item.get("tags", [])
+
+            if not all([video_id, title, url]):
+                continue
+
+            text = f"Video for kids: '{title}'. It teaches about {', '.join(tags)}."
+            
+            metadata = {
+                "source": "Parvarish Playlist",
+                "type": "video",
+                "title": title,
+                "url": url,
+                "tags": tags,
+            }
+            
+            docs.append(Document(id=f"vid_{video_id}", text=text, metadata=metadata))
         return docs
 
     def _normalize_hadith_quranic(self, data: Dict[str, Any]) -> List[Document]:
@@ -65,6 +112,9 @@ class DataLoader:
                 entry_id = entry.get("id") or f"{cat_name}-unknown"
                 parts: List[str] = []
                 # Combine bilingual content succinctly
+                source_info = self._format_source(entry.get("source"))
+                if source_info:
+                    parts.append(f"Source: {source_info}")
                 if entry.get("type") in {"ayat", "hadith"}:
                     arabic = entry.get("arabic")
                     if arabic:
@@ -99,28 +149,18 @@ class DataLoader:
                         parts.append(" ".join(tips))
                 elif isinstance(practical, str):
                     parts.append(f"Tip: {practical}")
-
-                text = "\n".join(parts)
-                # Ensure all metadata values are str/int/float/bool
-                import json as _json
-                def fix_meta(val):
-                    if val is None:
-                        return ""
-                    if isinstance(val, list):
-                        return ", ".join(str(v) for v in val)
-                    if isinstance(val, dict):
-                        return _json.dumps(val, ensure_ascii=False)
-                    return val
+                
+                text = " | ".join(parts)
+                
                 metadata = {
-                    "source_type": "quran_hadith",  # Add this field for retriever
-                    "category": fix_meta(cat_name),
-                    "type": fix_meta(entry.get("type")),
-                    "tags": fix_meta(entry.get("tags")),
-                    "age_range": fix_meta(entry.get("age_range")),
-                    "source": fix_meta(entry.get("source")),
-                    "hadith_classification": fix_meta(entry.get("hadith_classification")),
+                    "id": entry_id,
+                    "category": cat_name,
+                    "type": entry.get("type"),
+                    "source_details": self._format_source(entry.get("source")),
+                    "tags": entry.get("tags", []),
+                    "age_range": entry.get("age_range"),
                 }
-                docs.append(Document(id=f"hadith:{entry_id}", text=text, metadata=metadata))
+                docs.append(Document(id=entry_id, text=text, metadata=metadata))
         return docs
 
     def _normalize_prophet_stories(self, data: Any) -> List[Document]:

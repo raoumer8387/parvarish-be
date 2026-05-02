@@ -84,10 +84,10 @@ class Retriever:
                     # Hadith citation
                     elif 'collection' in source_dict:
                         hadith_ref = source_dict['collection']
-                        if 'book' in source_dict:
-                            hadith_ref += f", Book {source_dict['book']}"
-                        if 'number' in source_dict:
-                            hadith_ref += f", Hadith #{source_dict['number']}"
+                        if 'hadith_number' in source_dict:
+                            hadith_ref += f", {source_dict['hadith_number']}"
+                        elif 'number' in source_dict: # fallback
+                            hadith_ref += f", {source_dict['number']}"
                         citation_parts.append(hadith_ref)
                     
                     # Story or other source

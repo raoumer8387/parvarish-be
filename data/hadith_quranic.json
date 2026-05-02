@@ -654,11 +654,4511 @@
           }
         }
       ]
+    },
+    {
+      "category": "Communication",
+      "entries": [
+        {
+          "id": "Q001",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Logon se achi baat karo.",
+          "english_translation": "Speak kindly to people.",
+          "urdu_translation": "لوگوں سے اچھی بات کرو۔",
+          "tags": [
+            "speech",
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 83
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach respectful communication.",
+          "short_explanation": {
+            "en": "Teach respectful communication.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Knowledge",
+      "entries": [
+        {
+          "id": "Q002",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Ae mere Rab ilm mein izafa farma.",
+          "english_translation": "My Lord, increase me in knowledge.",
+          "urdu_translation": "اے میرے رب! میرے علم میں اضافہ فرما۔",
+          "tags": [
+            "learning"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 20,
+            "ayah": 114
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage curiosity and learning.",
+          "short_explanation": {
+            "en": "Encourage curiosity and learning.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotional Intelligence",
+      "entries": [
+        {
+          "id": "Q003",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Jo ghussa pee jatay hain aur logon ko maaf karte hain.",
+          "english_translation": "Those who restrain anger and forgive people.",
+          "urdu_translation": "جو غصہ پی جاتے ہیں اور لوگوں کو معاف کرتے ہیں۔",
+          "tags": [
+            "anger",
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 3,
+            "ayah": 134
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach emotional control and forgiveness.",
+          "short_explanation": {
+            "en": "Teach emotional control and forgiveness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Family",
+      "entries": [
+        {
+          "id": "Q004",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Us ne tumhare darmiyan mohabbat aur rehmat paida ki.",
+          "english_translation": "He placed between you love and mercy.",
+          "urdu_translation": "اس نے تمہارے درمیان محبت اور رحمت پیدا کی۔",
+          "tags": [
+            "love"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 30,
+            "ayah": 21
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build a loving home environment.",
+          "short_explanation": {
+            "en": "Build a loving home environment.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Character",
+      "entries": [
+        {
+          "id": "Q005",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Takabbur se logon se mun na moro.",
+          "english_translation": "Do not turn your face away in pride.",
+          "urdu_translation": "تکبر سے لوگوں سے منہ نہ موڑو۔",
+          "tags": [
+            "humility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 31,
+            "ayah": 18
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach humility.",
+          "short_explanation": {
+            "en": "Teach humility.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q046",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah achay akhlaq ka hukam deta hai.",
+          "english_translation": "Indeed, Allah commands good conduct.",
+          "urdu_translation": "اللہ اچھے اخلاق کا حکم دیتا ہے۔",
+          "tags": [
+            "character"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 16,
+            "ayah": 90
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach strong moral foundation.",
+          "short_explanation": {
+            "en": "Teach strong moral foundation.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Patience",
+      "entries": [
+        {
+          "id": "Q006",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Allah sabr karne walon ke sath hai.",
+          "english_translation": "Indeed, Allah is with the patient.",
+          "urdu_translation": "بے شک اللہ صبر کرنے والوں کے ساتھ ہے۔",
+          "tags": [
+            "sabr"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 153
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage patience in children.",
+          "short_explanation": {
+            "en": "Encourage patience in children.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Justice",
+      "entries": [
+        {
+          "id": "Q007",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Allah insaf ka hukam deta hai.",
+          "english_translation": "Indeed, Allah commands justice.",
+          "urdu_translation": "بے شک اللہ انصاف کا حکم دیتا ہے۔",
+          "tags": [
+            "justice"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 16,
+            "ayah": 90
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach fairness.",
+          "short_explanation": {
+            "en": "Teach fairness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q027",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Dushmani tumhein insaf se na roke.",
+          "english_translation": "Do not let hatred cause you to be unjust.",
+          "urdu_translation": "دشمنی تمہیں انصاف سے نہ روک دے۔",
+          "tags": [
+            "justice"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 5,
+            "ayah": 8
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach fairness even in conflict.",
+          "short_explanation": {
+            "en": "Teach fairness even in conflict.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q040",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Insaf ke liye mazbooti se kharay ho.",
+          "english_translation": "Stand firmly for justice, even against yourselves.",
+          "urdu_translation": "انصاف کے لیے مضبوطی سے کھڑے ہو۔",
+          "tags": [
+            "justice"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 4,
+            "ayah": 135
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach strong moral values.",
+          "short_explanation": {
+            "en": "Teach strong moral values.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Kindness",
+      "entries": [
+        {
+          "id": "Q008",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Walidain ke sath bhala karo.",
+          "english_translation": "Be good to parents.",
+          "urdu_translation": "والدین کے ساتھ بھلائی کرو۔",
+          "tags": [
+            "family"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 23
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Model respect in family.",
+          "short_explanation": {
+            "en": "Model respect in family.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q013",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah neki karne walon se mohabbat karta hai.",
+          "english_translation": "Allah loves those who do good.",
+          "urdu_translation": "اللہ نیکی کرنے والوں سے محبت کرتا ہے۔",
+          "tags": [
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 195
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage kindness.",
+          "short_explanation": {
+            "en": "Encourage kindness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q026",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Logon se achi baat kaho.",
+          "english_translation": "Say to people good words.",
+          "urdu_translation": "لوگوں سے اچھی بات کہو۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 83
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage polite communication.",
+          "short_explanation": {
+            "en": "Encourage polite communication.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q030",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Jo neki karta hai woh apne liye karta hai.",
+          "english_translation": "Whoever does good does it for himself.",
+          "urdu_translation": "جو نیکی کرتا ہے وہ اپنے لیے کرتا ہے۔",
+          "tags": [
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 41,
+            "ayah": 46
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach positive reinforcement of good actions.",
+          "short_explanation": {
+            "en": "Teach positive reinforcement of good actions.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Gratitude",
+      "entries": [
+        {
+          "id": "Q009",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Agar tum shukar karo ge to main aur dunga.",
+          "english_translation": "If you are grateful, I will increase you.",
+          "urdu_translation": "اگر تم شکر کرو گے تو میں تمہیں اور دوں گا۔",
+          "tags": [
+            "gratitude"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 14,
+            "ayah": 7
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach gratitude mindset.",
+          "short_explanation": {
+            "en": "Teach gratitude mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q037",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Mujhe yaad karo main tumhein yaad karunga.",
+          "english_translation": "Remember Me and I will remember you.",
+          "urdu_translation": "مجھے یاد کرو میں تمہیں یاد کروں گا۔",
+          "tags": [
+            "gratitude"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 152
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach gratitude and remembrance.",
+          "short_explanation": {
+            "en": "Teach gratitude and remembrance.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Honesty",
+      "entries": [
+        {
+          "id": "Q010",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Insaf ki baat karo.",
+          "english_translation": "Speak words of appropriate justice.",
+          "urdu_translation": "انصاف کی بات کرو۔",
+          "tags": [
+            "truth"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 33,
+            "ayah": 70
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage honesty.",
+          "short_explanation": {
+            "en": "Encourage honesty.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Responsibility",
+      "entries": [
+        {
+          "id": "Q011",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Har jaan apne amal ki zimmedar hai.",
+          "english_translation": "Every soul is responsible for what it has earned.",
+          "urdu_translation": "ہر جان اپنے اعمال کی ذمہ دار ہے۔",
+          "tags": [
+            "responsibility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 74,
+            "ayah": 38
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach accountability.",
+          "short_explanation": {
+            "en": "Teach accountability.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q028",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Koi kisi ka bojh nahi uthaye ga.",
+          "english_translation": "No bearer of burdens will bear the burden of another.",
+          "urdu_translation": "کوئی کسی کا بوجھ نہیں اٹھائے گا۔",
+          "tags": [
+            "responsibility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 6,
+            "ayah": 164
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach personal responsibility.",
+          "short_explanation": {
+            "en": "Teach personal responsibility.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Forgiveness",
+      "entries": [
+        {
+          "id": "Q012",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Unhein maaf karna chahiye.",
+          "english_translation": "Let them pardon and forgive.",
+          "urdu_translation": "انہیں معاف کرنا چاہیے اور درگزر کرنا چاہیے۔",
+          "tags": [
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 24,
+            "ayah": 22
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote forgiveness.",
+          "short_explanation": {
+            "en": "Promote forgiveness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q031",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Maaf karo aur dar guzar karo.",
+          "english_translation": "Let them forgive and overlook.",
+          "urdu_translation": "معاف کرو اور درگزر کرو۔",
+          "tags": [
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 24,
+            "ayah": 22
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach forgiveness in daily life.",
+          "short_explanation": {
+            "en": "Teach forgiveness in daily life.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q047",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Maaf karo, kya tum nahi chahte Allah tumhein maaf kare?",
+          "english_translation": "Forgive and overlook, do you not wish Allah to forgive you?",
+          "urdu_translation": "معاف کرو، کیا تم نہیں چاہتے اللہ تمہیں معاف کرے؟",
+          "tags": [
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 24,
+            "ayah": 22
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach forgiveness culture.",
+          "short_explanation": {
+            "en": "Teach forgiveness culture.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Self Control",
+      "entries": [
+        {
+          "id": "Q014",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Apni khwahishat ke peechay na chalo.",
+          "english_translation": "Do not follow your desires.",
+          "urdu_translation": "اپنی خواہشات کے پیچھے نہ چلو۔",
+          "tags": [
+            "discipline"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 38,
+            "ayah": 26
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach self-discipline.",
+          "short_explanation": {
+            "en": "Teach self-discipline.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q029",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Apni khwahishat ki pairwi na karo.",
+          "english_translation": "Do not follow your desires blindly.",
+          "urdu_translation": "اپنی خواہشات کی پیروی نہ کرو۔",
+          "tags": [
+            "self_control"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 45,
+            "ayah": 18
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach impulse control.",
+          "short_explanation": {
+            "en": "Teach impulse control.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Balance",
+      "entries": [
+        {
+          "id": "Q015",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Khao piyo magar israf na karo.",
+          "english_translation": "Eat and drink but do not waste.",
+          "urdu_translation": "کھاؤ پیو مگر اسراف نہ کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 7,
+            "ayah": 31
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach moderation.",
+          "short_explanation": {
+            "en": "Teach moderation.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q045",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Had se tajawuz na karo.",
+          "english_translation": "And do not commit excess.",
+          "urdu_translation": "حد سے تجاوز نہ کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 7,
+            "ayah": 31
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach moderation.",
+          "short_explanation": {
+            "en": "Teach moderation.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Good Behavior",
+      "entries": [
+        {
+          "id": "Q016",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Burai ko bhalai se dafa karo.",
+          "english_translation": "Repel evil with what is better.",
+          "urdu_translation": "برائی کو بھلائی سے دفع کرو۔",
+          "tags": [
+            "behavior"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 41,
+            "ayah": 34
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach positive responses.",
+          "short_explanation": {
+            "en": "Teach positive responses.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q038",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Burai ko bhalai se dafa karo.",
+          "english_translation": "Repel evil with good.",
+          "urdu_translation": "برائی کو بھلائی سے دفع کرو۔",
+          "tags": [
+            "behavior"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 23,
+            "ayah": 96
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach positive response to negativity.",
+          "short_explanation": {
+            "en": "Teach positive response to negativity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Trust",
+      "entries": [
+        {
+          "id": "Q017",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah par bharosa karo.",
+          "english_translation": "Put your trust in Allah.",
+          "urdu_translation": "اللہ پر بھروسہ کرو۔",
+          "tags": [
+            "trust"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 3,
+            "ayah": 159
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build emotional security.",
+          "short_explanation": {
+            "en": "Build emotional security.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q036",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah par bharosa karo agar tum momin ho.",
+          "english_translation": "And rely upon Allah if you are believers.",
+          "urdu_translation": "اگر تم مومن ہو تو اللہ پر بھروسہ کرو۔",
+          "tags": [
+            "trust"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 5,
+            "ayah": 23
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach trust and confidence.",
+          "short_explanation": {
+            "en": "Teach trust and confidence.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Humility",
+      "entries": [
+        {
+          "id": "Q018",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Zameen par ajzi se chalo.",
+          "english_translation": "Walk on the earth humbly.",
+          "urdu_translation": "زمین پر عاجزی سے چلو۔",
+          "tags": [
+            "humility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 25,
+            "ayah": 63
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach humility.",
+          "short_explanation": {
+            "en": "Teach humility.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q033",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Zameen par takabbur se na chalo.",
+          "english_translation": "Do not walk on earth arrogantly.",
+          "urdu_translation": "زمین پر تکبر سے نہ چلو۔",
+          "tags": [
+            "humility"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 17,
+            "ayah": 37
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach humility in behavior.",
+          "short_explanation": {
+            "en": "Teach humility in behavior.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Awareness",
+      "entries": [
+        {
+          "id": "Q019",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah tumhare aamaal se ba khabar hai.",
+          "english_translation": "Allah is aware of what you do.",
+          "urdu_translation": "اللہ تمہارے اعمال سے باخبر ہے۔",
+          "tags": [
+            "awareness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 283
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build self-awareness.",
+          "short_explanation": {
+            "en": "Build self-awareness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Truth",
+      "entries": [
+        {
+          "id": "Q020",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Sach ko jhoot ke sath na milao.",
+          "english_translation": "Do not mix truth with falsehood.",
+          "urdu_translation": "سچ کو جھوٹ کے ساتھ نہ ملاؤ۔",
+          "tags": [
+            "truth"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 42
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach integrity.",
+          "short_explanation": {
+            "en": "Teach integrity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Guidance",
+      "entries": [
+        {
+          "id": "Q021",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Humein seedhe raste ki hidayat de.",
+          "english_translation": "Guide us to the straight path.",
+          "urdu_translation": "ہمیں سیدھے راستے کی ہدایت دے۔",
+          "tags": [
+            "guidance"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 1,
+            "ayah": 6
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach children moral direction and guidance seeking.",
+          "short_explanation": {
+            "en": "Teach children moral direction and guidance seeking.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Behavior",
+      "entries": [
+        {
+          "id": "Q022",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Beshak aap aala akhlaq ke malik hain.",
+          "english_translation": "Indeed, you are of great moral character.",
+          "urdu_translation": "بے شک آپ اعلیٰ اخلاق کے مالک ہیں۔",
+          "tags": [
+            "character"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 68,
+            "ayah": 4
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Model prophetic character for children.",
+          "short_explanation": {
+            "en": "Model prophetic character for children.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q044",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah fasad ko pasand nahi karta.",
+          "english_translation": "Allah does not love corruption.",
+          "urdu_translation": "اللہ فساد کو پسند نہیں کرتا۔",
+          "tags": [
+            "behavior"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 205
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach moral behavior.",
+          "short_explanation": {
+            "en": "Teach moral behavior.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Discipline",
+      "entries": [
+        {
+          "id": "Q023",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Kamyab woh hai jo apne aap ko pak kare.",
+          "english_translation": "Successful are those who purify themselves.",
+          "urdu_translation": "کامیاب وہ ہے جو اپنے آپ کو پاک کرے۔",
+          "tags": [
+            "self_control"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 87,
+            "ayah": 14
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach self-discipline and purification.",
+          "short_explanation": {
+            "en": "Teach self-discipline and purification.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q035",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Namaz qaim karo taake Allah ko yaad rakho.",
+          "english_translation": "Establish prayer for remembrance of Allah.",
+          "urdu_translation": "نماز قائم کرو تاکہ اللہ کو یاد رکھو۔",
+          "tags": [
+            "discipline"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 20,
+            "ayah": 14
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build routine and discipline.",
+          "short_explanation": {
+            "en": "Build routine and discipline.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotion",
+      "entries": [
+        {
+          "id": "Q024",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Allah ke zikr se dilon ko sukoon milta hai.",
+          "english_translation": "In the remembrance of Allah do hearts find rest.",
+          "urdu_translation": "اللہ کے ذکر سے دلوں کو سکون ملتا ہے۔",
+          "tags": [
+            "calmness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 13,
+            "ayah": 28
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach emotional calming techniques.",
+          "short_explanation": {
+            "en": "Teach emotional calming techniques.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Respect",
+      "entries": [
+        {
+          "id": "Q025",
+          "type": "ayat",
+          "arabic": null,
+          "transliteration": "Mera aur walidain ka shukar ada karo.",
+          "english_translation": "Be grateful to Me and your parents.",
+          "urdu_translation": "میرا اور اپنے والدین کا شکر ادا کرو۔",
+          "tags": [
+            "family"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 31,
+            "ayah": 14
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach gratitude toward parents.",
+          "short_explanation": {
+            "en": "Teach gratitude toward parents.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Faith",
+      "entries": [
+        {
+          "id": "Q032",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah kisi jaan par uski taqat se zyada bojh nahi dalta.",
+          "english_translation": "Allah does not burden a soul beyond what it can bear.",
+          "urdu_translation": "اللہ کسی جان پر اس کی طاقت سے زیادہ بوجھ نہیں ڈالتا۔",
+          "tags": [
+            "faith"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 286
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build resilience in children.",
+          "short_explanation": {
+            "en": "Build resilience in children.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Speech",
+      "entries": [
+        {
+          "id": "Q034",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Insaf ki baat karo chahe apne khilaf ho.",
+          "english_translation": "Speak with justice even if it is against yourself.",
+          "urdu_translation": "انصاف کی بات کرو چاہے اپنے خلاف ہو۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 4,
+            "ayah": 135
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach honesty and fairness.",
+          "short_explanation": {
+            "en": "Teach honesty and fairness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "Q049",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Logon se achi baat karo.",
+          "english_translation": "And speak to people good words.",
+          "urdu_translation": "لوگوں سے اچھی بات کرو۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 83
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Reinforce communication skills.",
+          "short_explanation": {
+            "en": "Reinforce communication skills.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Learning",
+      "entries": [
+        {
+          "id": "Q039",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Kya janne walay aur na janne walay barabar hain?",
+          "english_translation": "Say, are those who know equal to those who do not know?",
+          "urdu_translation": "کیا جاننے والے اور نہ جاننے والے برابر ہیں؟",
+          "tags": [
+            "learning"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 39,
+            "ayah": 9
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage education and curiosity.",
+          "short_explanation": {
+            "en": "Encourage education and curiosity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Peace",
+      "entries": [
+        {
+          "id": "Q041",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah salamati ke ghar ki taraf bulata hai.",
+          "english_translation": "Allah invites to the دار السلام (abode of peace).",
+          "urdu_translation": "اللہ سلامتی کے گھر کی طرف بلاتا ہے۔",
+          "tags": [
+            "peace"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 10,
+            "ayah": 25
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach peace-oriented mindset.",
+          "short_explanation": {
+            "en": "Teach peace-oriented mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Self Awareness",
+      "entries": [
+        {
+          "id": "Q042",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Allah tumhare aamaal se ba khabar hai.",
+          "english_translation": "Allah is fully aware of what you do.",
+          "urdu_translation": "اللہ تمہارے اعمال سے مکمل باخبر ہے۔",
+          "tags": [
+            "awareness"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 3,
+            "ayah": 153
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build accountability awareness.",
+          "short_explanation": {
+            "en": "Build accountability awareness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Mercy",
+      "entries": [
+        {
+          "id": "Q043",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Meri rehmat har cheez par hai.",
+          "english_translation": "My mercy encompasses all things.",
+          "urdu_translation": "میری رحمت ہر چیز پر چھائی ہوئی ہے۔",
+          "tags": [
+            "mercy"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 7,
+            "ayah": 156
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach unconditional compassion.",
+          "short_explanation": {
+            "en": "Teach unconditional compassion.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Strength",
+      "entries": [
+        {
+          "id": "Q048",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Sabr aur namaz se madad lo.",
+          "english_translation": "And seek help through patience and prayer.",
+          "urdu_translation": "صبر اور نماز سے مدد لو۔",
+          "tags": [
+            "strength"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 2,
+            "ayah": 45
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach coping skills.",
+          "short_explanation": {
+            "en": "Teach coping skills.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Success",
+      "entries": [
+        {
+          "id": "Q050",
+          "type": "unknown",
+          "arabic": null,
+          "transliteration": "Yaqeenan momin kamyab hain.",
+          "english_translation": "Indeed, successful are the believers.",
+          "urdu_translation": "یقیناً مومن کامیاب ہیں۔",
+          "tags": [
+            "success"
+          ],
+          "age_range": "all",
+          "source": {
+            "book": "Qur'an",
+            "surah": 23,
+            "ayah": 1
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach goal-oriented mindset.",
+          "short_explanation": {
+            "en": "Teach goal-oriented mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Love",
+      "entries": [
+        {
+          "id": "H001",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo reham nahi karta us par reham nahi kiya jata.",
+          "english_translation": "Whoever does not show mercy will not be shown mercy.",
+          "urdu_translation": "جو رحم نہیں کرتا اس پر رحم نہیں کیا جاتا۔",
+          "tags": [
+            "mercy",
+            "love"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Show affection and emotional warmth to children.",
+          "short_explanation": {
+            "en": "Show affection and emotional warmth to children.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotional Intelligence",
+      "entries": [
+        {
+          "id": "H002",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Taqatwar woh hai jo ghussay ke waqt qabu rakhe.",
+          "english_translation": "The strong person is the one who controls himself when angry.",
+          "urdu_translation": "طاقتور وہ ہے جو غصے کے وقت خود پر قابو رکھے۔",
+          "tags": [
+            "anger",
+            "self_control"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach kids to regulate anger.",
+          "short_explanation": {
+            "en": "Teach kids to regulate anger.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Discipline",
+      "entries": [
+        {
+          "id": "H003",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah narmi ko pasand karta hai.",
+          "english_translation": "Allah is gentle and loves gentleness.",
+          "urdu_translation": "اللہ نرمی کرنے والا ہے اور نرمی کو پسند کرتا ہے۔",
+          "tags": [
+            "gentleness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Use gentle discipline methods.",
+          "short_explanation": {
+            "en": "Use gentle discipline methods.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H032",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Asani paida karo, mushkil na karo.",
+          "english_translation": "Facilitate and do not complicate.",
+          "urdu_translation": "آسانی پیدا کرو، مشکل نہ کرو۔",
+          "tags": [
+            "discipline"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Keep rules simple.",
+          "short_explanation": {
+            "en": "Keep rules simple.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Siblings",
+      "entries": [
+        {
+          "id": "H004",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Apni aulaad mein insaf karo.",
+          "english_translation": "Be just between your children.",
+          "urdu_translation": "اپنی اولاد میں انصاف کرو۔",
+          "tags": [
+            "justice",
+            "siblings"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Avoid favoritism.",
+          "short_explanation": {
+            "en": "Avoid favoritism.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Manners",
+      "entries": [
+        {
+          "id": "H005",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Baap behtareen tohfa akhlaq deta hai.",
+          "english_translation": "No father gives a better gift than good manners.",
+          "urdu_translation": "باپ اپنی اولاد کو اچھے اخلاق سے بہتر تحفہ نہیں دیتا۔",
+          "tags": [
+            "akhlaq"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Prioritize character building.",
+          "short_explanation": {
+            "en": "Prioritize character building.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Play",
+      "entries": [
+        {
+          "id": "H006",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Nabi ﷺ bachon ke sath khelte thay.",
+          "english_translation": "The Prophet used to play with children.",
+          "urdu_translation": "نبی ﷺ بچوں کے ساتھ کھیلتے تھے۔",
+          "tags": [
+            "play"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Play strengthens bonding.",
+          "short_explanation": {
+            "en": "Play strengthens bonding.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Responsibility",
+      "entries": [
+        {
+          "id": "H007",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Har aik zimmedar hai.",
+          "english_translation": "Each of you is a shepherd and responsible.",
+          "urdu_translation": "تم میں سے ہر ایک ذمہ دار ہے۔",
+          "tags": [
+            "responsibility"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach responsibility early.",
+          "short_explanation": {
+            "en": "Teach responsibility early.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Communication",
+      "entries": [
+        {
+          "id": "H008",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Achi baat karo ya khamosh raho.",
+          "english_translation": "Speak good or remain silent.",
+          "urdu_translation": "اچھی بات کرو یا خاموش رہو۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach respectful communication.",
+          "short_explanation": {
+            "en": "Teach respectful communication.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Empathy",
+      "entries": [
+        {
+          "id": "H009",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Woh hum mein se nahi jo bachon par reham na kare.",
+          "english_translation": "He is not one of us who does not show mercy to our young.",
+          "urdu_translation": "وہ ہم میں سے نہیں جو بچوں پر رحم نہ کرے۔",
+          "tags": [
+            "empathy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Be emotionally responsive.",
+          "short_explanation": {
+            "en": "Be emotionally responsive.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Honesty",
+      "entries": [
+        {
+          "id": "H010",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sachai neki ki taraf le jati hai.",
+          "english_translation": "Truthfulness leads to righteousness.",
+          "urdu_translation": "سچائی نیکی کی طرف لے جاتی ہے۔",
+          "tags": [
+            "truth"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Encourage honesty.",
+          "short_explanation": {
+            "en": "Encourage honesty.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H033",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sach bolo.",
+          "english_translation": "Be truthful.",
+          "urdu_translation": "سچ بولو۔",
+          "tags": [
+            "honesty"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Reinforce honesty daily.",
+          "short_explanation": {
+            "en": "Reinforce honesty daily.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H041",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Dhoka dene wala hum mein se nahi.",
+          "english_translation": "Whoever cheats is not one of us.",
+          "urdu_translation": "دھوکہ دینے والا ہم میں سے نہیں۔",
+          "tags": [
+            "honesty"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach integrity.",
+          "short_explanation": {
+            "en": "Teach integrity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Lying",
+      "entries": [
+        {
+          "id": "H011",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jhoot burai ki taraf le jata hai.",
+          "english_translation": "Lying leads to wickedness.",
+          "urdu_translation": "جھوٹ برائی کی طرف لے جاتا ہے۔",
+          "tags": [
+            "lying"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Discourage lying.",
+          "short_explanation": {
+            "en": "Discourage lying.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Kindness",
+      "entries": [
+        {
+          "id": "H012",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Muskurana sadaqa hai.",
+          "english_translation": "Smiling is charity.",
+          "urdu_translation": "مسکرانا صدقہ ہے۔",
+          "tags": [
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote positivity.",
+          "short_explanation": {
+            "en": "Promote positivity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Sharing",
+      "entries": [
+        {
+          "id": "H013",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Apne bhai ke liye wohi pasand karo.",
+          "english_translation": "Love for your brother what you love for yourself.",
+          "urdu_translation": "اپنے بھائی کے لیے وہی پسند کرو جو اپنے لیے کرتے ہو۔",
+          "tags": [
+            "sharing"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach sharing.",
+          "short_explanation": {
+            "en": "Teach sharing.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Cleanliness",
+      "entries": [
+        {
+          "id": "H014",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Safai nisf iman hai.",
+          "english_translation": "Cleanliness is half of faith.",
+          "urdu_translation": "صفائی نصف ایمان ہے۔",
+          "tags": [
+            "cleanliness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach hygiene.",
+          "short_explanation": {
+            "en": "Teach hygiene.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Patience",
+      "entries": [
+        {
+          "id": "H015",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sabr pehli museebat par hota hai.",
+          "english_translation": "Patience is at the first strike.",
+          "urdu_translation": "صبر پہلی چوٹ پر ہوتا ہے۔",
+          "tags": [
+            "sabr"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach patience.",
+          "short_explanation": {
+            "en": "Teach patience.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H037",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sabr karo ajar mile ga.",
+          "english_translation": "Be patient and you will be rewarded.",
+          "urdu_translation": "صبر کرو، اجر ملے گا۔",
+          "tags": [
+            "sabr"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage patience mindset.",
+          "short_explanation": {
+            "en": "Encourage patience mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Uncategorized",
+      "entries": [
+        {
+          "id": "H016",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah madad karta hai jo dusron ki madad kare.",
+          "english_translation": "Allah helps those who help others.",
+          "urdu_translation": "اللہ ان کی مدد کرتا ہے جو دوسروں کی مدد کرتے ہیں۔",
+          "tags": [
+            "helping"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage helping behavior",
+          "short_explanation": {
+            "en": "Encourage helping behavior",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H017",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo logon ka shukar nahi karta woh Allah ka shukar nahi karta.",
+          "english_translation": "He who does not thank people does not thank Allah.",
+          "urdu_translation": "جو لوگوں کا شکر ادا نہیں کرتا وہ اللہ کا شکر ادا نہیں کرتا۔",
+          "tags": [
+            "gratitude"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach gratitude",
+          "short_explanation": {
+            "en": "Teach gratitude",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H018",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Haya iman ka hissa hai.",
+          "english_translation": "Modesty is part of faith.",
+          "urdu_translation": "حیا ایمان کا حصہ ہے۔",
+          "tags": [
+            "haya"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach modesty",
+          "short_explanation": {
+            "en": "Teach modesty",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H019",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Asani paida karo, sakhti na karo.",
+          "english_translation": "Make things easy, do not make them difficult.",
+          "urdu_translation": "آسانی پیدا کرو، سختی نہ کرو۔",
+          "tags": [
+            "ease"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Avoid harsh parenting",
+          "short_explanation": {
+            "en": "Avoid harsh parenting",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H020",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Tohfay do mohabbat barhay gi.",
+          "english_translation": "Give gifts and you will love one another.",
+          "urdu_translation": "تحفے دو، محبت بڑھے گی۔",
+          "tags": [
+            "love"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Use rewards positively",
+          "short_explanation": {
+            "en": "Use rewards positively",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Family",
+      "entries": [
+        {
+          "id": "H021",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen woh hai jo apne ghar walon ke liye behtareen ho.",
+          "english_translation": "The best of you are those who are best to their families.",
+          "urdu_translation": "تم میں بہترین وہ ہے جو اپنے گھر والوں کے لیے بہترین ہو۔",
+          "tags": [
+            "family",
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Model kindness within family.",
+          "short_explanation": {
+            "en": "Model kindness within family.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H034",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Rishtay jor kar rakho.",
+          "english_translation": "Maintain ties of kinship.",
+          "urdu_translation": "رشتہ داروں سے تعلق جوڑے رکھو۔",
+          "tags": [
+            "family"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach family bonds.",
+          "short_explanation": {
+            "en": "Teach family bonds.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Focus",
+      "entries": [
+        {
+          "id": "H022",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Be-fazool cheez chhor dena acha islam hai.",
+          "english_translation": "Part of good Islam is leaving what does not concern you.",
+          "urdu_translation": "اچھے اسلام میں بے فائدہ چیز چھوڑ دینا شامل ہے۔",
+          "tags": [
+            "focus"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Teach focus and avoid distractions.",
+          "short_explanation": {
+            "en": "Teach focus and avoid distractions.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Safety",
+      "entries": [
+        {
+          "id": "H023",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Muslim woh hai jisse log mehfooz rahen.",
+          "english_translation": "A Muslim is one from whose tongue and hand people are safe.",
+          "urdu_translation": "مسلمان وہ ہے جس کی زبان اور ہاتھ سے لوگ محفوظ رہیں۔",
+          "tags": [
+            "safety"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach safe and respectful behavior.",
+          "short_explanation": {
+            "en": "Teach safe and respectful behavior.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Faith",
+      "entries": [
+        {
+          "id": "H024",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jahan bhi ho Allah se daro.",
+          "english_translation": "Be mindful of Allah wherever you are.",
+          "urdu_translation": "جہاں بھی ہو اللہ سے ڈرو۔",
+          "tags": [
+            "taqwa"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Develop inner accountability.",
+          "short_explanation": {
+            "en": "Develop inner accountability.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Growth",
+      "entries": [
+        {
+          "id": "H025",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Burai ke baad neki karo.",
+          "english_translation": "Follow a bad deed with a good one.",
+          "urdu_translation": "برائی کے بعد نیکی کرو۔",
+          "tags": [
+            "growth"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Teach recovery from mistakes.",
+          "short_explanation": {
+            "en": "Teach recovery from mistakes.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Mercy",
+      "entries": [
+        {
+          "id": "H026",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Reham karne walon par reham hota hai.",
+          "english_translation": "The merciful are shown mercy.",
+          "urdu_translation": "رحم کرنے والوں پر رحم کیا جاتا ہے۔",
+          "tags": [
+            "mercy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage empathy.",
+          "short_explanation": {
+            "en": "Encourage empathy.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Social",
+      "entries": [
+        {
+          "id": "H027",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Salam ko aam karo.",
+          "english_translation": "Spread peace among yourselves.",
+          "urdu_translation": "آپس میں سلام کو عام کرو۔",
+          "tags": [
+            "social"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach social connection.",
+          "short_explanation": {
+            "en": "Teach social connection.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotion",
+      "entries": [
+        {
+          "id": "H028",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Hasad na karo.",
+          "english_translation": "Do not envy one another.",
+          "urdu_translation": "ایک دوسرے سے حسد نہ کرو۔",
+          "tags": [
+            "envy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach contentment.",
+          "short_explanation": {
+            "en": "Teach contentment.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H029",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Bugz na rakho.",
+          "english_translation": "Do not hate one another.",
+          "urdu_translation": "ایک دوسرے سے بغض نہ رکھو۔",
+          "tags": [
+            "hate"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote harmony.",
+          "short_explanation": {
+            "en": "Promote harmony.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Charity",
+      "entries": [
+        {
+          "id": "H030",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen sadaqa chup kar diya jaye.",
+          "english_translation": "The best charity is that given secretly.",
+          "urdu_translation": "بہترین صدقہ وہ ہے جو چھپ کر دیا جائے۔",
+          "tags": [
+            "charity"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach sincerity.",
+          "short_explanation": {
+            "en": "Teach sincerity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Trust",
+      "entries": [
+        {
+          "id": "H031",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Badgumani se bacho.",
+          "english_translation": "Avoid suspicion.",
+          "urdu_translation": "بدگمانی سے بچو۔",
+          "tags": [
+            "trust"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build trust mindset.",
+          "short_explanation": {
+            "en": "Build trust mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Values",
+      "entries": [
+        {
+          "id": "H035",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen zakhira taqwa hai.",
+          "english_translation": "The best provision is piety.",
+          "urdu_translation": "بہترین زاد راہ تقویٰ ہے۔",
+          "tags": [
+            "taqwa"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Focus on values over materialism.",
+          "short_explanation": {
+            "en": "Focus on values over materialism.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Balance",
+      "entries": [
+        {
+          "id": "H036",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Fuzool kharchi na karo.",
+          "english_translation": "Do not waste.",
+          "urdu_translation": "فضول خرچی نہ کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach financial responsibility.",
+          "short_explanation": {
+            "en": "Teach financial responsibility.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H042",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Itedaal ikhtiyar karo.",
+          "english_translation": "Be moderate.",
+          "urdu_translation": "اعتدال اختیار کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach balance in life.",
+          "short_explanation": {
+            "en": "Teach balance in life.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Compassion",
+      "entries": [
+        {
+          "id": "H038",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Zameen walon par reham karo.",
+          "english_translation": "Show mercy to those on earth.",
+          "urdu_translation": "زمین والوں پر رحم کرو۔",
+          "tags": [
+            "compassion"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach universal compassion.",
+          "short_explanation": {
+            "en": "Teach universal compassion.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H046",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah us par reham nahi karta jo dusron par reham nahi karta.",
+          "english_translation": "Allah will not be merciful to those who are not merciful.",
+          "urdu_translation": "اللہ اس پر رحم نہیں کرتا جو دوسروں پر رحم نہیں کرتا۔",
+          "tags": [
+            "mercy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Reinforce kindness.",
+          "short_explanation": {
+            "en": "Reinforce kindness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Civic",
+      "entries": [
+        {
+          "id": "H039",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Raste se takleef hata do.",
+          "english_translation": "Remove harm from the road.",
+          "urdu_translation": "راستے سے تکلیف دہ چیز ہٹا دو۔",
+          "tags": [
+            "civic"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach responsibility in society.",
+          "short_explanation": {
+            "en": "Teach responsibility in society.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Sincerity",
+      "entries": [
+        {
+          "id": "H040",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Deen khairkhwahi hai.",
+          "english_translation": "Religion is sincere advice.",
+          "urdu_translation": "دین خیرخواہی ہے۔",
+          "tags": [
+            "sincerity"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote sincerity.",
+          "short_explanation": {
+            "en": "Promote sincerity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Learning",
+      "entries": [
+        {
+          "id": "H043",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Ilm hasil karo.",
+          "english_translation": "Seek knowledge.",
+          "urdu_translation": "علم حاصل کرو۔",
+          "tags": [
+            "learning"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage curiosity.",
+          "short_explanation": {
+            "en": "Encourage curiosity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Intentions",
+      "entries": [
+        {
+          "id": "H044",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Amaal ka daromadar niyat par hai.",
+          "english_translation": "Actions are judged by intentions.",
+          "urdu_translation": "اعمال کا دارومدار نیتوں پر ہے۔",
+          "tags": [
+            "niyyah"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach intention awareness.",
+          "short_explanation": {
+            "en": "Teach intention awareness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Respect",
+      "entries": [
+        {
+          "id": "H045",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo baron ka ehtram na kare woh hum mein se nahi.",
+          "english_translation": "He who does not respect elders is not one of us.",
+          "urdu_translation": "جو بڑوں کا احترام نہ کرے وہ ہم میں سے نہیں۔",
+          "tags": [
+            "respect"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach respect.",
+          "short_explanation": {
+            "en": "Teach respect.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Friendship",
+      "entries": [
+        {
+          "id": "H047",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Insan apne dost ke deen par hota hai.",
+          "english_translation": "A person follows the religion of his close friend.",
+          "urdu_translation": "انسان اپنے دوست کے دین پر ہوتا ہے۔",
+          "tags": [
+            "friends"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Guide children in choosing friends.",
+          "short_explanation": {
+            "en": "Guide children in choosing friends.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Helping",
+      "entries": [
+        {
+          "id": "H048",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen log woh hain jo dusron ke liye faida mand hon.",
+          "english_translation": "The best people are those most beneficial to others.",
+          "urdu_translation": "بہترین لوگ وہ ہیں جو دوسروں کے لیے فائدہ مند ہوں۔",
+          "tags": [
+            "helping"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage helpfulness.",
+          "short_explanation": {
+            "en": "Encourage helpfulness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Speech",
+      "entries": [
+        {
+          "id": "H049",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Achi baat sadaqa hai.",
+          "english_translation": "A good word is charity.",
+          "urdu_translation": "اچھی بات صدقہ ہے۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote kind speech.",
+          "short_explanation": {
+            "en": "Promote kind speech.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Forgiveness",
+      "entries": [
+        {
+          "id": "H050",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Reham karo tum par reham kiya jaye ga.",
+          "english_translation": "Show mercy and you will be shown mercy.",
+          "urdu_translation": "رحم کرو تم پر رحم کیا جائے گا۔",
+          "tags": [
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": null,
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach forgiveness and empathy.",
+          "short_explanation": {
+            "en": "Teach forgiveness and empathy.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Love",
+      "entries": [
+        {
+          "id": "H001",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo reham nahi karta us par reham nahi kiya jata.",
+          "english_translation": "Whoever does not show mercy will not be shown mercy.",
+          "urdu_translation": "جو رحم نہیں کرتا اس پر رحم نہیں کیا جاتا۔",
+          "tags": [
+            "mercy",
+            "love"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Show affection and emotional warmth to children.",
+          "short_explanation": {
+            "en": "Show affection and emotional warmth to children.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotional Intelligence",
+      "entries": [
+        {
+          "id": "H002",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Taqatwar woh hai jo ghussay ke waqt qabu rakhe.",
+          "english_translation": "The strong person is the one who controls himself when angry.",
+          "urdu_translation": "طاقتور وہ ہے جو غصے کے وقت خود پر قابو رکھے۔",
+          "tags": [
+            "anger",
+            "self_control"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach kids to regulate anger.",
+          "short_explanation": {
+            "en": "Teach kids to regulate anger.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Discipline",
+      "entries": [
+        {
+          "id": "H003",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah narmi ko pasand karta hai.",
+          "english_translation": "Allah is gentle and loves gentleness.",
+          "urdu_translation": "اللہ نرمی کرنے والا ہے اور نرمی کو پسند کرتا ہے۔",
+          "tags": [
+            "gentleness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Use gentle discipline methods.",
+          "short_explanation": {
+            "en": "Use gentle discipline methods.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H032",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Asani paida karo, mushkil na karo.",
+          "english_translation": "Facilitate and do not complicate.",
+          "urdu_translation": "آسانی پیدا کرو، مشکل نہ کرو۔",
+          "tags": [
+            "discipline"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Keep rules simple.",
+          "short_explanation": {
+            "en": "Keep rules simple.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Siblings",
+      "entries": [
+        {
+          "id": "H004",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Apni aulaad mein insaf karo.",
+          "english_translation": "Be just between your children.",
+          "urdu_translation": "اپنی اولاد میں انصاف کرو۔",
+          "tags": [
+            "justice",
+            "siblings"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Avoid favoritism.",
+          "short_explanation": {
+            "en": "Avoid favoritism.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Manners",
+      "entries": [
+        {
+          "id": "H005",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Baap behtareen tohfa akhlaq deta hai.",
+          "english_translation": "No father gives a better gift than good manners.",
+          "urdu_translation": "باپ اپنی اولاد کو اچھے اخلاق سے بہتر تحفہ نہیں دیتا۔",
+          "tags": [
+            "akhlaq"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Prioritize character building.",
+          "short_explanation": {
+            "en": "Prioritize character building.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Play",
+      "entries": [
+        {
+          "id": "H006",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Nabi ﷺ bachon ke sath khelte thay.",
+          "english_translation": "The Prophet used to play with children.",
+          "urdu_translation": "نبی ﷺ بچوں کے ساتھ کھیلتے تھے۔",
+          "tags": [
+            "play"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Play strengthens bonding.",
+          "short_explanation": {
+            "en": "Play strengthens bonding.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Responsibility",
+      "entries": [
+        {
+          "id": "H007",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Har aik zimmedar hai.",
+          "english_translation": "Each of you is a shepherd and responsible.",
+          "urdu_translation": "تم میں سے ہر ایک ذمہ دار ہے۔",
+          "tags": [
+            "responsibility"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach responsibility early.",
+          "short_explanation": {
+            "en": "Teach responsibility early.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Communication",
+      "entries": [
+        {
+          "id": "H008",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Achi baat karo ya khamosh raho.",
+          "english_translation": "Speak good or remain silent.",
+          "urdu_translation": "اچھی بات کرو یا خاموش رہو۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach respectful communication.",
+          "short_explanation": {
+            "en": "Teach respectful communication.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Empathy",
+      "entries": [
+        {
+          "id": "H009",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Woh hum mein se nahi jo bachon par reham na kare.",
+          "english_translation": "He is not one of us who does not show mercy to our young.",
+          "urdu_translation": "وہ ہم میں سے نہیں جو بچوں پر رحم نہ کرے۔",
+          "tags": [
+            "empathy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Be emotionally responsive.",
+          "short_explanation": {
+            "en": "Be emotionally responsive.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Honesty",
+      "entries": [
+        {
+          "id": "H010",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sachai neki ki taraf le jati hai.",
+          "english_translation": "Truthfulness leads to righteousness.",
+          "urdu_translation": "سچائی نیکی کی طرف لے جاتی ہے۔",
+          "tags": [
+            "truth"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Encourage honesty.",
+          "short_explanation": {
+            "en": "Encourage honesty.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H033",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sach bolo.",
+          "english_translation": "Be truthful.",
+          "urdu_translation": "سچ بولو۔",
+          "tags": [
+            "honesty"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Reinforce honesty daily.",
+          "short_explanation": {
+            "en": "Reinforce honesty daily.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H041",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Dhoka dene wala hum mein se nahi.",
+          "english_translation": "Whoever cheats is not one of us.",
+          "urdu_translation": "دھوکہ دینے والا ہم میں سے نہیں۔",
+          "tags": [
+            "honesty"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach integrity.",
+          "short_explanation": {
+            "en": "Teach integrity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Lying",
+      "entries": [
+        {
+          "id": "H011",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jhoot burai ki taraf le jata hai.",
+          "english_translation": "Lying leads to wickedness.",
+          "urdu_translation": "جھوٹ برائی کی طرف لے جاتا ہے۔",
+          "tags": [
+            "lying"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Discourage lying.",
+          "short_explanation": {
+            "en": "Discourage lying.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Kindness",
+      "entries": [
+        {
+          "id": "H012",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Muskurana sadaqa hai.",
+          "english_translation": "Smiling is charity.",
+          "urdu_translation": "مسکرانا صدقہ ہے۔",
+          "tags": [
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote positivity.",
+          "short_explanation": {
+            "en": "Promote positivity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Sharing",
+      "entries": [
+        {
+          "id": "H013",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Apne bhai ke liye wohi pasand karo.",
+          "english_translation": "Love for your brother what you love for yourself.",
+          "urdu_translation": "اپنے بھائی کے لیے وہی پسند کرو جو اپنے لیے کرتے ہو۔",
+          "tags": [
+            "sharing"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach sharing.",
+          "short_explanation": {
+            "en": "Teach sharing.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Cleanliness",
+      "entries": [
+        {
+          "id": "H014",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Safai nisf iman hai.",
+          "english_translation": "Cleanliness is half of faith.",
+          "urdu_translation": "صفائی نصف ایمان ہے۔",
+          "tags": [
+            "cleanliness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach hygiene.",
+          "short_explanation": {
+            "en": "Teach hygiene.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Patience",
+      "entries": [
+        {
+          "id": "H015",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sabr pehli museebat par hota hai.",
+          "english_translation": "Patience is at the first strike.",
+          "urdu_translation": "صبر پہلی چوٹ پر ہوتا ہے۔",
+          "tags": [
+            "sabr"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach patience.",
+          "short_explanation": {
+            "en": "Teach patience.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H037",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Sabr karo ajar mile ga.",
+          "english_translation": "Be patient and you will be rewarded.",
+          "urdu_translation": "صبر کرو، اجر ملے گا۔",
+          "tags": [
+            "sabr"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage patience mindset.",
+          "short_explanation": {
+            "en": "Encourage patience mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Uncategorized",
+      "entries": [
+        {
+          "id": "H016",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah madad karta hai jo dusron ki madad kare.",
+          "english_translation": "Allah helps those who help others.",
+          "urdu_translation": "اللہ ان کی مدد کرتا ہے جو دوسروں کی مدد کرتے ہیں۔",
+          "tags": [
+            "helping"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage helping behavior",
+          "short_explanation": {
+            "en": "Encourage helping behavior",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H017",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo logon ka shukar nahi karta woh Allah ka shukar nahi karta.",
+          "english_translation": "He who does not thank people does not thank Allah.",
+          "urdu_translation": "جو لوگوں کا شکر ادا نہیں کرتا وہ اللہ کا شکر ادا نہیں کرتا۔",
+          "tags": [
+            "gratitude"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach gratitude",
+          "short_explanation": {
+            "en": "Teach gratitude",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H018",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Haya iman ka hissa hai.",
+          "english_translation": "Modesty is part of faith.",
+          "urdu_translation": "حیا ایمان کا حصہ ہے۔",
+          "tags": [
+            "haya"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach modesty",
+          "short_explanation": {
+            "en": "Teach modesty",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H019",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Asani paida karo, sakhti na karo.",
+          "english_translation": "Make things easy, do not make them difficult.",
+          "urdu_translation": "آسانی پیدا کرو، سختی نہ کرو۔",
+          "tags": [
+            "ease"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Avoid harsh parenting",
+          "short_explanation": {
+            "en": "Avoid harsh parenting",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H020",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Tohfay do mohabbat barhay gi.",
+          "english_translation": "Give gifts and you will love one another.",
+          "urdu_translation": "تحفے دو، محبت بڑھے گی۔",
+          "tags": [
+            "love"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Al-Adab Al-Mufrad",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Use rewards positively",
+          "short_explanation": {
+            "en": "Use rewards positively",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Family",
+      "entries": [
+        {
+          "id": "H021",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen woh hai jo apne ghar walon ke liye behtareen ho.",
+          "english_translation": "The best of you are those who are best to their families.",
+          "urdu_translation": "تم میں بہترین وہ ہے جو اپنے گھر والوں کے لیے بہترین ہو۔",
+          "tags": [
+            "family",
+            "kindness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Model kindness within family.",
+          "short_explanation": {
+            "en": "Model kindness within family.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H034",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Rishtay jor kar rakho.",
+          "english_translation": "Maintain ties of kinship.",
+          "urdu_translation": "رشتہ داروں سے تعلق جوڑے رکھو۔",
+          "tags": [
+            "family"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach family bonds.",
+          "short_explanation": {
+            "en": "Teach family bonds.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Focus",
+      "entries": [
+        {
+          "id": "H022",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Be-fazool cheez chhor dena acha islam hai.",
+          "english_translation": "Part of good Islam is leaving what does not concern you.",
+          "urdu_translation": "اچھے اسلام میں بے فائدہ چیز چھوڑ دینا شامل ہے۔",
+          "tags": [
+            "focus"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Teach focus and avoid distractions.",
+          "short_explanation": {
+            "en": "Teach focus and avoid distractions.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Safety",
+      "entries": [
+        {
+          "id": "H023",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Muslim woh hai jisse log mehfooz rahen.",
+          "english_translation": "A Muslim is one from whose tongue and hand people are safe.",
+          "urdu_translation": "مسلمان وہ ہے جس کی زبان اور ہاتھ سے لوگ محفوظ رہیں۔",
+          "tags": [
+            "safety"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": "Sahih",
+          "tafsir_excerpt": "Teach safe and respectful behavior.",
+          "short_explanation": {
+            "en": "Teach safe and respectful behavior.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Faith",
+      "entries": [
+        {
+          "id": "H024",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jahan bhi ho Allah se daro.",
+          "english_translation": "Be mindful of Allah wherever you are.",
+          "urdu_translation": "جہاں بھی ہو اللہ سے ڈرو۔",
+          "tags": [
+            "taqwa"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Develop inner accountability.",
+          "short_explanation": {
+            "en": "Develop inner accountability.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Growth",
+      "entries": [
+        {
+          "id": "H025",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Burai ke baad neki karo.",
+          "english_translation": "Follow a bad deed with a good one.",
+          "urdu_translation": "برائی کے بعد نیکی کرو۔",
+          "tags": [
+            "growth"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": "Hasan",
+          "tafsir_excerpt": "Teach recovery from mistakes.",
+          "short_explanation": {
+            "en": "Teach recovery from mistakes.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Mercy",
+      "entries": [
+        {
+          "id": "H026",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Reham karne walon par reham hota hai.",
+          "english_translation": "The merciful are shown mercy.",
+          "urdu_translation": "رحم کرنے والوں پر رحم کیا جاتا ہے۔",
+          "tags": [
+            "mercy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage empathy.",
+          "short_explanation": {
+            "en": "Encourage empathy.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Social",
+      "entries": [
+        {
+          "id": "H027",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Salam ko aam karo.",
+          "english_translation": "Spread peace among yourselves.",
+          "urdu_translation": "آپس میں سلام کو عام کرو۔",
+          "tags": [
+            "social"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach social connection.",
+          "short_explanation": {
+            "en": "Teach social connection.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Emotion",
+      "entries": [
+        {
+          "id": "H028",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Hasad na karo.",
+          "english_translation": "Do not envy one another.",
+          "urdu_translation": "ایک دوسرے سے حسد نہ کرو۔",
+          "tags": [
+            "envy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach contentment.",
+          "short_explanation": {
+            "en": "Teach contentment.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H029",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Bugz na rakho.",
+          "english_translation": "Do not hate one another.",
+          "urdu_translation": "ایک دوسرے سے بغض نہ رکھو۔",
+          "tags": [
+            "hate"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote harmony.",
+          "short_explanation": {
+            "en": "Promote harmony.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Charity",
+      "entries": [
+        {
+          "id": "H030",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen sadaqa chup kar diya jaye.",
+          "english_translation": "The best charity is that given secretly.",
+          "urdu_translation": "بہترین صدقہ وہ ہے جو چھپ کر دیا جائے۔",
+          "tags": [
+            "charity"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "At-Tabarani (Al-Kabir)",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach sincerity.",
+          "short_explanation": {
+            "en": "Teach sincerity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Trust",
+      "entries": [
+        {
+          "id": "H031",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Badgumani se bacho.",
+          "english_translation": "Avoid suspicion.",
+          "urdu_translation": "بدگمانی سے بچو۔",
+          "tags": [
+            "trust"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Build trust mindset.",
+          "short_explanation": {
+            "en": "Build trust mindset.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Values",
+      "entries": [
+        {
+          "id": "H035",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen zakhira taqwa hai.",
+          "english_translation": "The best provision is piety.",
+          "urdu_translation": "بہترین زاد راہ تقویٰ ہے۔",
+          "tags": [
+            "taqwa"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Quranic Basis / Hadith",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Focus on values over materialism.",
+          "short_explanation": {
+            "en": "Focus on values over materialism.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Balance",
+      "entries": [
+        {
+          "id": "H036",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Fuzool kharchi na karo.",
+          "english_translation": "Do not waste.",
+          "urdu_translation": "فضول خرچی نہ کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach financial responsibility.",
+          "short_explanation": {
+            "en": "Teach financial responsibility.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H042",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Itedaal ikhtiyar karo.",
+          "english_translation": "Be moderate.",
+          "urdu_translation": "اعتدال اختیار کرو۔",
+          "tags": [
+            "balance"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach balance in life.",
+          "short_explanation": {
+            "en": "Teach balance in life.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Compassion",
+      "entries": [
+        {
+          "id": "H038",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Zameen walon par reham karo.",
+          "english_translation": "Show mercy to those on earth.",
+          "urdu_translation": "زمین والوں پر رحم کرو۔",
+          "tags": [
+            "compassion"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach universal compassion.",
+          "short_explanation": {
+            "en": "Teach universal compassion.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        },
+        {
+          "id": "H046",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Allah us par reham nahi karta jo dusron par reham nahi karta.",
+          "english_translation": "Allah will not be merciful to those who are not merciful.",
+          "urdu_translation": "اللہ اس پر رحم نہیں کرتا جو دوسروں پر رحم نہیں کرتا۔",
+          "tags": [
+            "mercy"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Reinforce kindness.",
+          "short_explanation": {
+            "en": "Reinforce kindness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Civic",
+      "entries": [
+        {
+          "id": "H039",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Raste se takleef hata do.",
+          "english_translation": "Remove harm from the road.",
+          "urdu_translation": "راستے سے تکلیف دہ چیز ہٹا دو۔",
+          "tags": [
+            "civic"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach responsibility in society.",
+          "short_explanation": {
+            "en": "Teach responsibility in society.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Sincerity",
+      "entries": [
+        {
+          "id": "H040",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Deen khairkhwahi hai.",
+          "english_translation": "Religion is sincere advice.",
+          "urdu_translation": "دین خیرخواہی ہے۔",
+          "tags": [
+            "sincerity"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih Muslim",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote sincerity.",
+          "short_explanation": {
+            "en": "Promote sincerity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Learning",
+      "entries": [
+        {
+          "id": "H043",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Ilm hasil karo.",
+          "english_translation": "Seek knowledge.",
+          "urdu_translation": "علم حاصل کرو۔",
+          "tags": [
+            "learning"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sunan Ibn Majah",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage curiosity.",
+          "short_explanation": {
+            "en": "Encourage curiosity.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Intentions",
+      "entries": [
+        {
+          "id": "H044",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Amaal ka daromadar niyat par hai.",
+          "english_translation": "Actions are judged by intentions.",
+          "urdu_translation": "اعمال کا دارومدار نیتوں پر ہے۔",
+          "tags": [
+            "niyyah"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach intention awareness.",
+          "short_explanation": {
+            "en": "Teach intention awareness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Respect",
+      "entries": [
+        {
+          "id": "H045",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Jo baron ka ehtram na kare woh hum mein se nahi.",
+          "english_translation": "He who does not respect elders is not one of us.",
+          "urdu_translation": "جو بڑوں کا احترام نہ کرے وہ ہم میں سے نہیں۔",
+          "tags": [
+            "respect"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Jami at-Tirmidhi",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach respect.",
+          "short_explanation": {
+            "en": "Teach respect.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Friendship",
+      "entries": [
+        {
+          "id": "H047",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Insan apne dost ke deen par hota hai.",
+          "english_translation": "A person follows the religion of his close friend.",
+          "urdu_translation": "انسان اپنے دوست کے دین پر ہوتا ہے۔",
+          "tags": [
+            "friends"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sunan Abi Dawud",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Guide children in choosing friends.",
+          "short_explanation": {
+            "en": "Guide children in choosing friends.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Helping",
+      "entries": [
+        {
+          "id": "H048",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Behtareen log woh hain jo dusron ke liye faida mand hon.",
+          "english_translation": "The best people are those most beneficial to others.",
+          "urdu_translation": "بہترین لوگ وہ ہیں جو دوسروں کے لیے فائدہ مند ہوں۔",
+          "tags": [
+            "helping"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "At-Tabarani (Al-Awsat)",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Encourage helpfulness.",
+          "short_explanation": {
+            "en": "Encourage helpfulness.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Speech",
+      "entries": [
+        {
+          "id": "H049",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Achi baat sadaqa hai.",
+          "english_translation": "A good word is charity.",
+          "urdu_translation": "اچھی بات صدقہ ہے۔",
+          "tags": [
+            "speech"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Sahih al-Bukhari",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Promote kind speech.",
+          "short_explanation": {
+            "en": "Promote kind speech.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "Forgiveness",
+      "entries": [
+        {
+          "id": "H050",
+          "type": "hadith",
+          "arabic": null,
+          "transliteration": "Reham karo tum par reham kiya jaye ga.",
+          "english_translation": "Show mercy and you will be shown mercy.",
+          "urdu_translation": "رحم کرو تم پر رحم کیا جائے گا۔",
+          "tags": [
+            "forgiveness"
+          ],
+          "age_range": "all",
+          "source": {
+            "collection": "Musnad Ahmad",
+            "hadith_number": null
+          },
+          "hadith_classification": null,
+          "tafsir_excerpt": "Teach forgiveness and empathy.",
+          "short_explanation": {
+            "en": "Teach forgiveness and empathy.",
+            "ur": ""
+          },
+          "practical_tip": {
+            "en": "",
+            "ur": ""
+          }
+        }
+      ]
     }
   ],
   "meta": {
     "created_by": "Assistant (curated batch)",
-    "entries_count": 44,
+    "entries_count": 173,
     "notes": "Initial curated dataset with tafsir excerpts, hadith classifications, tags, age_range and practical tips. Ask to expand any category to 50+ entries."
   }
 }
