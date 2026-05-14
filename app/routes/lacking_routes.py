@@ -42,6 +42,10 @@ from app.services.llm_task_generator import (
     generate_lacking_guidance,
     generate_islamic_tasks
 )
+from app.services.parent_realtime import (
+    mark_parent_notification_read,
+    schedule_lacking_alert_realtime,
+)
 
 router = APIRouter(prefix="/parent/lacking", tags=["parent-lacking-analysis"])
 logger = logging.getLogger(__name__)
@@ -263,6 +267,7 @@ def mark_notification_read(
                 raise HTTPException(status_code=403, detail="Access denied")
             
             notification["read"] = True
+            mark_parent_notification_read(parent.id, request.notification_id)
             return {"success": True, "message": "Notification marked as read"}
     
     raise HTTPException(status_code=404, detail="Notification not found")
@@ -451,6 +456,7 @@ def _create_notification(child: Child, lacking: dict, analysis: dict) -> None:
     
     _notifications_store.append(notification)
     logger.info(f"Created notification for child {child.id}, lacking: {lacking['area']}")
+    schedule_lacking_alert_realtime(child, notification)
 
 
 def _get_notification_message(lacking: dict) -> str:

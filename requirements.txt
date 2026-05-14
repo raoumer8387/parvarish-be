@@ -20,3 +20,7 @@ alembic
 email-validator
 openai-whisper
 python-multipart
+pytest
+pytest-cov
+pytest-asyncio
+pytest-html

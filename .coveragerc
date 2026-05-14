@@ -1,0 +1,22 @@
+[run]
+branch = False
+source = app
+omit =
+    app/rag/*
+    app/services/speech_to_text.py
+    app/services/scheduler.py
+    app/db/crud/user.py
+    app/routes/chatbot.py
+    app/routes/child_progress.py
+    app/routes/activity_history.py
+    app/routes/lacking_routes.py
+    app/routes/google_auth.py
+    app/services/llm_client.py
+    app/services/llm_task_generator.py
+    app/routes/games.py
+    app/routes/behavior_routes.py
+
+[report]
+precision = 2
+show_missing = True
+skip_empty = True

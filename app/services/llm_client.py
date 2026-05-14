@@ -356,3 +356,8 @@ def generate_response(
         return _generate_with_openrouter(messages, plugins=plugins, model=model)
 
     return _use_simple_fallback(messages)
+
+
+def get_generation_callable():
+    """Indirection hook used by tests and dependency injection."""
+    return generate_response

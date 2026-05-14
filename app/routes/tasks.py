@@ -84,7 +84,7 @@ def create_tasks_from_scores(
 @router.get("/child/{child_id}", response_model=ChildTaskListResponse)
 def get_child_tasks(
     child_id: int,
-    status: str | None = None,
+    task_status: str | None = None,
     limit: int = 50,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
@@ -98,7 +98,7 @@ def get_child_tasks(
     if child.parent_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="You do not have access to this child")
 
-    tasks = list_child_tasks(db, child_id=child_id, status=status, limit=limit)
+    tasks = list_child_tasks(db, child_id=child_id, status=task_status, limit=limit)
     return ChildTaskListResponse(
         child_id=child_id,
         child_name=child.name,
@@ -110,7 +110,7 @@ def get_child_tasks(
 @router.get("/all", response_model=ChildTaskListResponse)
 def get_all_parent_tasks(
     child_id: int | None = None,
-    status: str | None = None,
+    task_status: str | None = None,
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
@@ -139,8 +139,8 @@ def get_all_parent_tasks(
         query = query.filter(ChildTask.child_id == child_id)
     
     # Filter by status if provided
-    if status:
-        query = query.filter(ChildTask.status == status)
+    if task_status:
+        query = query.filter(ChildTask.status == task_status)
     
     # Get tasks
     tasks = query.order_by(ChildTask.created_at.desc()).limit(limit).all()

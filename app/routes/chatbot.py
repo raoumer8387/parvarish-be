@@ -90,13 +90,27 @@ def get_retriever() -> Retriever:
     return _retriever
 
 
-def _markdown_link_label(text: str) -> str:
-    """Escape characters that would break [label](url) markdown link text."""
-    return text.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
+def get_response_generator():
+    """Provide LLM callable for easier dependency patching in tests."""
+    return generate_response
 
 
-def _get_random_video_suggestions(lang: Literal["en", "ur", "rm"], count: int = 2) -> str:
-    """Append random playlist videos; titles use markdown links so URLs are clickable in markdown-capable clients."""
+def _normalize_video_url(url: str) -> str:
+    u = url.strip()
+    if not u or u == "#":
+        return ""
+    if u.startswith(("http://", "https://")):
+        return u
+    return f"https://{u}"
+
+
+class RecommendedVideo(BaseModel):
+    title: str
+    url: str
+
+
+def _recommended_videos_append(lang: Literal["en", "ur", "rm"], count: int = 2) -> Tuple[str, List[RecommendedVideo]]:
+    """Build text appendix (bare URLs on their own lines for OS link detectors) plus structured URLs for UI buttons."""
     root = Path(__file__).resolve().parents[2]
     playlist_path = root / "data" / "parvarish_playlist_tagged.json"
     headers = {
@@ -107,25 +121,37 @@ def _get_random_video_suggestions(lang: Literal["en", "ur", "rm"], count: int = 
     try:
         with open(playlist_path, encoding="utf-8") as f:
             playlist = json.load(f)
-
-        if not playlist:
-            return ""
-
-        suggestions = random.sample(playlist, min(count, len(playlist)))
-        if not suggestions:
-            return ""
-
-        header = headers.get(lang, headers["en"])
-        lines = ["\n\n", header, "\n\n"]
-        for n, video in enumerate(suggestions, start=1):
-            title = str(video.get("Title") or "Video").strip() or "Video"
-            url = (video.get("URL") or "").strip() or "#"
-            safe = _markdown_link_label(title)
-            lines.append(f"{n}. [{safe}]({url})\n")
-        return "".join(lines)
     except (OSError, json.JSONDecodeError, ValueError) as e:
-        print(f"Could not generate video suggestions: {e}")
-        return ""
+        print(f"Could not load playlist for video suggestions: {e}")
+        return "", []
+
+    if not playlist:
+        return "", []
+
+    suggestions = random.sample(playlist, min(count, len(playlist)))
+    if not suggestions:
+        return "", []
+
+    structured: List[RecommendedVideo] = []
+    header = headers.get(lang, headers["en"])
+    lines = ["\n\n", header, "\n"]
+    shown = 0
+    for video in suggestions:
+        title = str(video.get("Title") or "Video").strip() or "Video"
+        url = _normalize_video_url(str(video.get("URL") or ""))
+        if not url:
+            continue
+        shown += 1
+        structured.append(RecommendedVideo(title=title, url=url))
+        lines.append("\n")
+        lines.append(f"{shown}. {title}\n")
+        lines.append(url)
+        lines.append("\n")
+
+    if not structured:
+        return "", []
+
+    return "".join(lines), structured
 
 
 class ChatRequest(BaseModel):
@@ -137,6 +163,7 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     user_id: str
+    recommended_videos: List[RecommendedVideo] = Field(default_factory=list)
 
 
 class VoiceChatResponse(ChatResponse):
@@ -256,8 +283,10 @@ def _generate_chat_response(
 
     child_context = _get_child_context(db, current_user, child_id)
     full_prompt, reply_lang = _build_prompt(message, child_context, child_id, db)
-    answer = generate_response([{"role": "user", "content": full_prompt}])
-    answer = answer.rstrip() + _get_random_video_suggestions(reply_lang, count=2)
+    llm_generate = get_response_generator()
+    answer = llm_generate([{"role": "user", "content": full_prompt}])
+    video_append, videos = _recommended_videos_append(reply_lang, count=2)
+    answer = answer.rstrip() + video_append
 
     try:
         create_message(db, user_id=current_user.id, role="user", content=message, child_id=child_id)
@@ -265,7 +294,7 @@ def _generate_chat_response(
     except Exception as db_err:
         print(f"WARNING: Failed to persist chat messages: {db_err}")
 
-    return ChatResponse(response=answer, user_id=user_id)
+    return ChatResponse(response=answer, user_id=user_id, recommended_videos=videos)
 
 
 def _normalize_user_message_for_attachments(message: Optional[str]) -> str:
@@ -379,12 +408,14 @@ def _generate_chat_response_with_attachments(
         engine = os.getenv("OPENROUTER_PDF_ENGINE", "cloudflare-ai")
         plugins = [{"id": "file-parser", "pdf": {"engine": engine}}]
 
-    answer = generate_response(
+    llm_generate = get_response_generator()
+    answer = llm_generate(
         [user_message],
         plugins=plugins,
         model=get_attachment_model(),
     )
-    answer = answer.rstrip() + _get_random_video_suggestions(reply_lang, count=2)
+    video_append, videos = _recommended_videos_append(reply_lang, count=2)
+    answer = answer.rstrip() + video_append
 
     names = [name for _, name, _, _ in parsed_files]
     persist_user = user_text
@@ -397,7 +428,12 @@ def _generate_chat_response_with_attachments(
     except Exception as db_err:
         print(f"WARNING: Failed to persist chat messages: {db_err}")
 
-    return ChatWithAttachmentsResponse(response=answer, user_id=user_id, attachment_names=names)
+    return ChatWithAttachmentsResponse(
+        response=answer,
+        user_id=user_id,
+        attachment_names=names,
+        recommended_videos=videos,
+    )
 
 
 def _validate_audio_upload(audio: UploadFile, audio_bytes: bytes) -> None:
@@ -523,6 +559,7 @@ async def chat_with_voice(
             user_id=chat_response.user_id,
             transcription=transcription,
             filename=audio.filename,
+            recommended_videos=chat_response.recommended_videos,
         )
     except HTTPException:
         raise

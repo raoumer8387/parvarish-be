@@ -63,21 +63,31 @@ def get_parents_needing_reminders(
     return results
 
 
-def send_reminder_notification(parent_email: str, parent_name: str, children: List[Dict]):
+def send_reminder_notification(
+    parent_id: int,
+    parent_email: str,
+    parent_name: str,
+    children: List[Dict],
+):
     """Send reminder email/notification to parent.
-    
+
     TODO: Integrate with email service (SendGrid, AWS SES, etc.)
-    For now, just logs the reminder.
+    Logs the reminder and pushes to connected parent browsers via WebSocket.
     """
     import logging
+
+    from app.services.parent_realtime import schedule_daily_checkin_reminder_realtime
+
     logger = logging.getLogger(__name__)
-    
+
     child_names = ", ".join([c["child_name"] for c in children])
     logger.info(
         f"REMINDER: {parent_name} ({parent_email}) needs to check in for: {child_names}"
     )
-    
-    # Future: Send actual email/push notification
+
+    schedule_daily_checkin_reminder_realtime(parent_id, parent_name, children)
+
+    # Future: Send actual email
     # Example:
     # send_email(
     #     to=parent_email,
@@ -100,9 +110,10 @@ def run_daily_reminders(db: Session):
     
     for parent_info in parents:
         send_reminder_notification(
+            parent_id=parent_info["parent_id"],
             parent_email=parent_info["parent_email"],
             parent_name=parent_info["parent_name"],
-            children=parent_info["children"]
+            children=parent_info["children"],
         )
     
     return {

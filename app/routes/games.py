@@ -25,6 +25,7 @@ from app.games.mood_picker.service import save_mood_result
 from app.games.scenario_game.service import save_scenario_result
 from app.games.islamic_quiz.service import save_quiz_result
 from app.services.task_service import generate_tasks_from_scores
+from app.services.parent_realtime import notify_parent_child_game_completed
 from app.games.game_config import (
     calculate_game_score,
     get_completion_message,
@@ -109,7 +110,9 @@ def complete_mood_session(
     
     # Generate tasks based on performance
     gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-    
+
+    notify_parent_child_game_completed(db, child_id, "mood", score_data)
+
     return {
         "success": True,
         "game_type": "mood",
@@ -183,7 +186,9 @@ def complete_scenario_session(
     
     # Generate tasks
     gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-    
+
+    notify_parent_child_game_completed(db, child_id, "scenario", score_data)
+
     return {
         "success": True,
         "game_type": "scenario",
@@ -260,7 +265,9 @@ def complete_quiz_session(
     
     # Generate tasks
     gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-    
+
+    notify_parent_child_game_completed(db, child_id, "islamic_quiz", score_data)
+
     return {
         "success": True,
         "game_type": "islamic_quiz",
@@ -331,7 +338,9 @@ def complete_memory_session(
     
     # Generate tasks
     gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-    
+
+    notify_parent_child_game_completed(db, child_id, "memory", score_data)
+
     return {
         "success": True,
         "game_type": "memory",
@@ -408,6 +417,13 @@ def submit_memory_game(
 
     # Trigger task generation based on recent scores
     gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
+
+    score_data = calculate_game_score("memory", {
+        "total_flips": payload["total_flips"],
+        "correct_matches": payload["correct_matches"],
+        "time_taken_seconds": int(payload["time_taken_seconds"]),
+    })
+    notify_parent_child_game_completed(db, child_id, "memory", score_data)
 
     return {"result_id": str(result.id), "analysis": result.analysis_score, "tasks_generated": gen.get("count", 0)}
 

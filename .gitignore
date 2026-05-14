@@ -10,3 +10,6 @@ dist/
 *.egg-info/
 .DS_Store
 *.md
+# pytest / coverage generated artifacts (keep reports/.gitkeep)
+reports/*
+!reports/.gitkeep
