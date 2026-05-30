@@ -13,3 +13,6 @@ dist/
 # pytest / coverage generated artifacts (keep reports/.gitkeep)
 reports/*
 !reports/.gitkeep
+.cache/
+hub/
+.coverage
