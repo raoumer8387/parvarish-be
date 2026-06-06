@@ -10,6 +10,7 @@ from app.db.models.user import User
 from app.db.models.child import Child
 from app.schemas.task import TaskFromChatRequest, TasksFromChatResponse, ChildTaskOut, ChildTaskListResponse, TaskCompleteResponse, TaskFromScoresRequest, UpdateTaskStatusRequest
 from app.services.task_service import generate_tasks_from_chat, list_child_tasks, mark_task_completed, generate_tasks_from_scores, update_task_status
+from app.services.unified_behavior import refresh_and_notify_dashboard
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/tasks", tags=["tasks"])
@@ -38,6 +39,7 @@ def create_tasks_from_chat(
         chatbot_response=request.chatbot_response,
         chatbot_tags=request.chatbot_tags,
     )
+    refresh_and_notify_dashboard(db, request.child_id, trigger_source="task")
 
     # Use Pydantic model validation; attribute meta already compatible
     return TasksFromChatResponse(
@@ -71,6 +73,7 @@ def create_tasks_from_scores(
         days=request.days,
         max_tasks=request.max_tasks,
     )
+    refresh_and_notify_dashboard(db, request.child_id, trigger_source="task")
 
     return TasksFromChatResponse(
         count=result["count"],
@@ -191,6 +194,8 @@ def complete_task(
     if not child or child.parent_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="You do not have access to this task")
 
+    refresh_and_notify_dashboard(db, task.child_id, trigger_source="task")
+
     completed_at = (task.meta or {}).get("completed_at")
     return TaskCompleteResponse(task_id=task.id, status=task.status, completed_at=completed_at)
 
@@ -221,6 +226,8 @@ def update_task_status_endpoint(
     updated_task = update_task_status(db, task_id, request.status)
     if not updated_task:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Failed to update task")
+
+    refresh_and_notify_dashboard(db, task.child_id, trigger_source="task")
 
     completed_at = (updated_task.meta or {}).get("completed_at")
     return TaskCompleteResponse(task_id=updated_task.id, status=updated_task.status, completed_at=completed_at)

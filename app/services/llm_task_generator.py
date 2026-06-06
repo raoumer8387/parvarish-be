@@ -11,9 +11,8 @@ from sqlalchemy.orm import Session
 import logging
 
 from app.services.llm_client import generate_response
+from app.rag.bootstrap import get_rag_retriever
 from app.rag.retriever import Retriever
-from app.rag.embedder import Embedder, VectorStoreConfig
-from app.rag.data_loader import DataLoader
 
 logger = logging.getLogger(__name__)
 
@@ -199,36 +198,9 @@ def get_retriever() -> Retriever:
     """Initialize and return RAG retriever with Islamic knowledge."""
     try:
         logger.info("Initializing RAG retriever with Islamic knowledge...")
-        
-        # Initialize embedder with default config
-        embedder = Embedder()
-        logger.info("Embedder initialized successfully")
-        
-        # Check if collection has data, if not load it
-        collection = embedder.as_retriever()
-        count = collection.count()
-        logger.info(f"Current collection document count: {count}")
-        
-        if count == 0:
-            # Load and index data
-            logger.info("No data in collection, loading Islamic knowledge...")
-            data_loader = DataLoader()
-            docs = data_loader.load()
-            logger.info(f"Loaded {len(docs)} documents from data files")
-            
-            if len(docs) > 0:
-                embedder.build_index(docs)
-                logger.info(f"Successfully indexed {len(docs)} documents into vector store")
-            else:
-                logger.warning("No documents loaded from data files")
-                return None
-        else:
-            logger.info(f"Using existing collection with {count} documents")
-        
-        retriever = Retriever(collection)
+        retriever = get_rag_retriever()
         logger.info("RAG retriever ready")
         return retriever
-        
     except Exception as e:
         logger.error(f"Error initializing retriever: {e}", exc_info=True)
         return None

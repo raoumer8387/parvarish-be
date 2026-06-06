@@ -26,6 +26,8 @@ from app.services.behavior_service import (
     get_child_behavior_stats,
     get_child_questions_full_coverage,
 )
+from app.services.task_service import generate_tasks_from_scores
+from app.services.unified_behavior import refresh_and_notify_dashboard
 from app.core.security import get_current_user
 from app.db.models.behavior_models import Question
 from app.db.models.child import Child
@@ -248,7 +250,14 @@ def submit_behavior_responses(
     # Save responses and compute totals
     result = submit_child_responses(db, request.child_id, [r.model_dump() for r in request.responses])
 
-    logger.info(f"Saved {result['total_questions']} responses for child {request.child_id}")
+    # Interlink: low check-in categories → tasks; refresh unified dashboard for parent
+    tasks_gen = generate_tasks_from_scores(db, child_id=request.child_id, days=3)
+    unified = refresh_and_notify_dashboard(db, request.child_id, trigger_source="daily_checkin")
+
+    logger.info(
+        f"Saved {result['total_questions']} responses for child {request.child_id}; "
+        f"tasks={tasks_gen.get('count', 0)}; unified_score={unified.get('overall_score')}"
+    )
 
     return SubmitChildResponsesResult(
         message="Responses saved successfully",

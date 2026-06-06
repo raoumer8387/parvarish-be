@@ -13,8 +13,7 @@ from fastapi import APIRouter, HTTPException, Depends, File, Form, UploadFile
 from pydantic import BaseModel, Field
 from typing import List, Literal, Optional, Tuple
 from sqlalchemy.orm import Session
-from app.rag.data_loader import DataLoader
-from app.rag.embedder import Embedder, VectorStoreConfig
+from app.rag.bootstrap import get_rag_retriever, reset_rag_retriever
 from app.rag.retriever import Retriever
 from app.services.llm_client import generate_response, get_attachment_model
 from app.db.crud.message import create_message, list_messages_for_user
@@ -29,8 +28,6 @@ from app.utils.language_detector import detect_language  # Import the detector
 
 router = APIRouter(tags=["chatbot"])
 
-# Initialize RAG components (singleton pattern)
-_retriever = None
 MAX_AUDIO_BYTES = 10 * 1024 * 1024
 SUPPORTED_AUDIO_TYPES = {
     "audio/mpeg",
@@ -73,21 +70,7 @@ _DEFAULT_ATTACHMENT_PROMPT = (
 
 def get_retriever() -> Retriever:
     """Get or initialize the RAG retriever."""
-    global _retriever
-    if _retriever is None:
-        loader = DataLoader()
-        docs = loader.load()
-        store = Embedder(VectorStoreConfig())
-        
-        # Check if index needs building
-        try:
-            if store.collection.count() == 0:
-                store.build_index(docs, reset=False)
-        except Exception:
-            store.build_index(docs, reset=False)
-        
-        _retriever = Retriever(store.as_retriever())
-    return _retriever
+    return get_rag_retriever()
 
 
 def get_response_generator():
@@ -188,7 +171,9 @@ SYSTEM_PROMPT = (
     "Example: 'As mentioned in Ihya Ulum ad-Din by Imam Al-Ghazali...' "
     "Speak gently and respectfully, maintaining an educational and empathetic tone. "
     "If no relevant reference is found in the given data, respond politely that you currently do not have Islamic guidance on that specific topic. Do not speculate or invent information. "
-    "Provide SHORT, concise answers (1-2 paragraphs maximum). Focus on actionable advice. Be brief and direct."
+    "When the user asks for hadith or Quranic guidance, you MUST quote at least one hadith or ayat from the provided context (with its exact reference). "
+    "Do not cite a source number unless that exact text appears in the context below. "
+    "Provide SHORT, concise answers (2-3 paragraphs maximum). Focus on actionable advice. Be brief and direct."
 )
 
 
@@ -225,13 +210,38 @@ Use this context to provide PERSONALIZED advice for {child.name}. Reference thei
 """
 
 
+def _retrieve_rag_context(message: str, child_context: str = "") -> str:
+    """Load RAG context; degrade gracefully if embeddings/Chroma are unavailable."""
+    import traceback
+
+    for attempt in range(2):
+        try:
+            retriever = get_retriever()
+            chunks = retriever.retrieve_parenting_context(
+                message,
+                child_context=child_context,
+                k=10,
+            )
+            if chunks:
+                return Retriever.format_context(chunks)
+            return "No specific references found in the database."
+        except Exception as rag_err:
+            stale_collection = "does not exist" in str(rag_err).lower()
+            if attempt == 0 and stale_collection:
+                print("WARNING: RAG collection stale, reinitializing and retrying...")
+                reset_rag_retriever()
+                continue
+            print(f"WARNING: RAG retrieval failed, continuing without Islamic context: {rag_err}")
+            traceback.print_exc()
+            break
+    return "No specific references found in the database."
+
+
 def _build_prompt(message: str, child_context: str, child_id: Optional[int], db: Session) -> Tuple[str, Literal["en", "ur", "rm"]]:
     """Construct the full prompt for the LLM, tailored to the detected language."""
-    retriever = get_retriever()
-    chunks = retriever.query(message, k=8)
-    context = Retriever.format_context(chunks) if chunks else "No specific references found in the database."
+    context = _retrieve_rag_context(message, child_context)
 
-    max_context_length = 2000
+    max_context_length = 6000
     if len(context) > max_context_length:
         context = context[:max_context_length] + "\n[Context truncated...]"
 
@@ -258,12 +268,14 @@ Question: {message}
 
 ---
 **CRITICAL: CITATION REQUIREMENTS**
-You MUST cite your sources. Follow these rules exactly:
-- For Quran: "As Allah says in the Quran (Surah Al-Isra, 17:23)..."
-- For Hadith: "The Prophet (PBUH) said..." and then cite the reference, like "(Sahih al-Bukhari, 5997)".
-- For any other text, use the source information provided in the context, for example: "(Source: Ihya Ulum ad-Din by Imam Al-Ghazali)".
-- If the context provides a `[Source X: ...]` header, you MUST use it to cite the information. For example, if you use text from `[Source 1: Quran, 17:23]`, you must cite it as `(Quran, 17:23)`.
-- Aim to use at least one reference in your answer if relevant sources are provided in the context.
+You MUST cite your sources using ONLY the references provided in the context above.
+- For Quran: quote the EN/UR text from context and cite exactly as shown, e.g. "(Qur'an 3:134)".
+- For Hadith: begin with "The Prophet (PBUH) said..." using the EN/UR text from context, then cite e.g. "(Sahih al-Bukhari, Hadith 6114)".
+- For scholar references: cite book and author from the [Source X: ...] header.
+- For Prophet stories: cite the story title from the header, e.g. "(Prophet Story: Aman aur Rehmat)".
+- If the user asks for hadith or Quranic advice and matching sources appear in the context, include at least one hadith OR ayat in your answer.
+- NEVER invent hadith numbers, surah names, or story titles that are not in the context.
+- If the context provides a `[Source X: ...]` header, you MUST use that reference when using that passage.
 ---
 """
     return prompt, lang
@@ -284,7 +296,16 @@ def _generate_chat_response(
     child_context = _get_child_context(db, current_user, child_id)
     full_prompt, reply_lang = _build_prompt(message, child_context, child_id, db)
     llm_generate = get_response_generator()
-    answer = llm_generate([{"role": "user", "content": full_prompt}])
+    try:
+        answer = llm_generate([{"role": "user", "content": full_prompt}])
+    except Exception as llm_err:
+        import traceback
+        print(f"WARNING: LLM generation failed: {llm_err}")
+        traceback.print_exc()
+        answer = (
+            "Assalamu Alaikum! I could not reach the AI service right now. "
+            "Please ask the administrator to verify GOOGLE_API_KEY or OPENROUTER_API_KEY in the backend .env file."
+        )
     video_append, videos = _recommended_videos_append(reply_lang, count=2)
     answer = answer.rstrip() + video_append
 

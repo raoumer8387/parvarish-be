@@ -307,7 +307,9 @@ def _generate_with_openrouter(
                     time.sleep(wait)
                     continue
                 break
-        raise last_exc
+        if last_exc is not None:
+            raise last_exc
+        return _use_simple_fallback(messages)
 
     except Exception as e:
         status = getattr(e, "status_code", None)

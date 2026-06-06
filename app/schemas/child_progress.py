@@ -103,10 +103,28 @@ class ActivityTimelineItem(BaseModel):
     score: Optional[float] = None
 
 
+class UnifiedBehaviorAnalysis(BaseModel):
+    """Interlinked scores from daily check-ins, games, and tasks."""
+    child_id: int
+    period_days: int
+    overall_score: float
+    unified_scores: Dict[str, float]
+    category_changes: Dict[str, str]
+    upgraded_categories: List[str]
+    downgraded_categories: List[str]
+    strongest_category: Optional[str] = None
+    weakest_category: Optional[str] = None
+    sources: Dict[str, Dict[str, float]]
+    skill_areas: Dict[str, Any]
+    data_freshness: Dict[str, Optional[str]]
+    analyzed_at: str
+
+
 class ChildProgressDashboard(BaseModel):
     """Complete child progress dashboard response."""
     child_info: ChildInfo
     period_days: int
+    unified_analysis: UnifiedBehaviorAnalysis
     behavior_summary: BehaviorSummary
     games_summary: GamesSummary
     tasks_summary: TasksSummary
@@ -121,6 +139,9 @@ class ChildOverviewItem(BaseModel):
     age: Optional[int] = None
     recent_activities: Dict[str, int]
     engagement_score: float
+    overall_behavior_score: float
+    unified_scores: Dict[str, float]
+    downgraded_categories: List[str]
     needs_attention: bool
     last_activity: Optional[str] = None
 

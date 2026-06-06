@@ -36,7 +36,8 @@ from app.schemas.lacking_schemas import (
 )
 from app.services.lacking_analyzer import (
     get_child_lacking_analysis,
-    should_generate_ticker
+    should_generate_ticker,
+    resolve_lacking_area_info,
 )
 from app.services.llm_task_generator import (
     generate_lacking_guidance,
@@ -46,6 +47,7 @@ from app.services.parent_realtime import (
     mark_parent_notification_read,
     schedule_lacking_alert_realtime,
 )
+from app.services.unified_behavior import refresh_and_notify_dashboard
 
 router = APIRouter(prefix="/parent/lacking", tags=["parent-lacking-analysis"])
 logger = logging.getLogger(__name__)
@@ -286,35 +288,16 @@ def get_lacking_guidance(
     parent = _assert_parent_user(user)
     child = _assert_parent_owns_child(db, parent, request.child_id)
     
-    # Get recent lacking analysis
     try:
-        analysis = get_child_lacking_analysis(db, request.child_id, days=7)
-        
-        # Find the specific lacking area
-        lacking_info = None
-        for area in analysis["lacking_areas"]:
-            if area["area"] == request.lacking_area:
-                lacking_info = area
-                break
-        
-        if not lacking_info:
-            # Check if area exists in detailed analysis
-            detailed = analysis["detailed_analysis"].get(request.lacking_area)
-            if detailed and detailed.get("score") is not None:
-                lacking_info = {
-                    "area": request.lacking_area,
-                    "label": request.lacking_area.replace("_", " ").title(),
-                    "score": detailed["score"]
-                }
-            else:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"No data found for lacking area: {request.lacking_area}"
-                )
-        
-        # Generate Islamic guidance
+        try:
+            lacking_info = resolve_lacking_area_info(
+                db, request.child_id, request.lacking_area, days=7
+            )
+        except ValueError as e:
+            raise HTTPException(status_code=422, detail=str(e))
+
         guidance = generate_lacking_guidance(
-            lacking_area=request.lacking_area,
+            lacking_area=lacking_info["area"],
             score=lacking_info["score"],
             child_name=child.name,
             child_age=child.age
@@ -323,7 +306,7 @@ def get_lacking_guidance(
         return {
             "child_id": child.id,
             "child_name": child.name,
-            "lacking_area": request.lacking_area,
+            "lacking_area": lacking_info["area"],
             "lacking_label": lacking_info["label"],
             "score": lacking_info["score"],
             "guidance": guidance,
@@ -356,34 +339,17 @@ def generate_tasks_for_lacking(
     child = _assert_parent_owns_child(db, parent, request.child_id)
     
     try:
-        # Get recent lacking analysis
-        analysis = get_child_lacking_analysis(db, request.child_id, days=7)
-        
-        # Find the specific lacking area
-        lacking_info = None
-        for area in analysis["lacking_areas"]:
-            if area["area"] == request.lacking_area:
-                lacking_info = area
-                break
-        
-        if not lacking_info:
-            detailed = analysis["detailed_analysis"].get(request.lacking_area)
-            if detailed and detailed.get("score") is not None:
-                lacking_info = {
-                    "area": request.lacking_area,
-                    "score": detailed["score"]
-                }
-            else:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"No data found for lacking area: {request.lacking_area}"
-                )
-        
-        # Generate tasks using LLM
+        try:
+            lacking_info = resolve_lacking_area_info(
+                db, request.child_id, request.lacking_area, days=7
+            )
+        except ValueError as e:
+            raise HTTPException(status_code=422, detail=str(e))
+
         tasks = generate_islamic_tasks(
             db=db,
             child_id=request.child_id,
-            lacking_area=request.lacking_area,
+            lacking_area=lacking_info["area"],
             score=lacking_info["score"],
             child_age=child.age
         )
@@ -407,7 +373,7 @@ def generate_tasks_for_lacking(
                 status="pending",
                 source="lacking_analysis",
                 meta={
-                    "lacking_area": request.lacking_area,
+                    "lacking_area": lacking_info["area"],
                     "islamic_reference": task_data.get("islamic_reference", ""),
                     "generated_by": "llm",
                     "parent_id": parent.id
@@ -417,11 +383,12 @@ def generate_tasks_for_lacking(
             saved_tasks.append(task_data)
         
         db.commit()
+        refresh_and_notify_dashboard(db, request.child_id, trigger_source="lacking_analysis")
         
         return {
             "child_id": request.child_id,
             "child_name": child.name,
-            "lacking_area": request.lacking_area,
+            "lacking_area": lacking_info["area"],
             "tasks": [GeneratedTask(**t) for t in saved_tasks],
             "tasks_saved": True,
             "generated_at": datetime.utcnow().isoformat()

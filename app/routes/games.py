@@ -26,6 +26,7 @@ from app.games.scenario_game.service import save_scenario_result
 from app.games.islamic_quiz.service import save_quiz_result
 from app.services.task_service import generate_tasks_from_scores
 from app.services.parent_realtime import notify_parent_child_game_completed
+from app.services.unified_behavior import refresh_and_notify_dashboard
 from app.games.game_config import (
     calculate_game_score,
     get_completion_message,
@@ -49,6 +50,20 @@ def get_age_group_from_age(age: int | None) -> str:
         return "9-11"
     else:
         return "12-14"
+
+
+def _finalize_game_submit(
+    db: Session,
+    child_id: int,
+    game_type: str,
+    gen: Dict[str, Any],
+    score_data: Dict[str, Any] | None = None,
+) -> Dict[str, Any]:
+    """Interlink game results with tasks and push unified dashboard update to parent."""
+    refresh_and_notify_dashboard(db, child_id, trigger_source="game")
+    if score_data is not None:
+        notify_parent_child_game_completed(db, child_id, game_type, score_data)
+    return gen
 
 
 # ==================== BATCH GAME SUBMISSION (Complete Sessions) ====================
@@ -108,10 +123,7 @@ def complete_mood_session(
     score_data = calculate_game_score("mood", {"responses": responses})
     completion_msg = get_completion_message(score_data["percentage"])
     
-    # Generate tasks based on performance
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-
-    notify_parent_child_game_completed(db, child_id, "mood", score_data)
+    gen = _finalize_game_submit(db, child_id, "mood", generate_tasks_from_scores(db, child_id=child_id, days=3), score_data)
 
     return {
         "success": True,
@@ -184,10 +196,7 @@ def complete_scenario_session(
     score_data = calculate_game_score("scenario", {"responses": response_scores})
     completion_msg = get_completion_message(score_data["percentage"])
     
-    # Generate tasks
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-
-    notify_parent_child_game_completed(db, child_id, "scenario", score_data)
+    gen = _finalize_game_submit(db, child_id, "scenario", generate_tasks_from_scores(db, child_id=child_id, days=3), score_data)
 
     return {
         "success": True,
@@ -263,10 +272,7 @@ def complete_quiz_session(
     score_data = calculate_game_score("islamic_quiz", {"responses": response_data})
     completion_msg = get_completion_message(score_data["percentage"])
     
-    # Generate tasks
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-
-    notify_parent_child_game_completed(db, child_id, "islamic_quiz", score_data)
+    gen = _finalize_game_submit(db, child_id, "islamic_quiz", generate_tasks_from_scores(db, child_id=child_id, days=3), score_data)
 
     return {
         "success": True,
@@ -336,10 +342,7 @@ def complete_memory_session(
     })
     completion_msg = get_completion_message(score_data["percentage"])
     
-    # Generate tasks
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-
-    notify_parent_child_game_completed(db, child_id, "memory", score_data)
+    gen = _finalize_game_submit(db, child_id, "memory", generate_tasks_from_scores(db, child_id=child_id, days=3), score_data)
 
     return {
         "success": True,
@@ -415,15 +418,12 @@ def submit_memory_game(
         int(payload["time_taken_seconds"]),
     )
 
-    # Trigger task generation based on recent scores
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
-
     score_data = calculate_game_score("memory", {
         "total_flips": payload["total_flips"],
         "correct_matches": payload["correct_matches"],
         "time_taken_seconds": int(payload["time_taken_seconds"]),
     })
-    notify_parent_child_game_completed(db, child_id, "memory", score_data)
+    gen = _finalize_game_submit(db, child_id, "memory", generate_tasks_from_scores(db, child_id=child_id, days=3), score_data)
 
     return {"result_id": str(result.id), "analysis": result.analysis_score, "tasks_generated": gen.get("count", 0)}
 
@@ -447,7 +447,7 @@ def submit_mood(
         int(payload["scenario_id"]),
         str(payload["selected_mood"]),
     )
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
+    gen = _finalize_game_submit(db, child_id, "mood", generate_tasks_from_scores(db, child_id=child_id, days=3))
     return {"result_id": str(result.id), "analysis": result.analysis_score, "tasks_generated": gen.get("count", 0)}
 
 
@@ -470,7 +470,7 @@ def submit_scenario(
         int(payload["scenario_id"]),
         str(payload["selected_option"]),
     )
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
+    gen = _finalize_game_submit(db, child_id, "scenario", generate_tasks_from_scores(db, child_id=child_id, days=3))
     return {"result_id": str(result.id), "analysis": result.analysis_score, "tasks_generated": gen.get("count", 0)}
 
 
@@ -494,7 +494,7 @@ def submit_islamic_quiz(
         int(payload["question_id"]),
         str(payload["selected_answer"]),
     )
-    gen = generate_tasks_from_scores(db, child_id=child_id, days=3)
+    gen = _finalize_game_submit(db, child_id, "islamic_quiz", generate_tasks_from_scores(db, child_id=child_id, days=3))
     return {"result_id": str(result.id), "analysis": result.analysis_score, "tasks_generated": gen.get("count", 0)}
 
 

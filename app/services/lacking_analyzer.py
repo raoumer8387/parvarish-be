@@ -30,7 +30,102 @@ LACKING_THRESHOLDS = {
     "behavior_identification": 60 # Scenario game
 }
 
-# Minimum games required for analysis
+VALID_LACKING_AREAS = frozenset(LACKING_THRESHOLDS.keys())
+
+LACKING_AREA_LABELS = {
+    "presence_of_mind": "Presence of Mind",
+    "mood_identification": "Mood Identification",
+    "learning_capability": "Learning Capability",
+    "behavior_identification": "Behavior Identification",
+}
+
+# Parent dashboard unified categories → guidance/task prompt keys
+UNIFIED_CATEGORY_TO_LACKING = {
+    "emotional": "mood_identification",
+    "social": "behavior_identification",
+    "moral": "behavior_identification",
+    "habitual": "behavior_identification",
+    "cognitive": "presence_of_mind",
+    "physical": "presence_of_mind",
+    "spiritual": "learning_capability",
+}
+
+
+def normalize_lacking_area(raw: str) -> Optional[str]:
+    """Map API / dashboard labels to a valid game lacking-area slug."""
+    if not raw or not str(raw).strip():
+        return None
+    normalized = str(raw).strip().lower().replace("-", "_")
+    if " " in normalized:
+        normalized = normalized.replace(" ", "_")
+    if normalized in VALID_LACKING_AREAS:
+        return normalized
+    if normalized in UNIFIED_CATEGORY_TO_LACKING:
+        return UNIFIED_CATEGORY_TO_LACKING[normalized]
+    for slug, label in LACKING_AREA_LABELS.items():
+        if label.lower().replace(" ", "_") == normalized:
+            return slug
+    return None
+
+
+def resolve_lacking_area_info(
+    db: Session,
+    child_id: int,
+    lacking_area_raw: str,
+    days: int = 7,
+) -> Dict[str, Any]:
+    """Resolve lacking area + score for guidance/tasks, with sensible fallbacks."""
+    area = normalize_lacking_area(lacking_area_raw)
+    if not area:
+        valid = ", ".join(sorted(VALID_LACKING_AREAS))
+        raise ValueError(
+            f"Unknown lacking area '{lacking_area_raw}'. Expected one of: {valid} "
+            "(or a dashboard category like emotional, social, spiritual)."
+        )
+
+    analysis = get_child_lacking_analysis(db, child_id, days=days)
+    label = LACKING_AREA_LABELS[area]
+    score: Optional[float] = None
+
+    for item in analysis.get("lacking_areas", []):
+        if item["area"] == area:
+            return {
+                "area": area,
+                "label": item.get("label", label),
+                "score": float(item["score"]),
+            }
+
+    for item in analysis.get("all_areas", []):
+        if item["area"] == area and item.get("score") is not None:
+            score = float(item["score"])
+            label = item.get("label", label)
+            break
+
+    if score is None:
+        detailed = analysis.get("detailed_analysis", {}).get(area)
+        if detailed and detailed.get("score") is not None:
+            score = float(detailed["score"])
+
+    if score is None:
+        unified_cat = next(
+            (cat for cat, mapped in UNIFIED_CATEGORY_TO_LACKING.items() if mapped == area),
+            None,
+        )
+        if unified_cat:
+            from app.services.unified_behavior import get_unified_behavior_analysis
+
+            unified = get_unified_behavior_analysis(
+                db, child_id, days=days, include_skill_areas=False
+            )
+            unified_score = unified.get("unified_scores", {}).get(unified_cat)
+            if unified_score is not None:
+                score = float(unified_score)
+
+    if score is None:
+        score = 50.0
+
+    return {"area": area, "label": label, "score": score}
+
 MIN_GAMES_FOR_ANALYSIS = {
     "memory": 2,
     "mood": 3,

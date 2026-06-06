@@ -22,6 +22,7 @@ from app.db.models.behavior_models import ChildBehaviorResponse
 from app.db.models.game_results import ChildGameResult
 from app.db.models.child_task import ChildTask
 from app.services.behavior_service import get_child_behavior_stats
+from app.services.unified_behavior import get_unified_behavior_analysis
 from app.schemas.child_progress import ChildProgressDashboard, AllChildrenOverview
 
 logger = logging.getLogger(__name__)
@@ -59,6 +60,18 @@ def _assert_parent_owns_child(db: Session, user: User, child_id: int) -> Child:
     return child
 
 
+@router.get("/{child_id}/unified")
+def get_child_unified_analysis(
+    child_id: int,
+    days: int = 30,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Interlinked behavior scores from daily check-ins, games, and tasks."""
+    _assert_parent_owns_child(db, current_user, child_id)
+    return get_unified_behavior_analysis(db, child_id, days=days)
+
+
 @router.get("/{child_id}/dashboard", response_model=ChildProgressDashboard)
 def get_child_progress_dashboard(
     child_id: int,
@@ -78,6 +91,8 @@ def get_child_progress_dashboard(
     - Recent activity timeline
     """
     child = _assert_parent_owns_child(db, current_user, child_id)
+
+    unified_analysis = get_unified_behavior_analysis(db, child_id, days=days)
     
     # Calculate date range
     end_date = datetime.now(timezone.utc)
@@ -324,19 +339,34 @@ def get_child_progress_dashboard(
             "message": f"{child.name} needs a daily behavior check-in",
             "action": "behavior_checkin"
         })
+
+    for cat in unified_analysis.get("downgraded_categories", []):
+        insights.append({
+            "type": "downgrade",
+            "message": f"{child.name}'s {cat} score declined — review recent activity",
+            "action": "review_category",
+        })
+
+    for cat in unified_analysis.get("upgraded_categories", []):
+        insights.append({
+            "type": "upgrade",
+            "message": f"{child.name} improved in {cat} — great progress!",
+            "action": "celebrate_progress",
+        })
+
+    weakest_unified = unified_analysis.get("weakest_category")
+    if weakest_unified and unified_analysis.get("unified_scores", {}).get(weakest_unified, 100) < 55:
+        insights.append({
+            "type": "improvement",
+            "message": f"Focus on {weakest_unified} — lowest unified score across check-ins, games, and tasks",
+            "action": "targeted_tasks",
+        })
     
     if overall_engagement < 50:
         insights.append({
             "type": "concern",
             "message": f"{child.name}'s engagement is low this week",
             "action": "increase_engagement"
-        })
-    
-    if weakest_category and category_averages.get(weakest_category, 0) < 60:
-        insights.append({
-            "type": "improvement",
-            "message": f"Focus on {weakest_category} development through targeted activities",
-            "action": "targeted_tasks"
         })
     
     if len(pending_tasks) > 5:
@@ -349,7 +379,9 @@ def get_child_progress_dashboard(
     progress_insights = {
         "overall_engagement_score": overall_engagement,
         "insights": insights,
-        "recommendations": _generate_recommendations(child, behavior_stats, games_summary, tasks_summary)
+        "recommendations": _generate_recommendations(
+            child, behavior_stats, games_summary, tasks_summary, unified_analysis
+        )
     }
     
     # === RECENT ACTIVITY TIMELINE ===
@@ -401,6 +433,7 @@ def get_child_progress_dashboard(
     return {
         "child_info": child_info,
         "period_days": days,
+        "unified_analysis": unified_analysis,
         "behavior_summary": behavior_summary,
         "games_summary": games_summary,
         "tasks_summary": tasks_summary,
@@ -409,12 +442,18 @@ def get_child_progress_dashboard(
     }
 
 
-def _generate_recommendations(child: Child, behavior_stats: Dict, games_summary: Dict, tasks_summary: Dict) -> List[Dict[str, str]]:
+def _generate_recommendations(
+    child: Child,
+    behavior_stats: Dict,
+    games_summary: Dict,
+    tasks_summary: Dict,
+    unified_analysis: Dict,
+) -> List[Dict[str, str]]:
     """Generate personalized recommendations based on child's progress."""
     recommendations = []
     
     # Behavior-based recommendations
-    if behavior_stats.get("avg_score", 0) < 60:
+    if behavior_stats.get("behavior_level", 0) < 60:
         recommendations.append({
             "category": "behavior",
             "title": "Focus on Daily Check-ins",
@@ -429,7 +468,7 @@ def _generate_recommendations(child: Child, behavior_stats: Dict, games_summary:
             "description": "Educational games help develop cognitive and social skills in a fun way"
         })
     
-    weakest = games_summary.get("weakest_category")
+    weakest = unified_analysis.get("weakest_category") or games_summary.get("weakest_category")
     if weakest:
         game_suggestions = {
             "cognitive": "memory and puzzle games",
@@ -571,14 +610,19 @@ def get_all_children_overview(
             hours_since = (end_date - last_ts).total_seconds() / 3600
             needs_checkin = hours_since >= 24
         
-        if needs_checkin:
+        child_unified = get_unified_behavior_analysis(db, child.id, days=days, include_skill_areas=False)
+        needs_skill_attention = child_unified.get("skill_areas", {}).get("requires_attention", False)
+        has_downgrades = bool(child_unified.get("downgraded_categories"))
+        needs_attention = needs_checkin or has_downgrades or needs_skill_attention
+        if needs_attention:
             children_needing_attention += 1
         
         # Calculate engagement score
         activity_score = min((behavior_count + game_count + task_count) * 10, 100)
         completion_rate = (completed_tasks / task_count * 100) if task_count > 0 else 100
         engagement_score = (activity_score + completion_rate) / 2
-        engagement_scores.append(engagement_score)
+        overall_behavior = child_unified.get("overall_score", 0)
+        engagement_scores.append((engagement_score + overall_behavior) / 2)
         
         total_activities += behavior_count + game_count + task_count
         
@@ -593,7 +637,10 @@ def get_all_children_overview(
                 "tasks_completed": completed_tasks
             },
             "engagement_score": round(engagement_score, 1),
-            "needs_attention": needs_checkin,
+            "overall_behavior_score": overall_behavior,
+            "unified_scores": child_unified.get("unified_scores", {}),
+            "downgraded_categories": child_unified.get("downgraded_categories", []),
+            "needs_attention": needs_attention,
             "last_activity": _ensure_timezone_aware(last_behavior.timestamp).isoformat() if last_behavior and last_behavior.timestamp else None
         })
     

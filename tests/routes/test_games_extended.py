@@ -11,10 +11,17 @@ from tests.conftest import build_client
 @pytest.mark.endpoint
 def test_memory_submit_success(fake_db, child_user, monkeypatch):
     res = SimpleNamespace(id=uuid.uuid4(), analysis_score={"cognitive": 80})
+    child_profile = SimpleNamespace(id=child_user.id, name="Child User", parent_id=10)
     monkeypatch.setattr(games_routes, "save_memory_game_result", lambda *a, **k: res)
     monkeypatch.setattr(games_routes, "generate_tasks_from_scores", lambda *a, **k: {"count": 0})
+    monkeypatch.setattr(games_routes, "notify_parent_child_game_completed", lambda *a, **k: None)
+    monkeypatch.setattr(
+        games_routes,
+        "refresh_and_notify_dashboard",
+        lambda *a, **k: {"overall_score": 72, "upgraded_categories": [], "downgraded_categories": []},
+    )
     q = MagicMock()
-    q.filter.return_value.first.return_value = SimpleNamespace(id=child_user.id)
+    q.filter.return_value.first.return_value = child_profile
     fake_db.query.return_value = q
     client = build_client(games_routes, fake_db, user=child_user)
     r = client.post(
@@ -33,10 +40,21 @@ def test_memory_submit_success(fake_db, child_user, monkeypatch):
 
 @pytest.mark.endpoint
 def test_complete_mood_session_success(fake_db, child_user, monkeypatch):
-    monkeypatch.setattr(games_routes, "save_mood_result", lambda *a, **k: SimpleNamespace())
+    child_profile = SimpleNamespace(id=child_user.id, name="Child User", parent_id=10)
+    monkeypatch.setattr(
+        games_routes,
+        "save_mood_result",
+        lambda *a, **k: SimpleNamespace(analysis_score={"emotional": 70}),
+    )
     monkeypatch.setattr(games_routes, "generate_tasks_from_scores", lambda *a, **k: {"count": 0})
+    monkeypatch.setattr(games_routes, "notify_parent_child_game_completed", lambda *a, **k: None)
+    monkeypatch.setattr(
+        games_routes,
+        "refresh_and_notify_dashboard",
+        lambda *a, **k: {"overall_score": 72, "upgraded_categories": [], "downgraded_categories": []},
+    )
     q = MagicMock()
-    q.filter.return_value.first.return_value = SimpleNamespace(id=child_user.id)
+    q.filter.return_value.first.return_value = child_profile
     fake_db.query.return_value = q
     payload = {
         "child_id": child_user.id,

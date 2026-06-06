@@ -4,6 +4,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Dict, Any, Optional
+import hashlib
 
 
 @dataclass
@@ -34,35 +35,71 @@ class DataLoader:
             base = app_data if app_data.exists() else root_data
         self.base_dir = base
         self.hadith_file = self.base_dir / "hadith_quranic.json"
+        self.new_hadith_file = self.base_dir / "new_hadith.json"
+        self.new_quranic_file = self.base_dir / "new_quranic_verse.json"
         self.stories_file = self.base_dir / "prophet_stories.json"
         self.scholars_file = self.base_dir / "islamic_refrences.json"
         self.playlist_file = self.base_dir / "parvarish_playlist_tagged.json"
 
     def load(self) -> List[Document]:
         docs: List[Document] = []
-        # hadith_quranic
         if self.hadith_file.exists():
             with self.hadith_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._normalize_hadith_quranic(data))
-        # prophet_stories
+        if self.new_hadith_file.exists():
+            with self.new_hadith_file.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            docs.extend(self._normalize_new_hadith(data))
+        if self.new_quranic_file.exists():
+            with self.new_quranic_file.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            docs.extend(self._normalize_new_quranic(data))
         if self.stories_file.exists():
             with self.stories_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._normalize_prophet_stories(data))
-        # islamic_scholars (NEW)
         if self.scholars_file.exists():
             with self.scholars_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._load_islamic_scholars(data))
-        
-        # Load playlist data
         if self.playlist_file.exists():
             with self.playlist_file.open("r", encoding="utf-8") as f:
                 data = json.load(f)
             docs.extend(self._normalize_playlist(data))
-            
-        return docs
+
+        return self._dedupe_documents(docs)
+
+    def source_signature(self) -> str:
+        """Fingerprint data files so the vector index rebuilds when JSON changes."""
+        parts: List[str] = []
+        for path in (
+            self.hadith_file,
+            self.new_hadith_file,
+            self.new_quranic_file,
+            self.stories_file,
+            self.scholars_file,
+            self.playlist_file,
+        ):
+            if path.exists():
+                stat = path.stat()
+                parts.append(f"{path.name}:{stat.st_mtime_ns}:{stat.st_size}")
+        return hashlib.sha256("|".join(sorted(parts)).encode("utf-8")).hexdigest()
+
+    @staticmethod
+    def _dedupe_documents(docs: List[Document]) -> List[Document]:
+        """Ensure every document id is unique before indexing."""
+        seen: Dict[str, int] = {}
+        unique: List[Document] = []
+        for doc in docs:
+            doc_id = doc.id
+            if doc_id in seen:
+                seen[doc_id] += 1
+                doc_id = f"{doc_id}__{seen[doc_id]}"
+            else:
+                seen[doc_id] = 1
+            unique.append(Document(id=doc_id, text=doc.text, metadata=doc.metadata))
+        return unique
 
     def _format_source(self, source: Optional[Dict[str, Any]]) -> str:
         if not source:
@@ -72,7 +109,12 @@ class DataLoader:
         if "book" in source and source["book"] == "Qur'an":
             parts.append(f"Qur'an {source.get('surah')}:{source.get('ayah')}")
         elif "collection" in source:
-            parts.append(f"{source.get('collection')}, Hadith {source.get('hadith_number')}")
+            collection = source.get("collection") or "Hadith"
+            number = source.get("hadith_number") or source.get("number")
+            if number:
+                parts.append(f"{collection}, Hadith {number}")
+            else:
+                parts.append(collection)
         elif "note" in source:
             parts.append(source.get("note"))
             
@@ -95,6 +137,7 @@ class DataLoader:
             metadata = {
                 "source": "Parvarish Playlist",
                 "type": "video",
+                "content_type": "video",
                 "title": title,
                 "url": url,
                 "tags": tags,
@@ -152,15 +195,106 @@ class DataLoader:
                 
                 text = " | ".join(parts)
                 
+                entry_type = entry.get("type") or "unknown"
+                source_details = self._format_source(entry.get("source"))
                 metadata = {
                     "id": entry_id,
                     "category": cat_name,
-                    "type": entry.get("type"),
-                    "source_details": self._format_source(entry.get("source")),
+                    "type": entry_type,
+                    "content_type": entry_type if entry_type in {"hadith", "ayat"} else "guidance",
+                    "source_details": source_details,
                     "tags": entry.get("tags", []),
                     "age_range": entry.get("age_range"),
+                    "hadith_classification": entry.get("hadith_classification") or "",
                 }
-                docs.append(Document(id=entry_id, text=text, metadata=metadata))
+                docs.append(Document(id=f"hq:{cat_name}:{entry_id}", text=text, metadata=metadata))
+        return docs
+
+    def _normalize_new_hadith(self, data: List[Dict[str, Any]]) -> List[Document]:
+        docs: List[Document] = []
+        if not isinstance(data, list):
+            return docs
+        for entry in data:
+            entry_id = entry.get("id") or f"nh-{len(docs) + 1}"
+            source = entry.get("source") or "Hadith"
+            reference = entry.get("reference") or ""
+            source_details = f"{source}, Hadith {reference}" if reference else source
+            parts: List[str] = []
+            if entry.get("embedding_text"):
+                parts.append(entry["embedding_text"])
+            topic = entry.get("topic")
+            subtopic = entry.get("subtopic")
+            if topic:
+                parts.append(f"Topic: {topic}" + (f" / {subtopic}" if subtopic else ""))
+            parts.append(f"Source: {source_details}")
+            if entry.get("text_en"):
+                parts.append(f"EN: {entry['text_en']}")
+            if entry.get("text_urdu"):
+                parts.append(f"UR: {entry['text_urdu']}")
+            if entry.get("text_roman_urdu"):
+                parts.append(f"RM: {entry['text_roman_urdu']}")
+            if entry.get("parenting_insight"):
+                parts.append(f"Parenting insight: {entry['parenting_insight']}")
+            docs.append(
+                Document(
+                    id=f"new_hadith:{entry_id}",
+                    text=" | ".join(parts),
+                    metadata={
+                        "id": entry_id,
+                        "type": "hadith",
+                        "content_type": "hadith",
+                        "category": topic or "Parenting Hadith",
+                        "source_details": source_details,
+                        "collection": source,
+                        "hadith_number": str(reference),
+                        "hadith_classification": entry.get("authenticity") or "",
+                        "tags": entry.get("tags", []),
+                        "topic": topic or "",
+                    },
+                )
+            )
+        return docs
+
+    def _normalize_new_quranic(self, data: List[Dict[str, Any]]) -> List[Document]:
+        docs: List[Document] = []
+        if not isinstance(data, list):
+            return docs
+        for entry in data:
+            entry_id = entry.get("id") or f"nq-{len(docs) + 1}"
+            reference = entry.get("reference") or ""
+            source_details = f"Qur'an {reference}" if reference else "Qur'an"
+            parts: List[str] = []
+            if entry.get("embedding_text"):
+                parts.append(entry["embedding_text"])
+            topic = entry.get("topic")
+            subtopic = entry.get("subtopic")
+            if topic:
+                parts.append(f"Topic: {topic}" + (f" / {subtopic}" if subtopic else ""))
+            parts.append(f"Source: {source_details}")
+            if entry.get("text_en"):
+                parts.append(f"EN: {entry['text_en']}")
+            if entry.get("text_urdu"):
+                parts.append(f"UR: {entry['text_urdu']}")
+            if entry.get("text_roman_urdu"):
+                parts.append(f"RM: {entry['text_roman_urdu']}")
+            if entry.get("parenting_insight"):
+                parts.append(f"Parenting insight: {entry['parenting_insight']}")
+            docs.append(
+                Document(
+                    id=f"new_quran:{entry_id}",
+                    text=" | ".join(parts),
+                    metadata={
+                        "id": entry_id,
+                        "type": "ayat",
+                        "content_type": "ayat",
+                        "category": topic or "Parenting Quran",
+                        "source_details": source_details,
+                        "quran_reference": reference,
+                        "tags": entry.get("tags", []),
+                        "topic": topic or "",
+                    },
+                )
+            )
         return docs
 
     def _normalize_prophet_stories(self, data: Any) -> List[Document]:
@@ -180,19 +314,31 @@ class DataLoader:
             return val
         for idx, story in enumerate(stories):
             sid = story.get("id") or f"S{idx+1}"
-            title = story.get("title") or story.get("name")
-            text = story.get("text") or story.get("story") or ""
+            title = story.get("title") or story.get("name") or ""
+            english = story.get("english_text") or story.get("text") or story.get("story") or ""
+            urdu = story.get("urdu_text") or ""
+            lesson_en = story.get("lesson_english") or ""
+            lesson_ur = story.get("lesson_urdu") or ""
             key_points = story.get("key_points") or []
             parts: List[str] = []
             if title:
                 parts.append(f"TITLE: {title}")
-            if text:
-                parts.append(text)
+            if english:
+                parts.append(f"EN: {english}")
+            if urdu:
+                parts.append(f"UR: {urdu}")
+            if lesson_en:
+                parts.append(f"Lesson(EN): {lesson_en}")
+            if lesson_ur:
+                parts.append(f"Lesson(UR): {lesson_ur}")
             if key_points:
                 parts.append("Key Points: " + "; ".join(key_points))
             full_text = "\n".join(parts)
             metadata = {
-                "source_type": "prophet_story",  # Add this field for retriever
+                "source_type": "prophet_story",
+                "content_type": "prophet_story",
+                "source_details": f"Prophet Story: {title}" if title else "Prophet Story",
+                "title": title,
                 "source": fix_meta(story.get("source")),
                 "tags": fix_meta(story.get("tags")),
                 "category": "Prophet Stories",
@@ -241,15 +387,21 @@ class DataLoader:
             combined_text = "\n".join(parts)
             
             # Build metadata with all relevant fields
+            book = fix_meta(ref.get("book_title"))
+            author = fix_meta(ref.get("author"))
+            topic = fix_meta(ref.get("topic"))
+            source_details = f"{book} – {author}" if book and author else (book or author or "Islamic Scholar")
             metadata = {
                 "source_type": "islamic_scholar",
-                "book_title": fix_meta(ref.get("book_title")),
-                "author": fix_meta(ref.get("author")),
-                "topic": fix_meta(ref.get("topic")),
+                "content_type": "scholar",
+                "source_details": source_details,
+                "book_title": book,
+                "author": author,
+                "topic": topic,
                 "tags": fix_meta(ref.get("tags")),
                 "age_range": fix_meta(ref.get("age_range")),
                 "language_support": "en, ur, rm",
-                "category": "Islamic Scholar Reference"
+                "category": "Islamic Scholar Reference",
             }
             
             docs.append(Document(id=f"scholar:{ref_id}", text=combined_text, metadata=metadata))

@@ -63,11 +63,23 @@ def _extract_categories_from_text(text: str) -> Tuple[Set[str], Set[str]]:
 
 
 def _get_low_score_categories(db: Session, child_id: int, days: int = 3) -> List[str]:
-    """Derive low-score categories based on recent behavior stats (last 3 days)."""
-    stats = get_child_behavior_stats(db, child_id, days=days)
-    categories_pct: Dict[str, float] = stats.get("categories", {})
+    """Derive low-score categories from unified check-in + game + task analysis."""
+    from app.services.unified_behavior import get_unified_behavior_analysis
+
+    analysis = get_unified_behavior_analysis(
+        db, child_id, days=days, include_skill_areas=False
+    )
     low_categories: List[str] = []
-    for raw_cat, pct in categories_pct.items():
+    for cat, pct in (analysis.get("unified_scores") or {}).items():
+        if cat in ALLOWED_CATEGORIES and pct < LOW_SCORE_THRESHOLD:
+            low_categories.append(cat)
+
+    if low_categories:
+        return low_categories
+
+    # Fallback when unified window has no merged data yet
+    stats = get_child_behavior_stats(db, child_id, days=days)
+    for raw_cat, pct in stats.get("categories", {}).items():
         cat = raw_cat.lower()
         if cat not in ALLOWED_CATEGORIES and cat in CATEGORY_ALIAS_MAP:
             cat = CATEGORY_ALIAS_MAP[cat]

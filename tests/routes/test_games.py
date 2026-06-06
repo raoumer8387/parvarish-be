@@ -6,9 +6,11 @@ from tests.conftest import build_client
 
 @pytest.mark.unit
 def test_get_age_group_from_age():
-    assert games.get_age_group_from_age(99) == "6-8"
+    assert games.get_age_group_from_age(None) == "6-8"
+    assert games.get_age_group_from_age(7) == "6-8"
     assert games.get_age_group_from_age(10) == "9-11"
     assert games.get_age_group_from_age(13) == "12-14"
+    assert games.get_age_group_from_age(99) == "12-14"
 
 
 @pytest.mark.endpoint

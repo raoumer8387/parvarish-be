@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Dict, Any
+import hashlib
+import json
 import logging
 
 import os
@@ -19,6 +21,8 @@ logger = logging.getLogger(__name__)
 DEFAULT_MODEL_NAME = "all-MiniLM-L6-v2"
 DEFAULT_DB_DIR = Path(os.getenv("PARVARISH_CHROMA_DIR", Path.home() / ".parvarish_chroma"))
 DEFAULT_COLLECTION = "parvarish_islamic_parenting"
+INDEX_MANIFEST = "index_manifest.json"
+RAG_INDEX_VERSION = 2
 
 
 @dataclass
@@ -86,8 +90,7 @@ class Embedder:
             return
         ids = [d.id for d in docs]
         texts = [d.text for d in docs]
-        metadatas: List[Dict[str, Any]] = [d.metadata for d in docs]
-        # Upsert in manageable batches
+        metadatas: List[Dict[str, Any]] = [self._sanitize_metadata(d.metadata) for d in docs]
         batch_size = 128
         for i in range(0, len(docs), batch_size):
             self.collection.upsert(
@@ -96,9 +99,91 @@ class Embedder:
                 metadatas=metadatas[i : i + batch_size],
             )
 
-    def ensure_built(self) -> None:
-        # NOP placeholder; Chroma persists automatically on upsert
-        pass
+    @staticmethod
+    def _sanitize_metadata(metadata: Dict[str, Any]) -> Dict[str, Any]:
+        """Chroma metadata values must be str, int, float, or bool."""
+        clean: Dict[str, Any] = {}
+        for key, value in metadata.items():
+            if value is None:
+                continue
+            if isinstance(value, (str, int, float, bool)):
+                clean[key] = value
+            elif isinstance(value, list):
+                clean[key] = ", ".join(str(v) for v in value)
+            else:
+                clean[key] = str(value)
+        return clean
+
+    @staticmethod
+    def doc_signature(docs: List[Document]) -> str:
+        payload = "|".join(sorted(d.id for d in docs))
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+    def ensure_index(self, docs: List[Document], *, data_signature: str | None = None) -> bool:
+        """Rebuild the vector index when data files change or the collection is incomplete."""
+        manifest_path = self.config.persist_directory / INDEX_MANIFEST
+        signature = self.doc_signature(docs)
+        expected_count = len(docs)
+        current_count = self.collection.count()
+        stored_signature = None
+        stored_data_signature = None
+        stored_version = None
+        if manifest_path.exists():
+            try:
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                stored_signature = manifest.get("signature")
+                stored_data_signature = manifest.get("data_signature")
+                stored_version = manifest.get("version")
+            except (OSError, json.JSONDecodeError):
+                stored_signature = None
+                stored_data_signature = None
+                stored_version = None
+
+        needs_rebuild = (
+            expected_count == 0
+            or current_count != expected_count
+            or stored_signature != signature
+            or stored_version != RAG_INDEX_VERSION
+            or (data_signature is not None and stored_data_signature != data_signature)
+        )
+        if not needs_rebuild:
+            try:
+                self.collection.count()
+            except Exception:
+                logger.warning("Chroma collection handle is stale; forcing rebuild")
+                needs_rebuild = True
+
+        if not needs_rebuild:
+            return False
+
+        logger.info(
+            "Rebuilding RAG index (%s docs in store, %s expected)",
+            current_count,
+            expected_count,
+        )
+        self.build_index(docs, reset=True)
+        manifest_path.write_text(
+            json.dumps(
+                {
+                    "signature": signature,
+                    "data_signature": data_signature,
+                    "count": expected_count,
+                    "version": RAG_INDEX_VERSION,
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        return True
+
+    def refresh_collection(self) -> chromadb.api.models.Collection.Collection:
+        """Re-bind to the persisted collection (fixes stale UUID handles after rebuild)."""
+        self.collection = self.client.get_or_create_collection(
+            name=self.config.collection_name,
+            embedding_function=self.embedding_fn,
+            metadata={"hnsw:space": "cosine"},
+        )
+        return self.collection
 
     def as_retriever(self) -> chromadb.api.models.Collection.Collection:
         return self.collection

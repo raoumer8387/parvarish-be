@@ -40,41 +40,41 @@ def test_rag_system():
         count = collection.count()
         print(f"Step 2: Current collection has {count} documents\n")
         
-        # Step 3: Load data if needed
-        if count == 0:
-            print("Step 3: Loading Islamic knowledge from data files...")
-            data_loader = DataLoader()
-            docs = data_loader.load()
-            print(f"✅ Loaded {len(docs)} documents from data files\n")
-            
-            print("Step 4: Building index...")
-            embedder.build_index(docs)
-            print(f"✅ Indexed {len(docs)} documents into vector store\n")
-            
-            # Verify
-            new_count = collection.count()
-            print(f"✅ Verified: Collection now has {new_count} documents\n")
+        # Step 3: Load data and sync index
+        print("Step 3: Loading Islamic knowledge from data files...")
+        data_loader = DataLoader()
+        docs = data_loader.load()
+        print(f"✅ Loaded {len(docs)} documents from data files\n")
+
+        print("Step 4: Syncing vector index...")
+        rebuilt = embedder.ensure_index(docs, data_signature=data_loader.source_signature())
+        if rebuilt:
+            print(f"✅ Rebuilt index with {len(docs)} documents\n")
         else:
-            print(f"✅ Collection already has {count} documents, skipping load\n")
+            print(f"✅ Index already up to date ({embedder.collection.count()} documents)\n")
+
+        new_count = collection.count()
+        print(f"✅ Verified: Collection has {new_count} documents\n")
         
         # Step 5: Test retrieval
         print("Step 5: Testing retrieval...")
         retriever = Retriever(collection)
         
         test_queries = [
+            "hadith anger control active child behavior",
+            "quran verse patience mercy parenting",
             "focus attention mindfulness",
             "emotions patience forgiveness",
-            "seeking knowledge learning",
-            "good character akhlaq morality"
         ]
         
         for query in test_queries:
             print(f"\n  Query: '{query}'")
-            chunks = retriever.query(query, k=2)
+            chunks = retriever.retrieve_parenting_context(query, k=5)
             print(f"  Found {len(chunks)} results:")
             for i, chunk in enumerate(chunks, 1):
+                ctype = retriever._content_type(chunk)
                 preview = chunk.text[:100].replace('\n', ' ')
-                print(f"    {i}. {preview}...")
+                print(f"    {i}. [{ctype}] {preview}...")
         
         print("\n" + "="*70)
         print("✅ RAG SYSTEM TEST PASSED!")
